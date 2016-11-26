@@ -1,0 +1,32 @@
+[user]
+	name = Richard Huang
+	email = richardhuang.huang@gmail.com
+	signingkey = 8B4D6658
+[core]
+	editor = vim
+[color]
+	ui = always
+	branch = always
+	diff = always
+	interactive = always
+	status = always
+	grep = always
+	pager = true
+	decorate = always
+	showbranch = always
+[commit]
+	gpgsign = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
+[alias]
+	co = checkout
+	ec = config --global -e
+	cm = git add . && git commit -m
+	amend = commit -a --amend
+	s = status
+	branches = branch -a
+	remotes = remote -v
+	l = log --pretty=oneline --graph --abbrev-commit
+	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
