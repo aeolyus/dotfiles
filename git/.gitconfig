@@ -21,12 +21,15 @@
 	smudge = git-lfs smudge -- %f
 	required = true
 [alias]
+	a = add
+	aa = add --all
 	co = checkout
 	ec = config --global -e
-	cm = git add . && git commit -m
+	cm = commit -m
 	amend = commit -a --amend
 	s = status
 	branches = branch -a
 	remotes = remote -v
 	l = log --pretty=oneline --graph --abbrev-commit
 	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+	db = branch -d
