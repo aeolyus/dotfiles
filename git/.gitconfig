@@ -4,6 +4,7 @@
 	signingkey = 8B4D6658
 [core]
 	editor = vim
+	autocrlf = true
 [color]
 	ui = always
 	branch = always
