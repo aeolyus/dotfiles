@@ -10,6 +10,8 @@ COMPLETION_WAITING_DOTS="true"
 
 plugins=(
   git
+  zsh-syntax-highlighting
+  zsh-autosuggestions
 )
 
 if [[ -n $SSH_CONNECTION ]]; then
