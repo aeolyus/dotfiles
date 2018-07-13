@@ -4,7 +4,7 @@ ZSH=/usr/share/oh-my-zsh/
 
 ZSH_THEME="bullet-train"
 
-DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="false"
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 
@@ -21,6 +21,7 @@ if [[ -n $SSH_CONNECTION ]]; then
  fi
 
 export SSH_KEY_PATH="~/.ssh/rsa_id"
+export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
