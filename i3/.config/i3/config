@@ -174,13 +174,13 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+mod1+l exec i3pixellock
 
 # Always executed
-exec_always feh --bg-scale /home/aeolyus/Pictures/islandNight.jpg
+exec_always feh --bg-scale /home/aeolyus/Pictures/islandDay.jpg
 exec_always compton -f
 
 # i3 gaps
-for_window [class="^.*"] border pixel 0
-gaps inner 15
-gaps outer 1
+for_window [class="^.*"] border pixel 1
+gaps inner 0
+gaps outer 0
 
 for_window [class="Nautilus"] floating enable
 for_window [window_role="pop-up"] floating enable
