@@ -175,7 +175,8 @@ bindsym $mod+mod1+l exec i3pixellock
 
 # Always executed
 exec_always feh --bg-scale /home/aeolyus/Pictures/islandDay.jpg
-exec_always compton -f
+exec_always compton -f --backend glx --glx-no-stencil
+exec_always amixer -c0 sset 'Headphone Mic Boost' 10dB
 
 # i3 gaps
 for_window [class="^.*"] border pixel 1
