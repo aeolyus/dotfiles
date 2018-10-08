@@ -131,10 +131,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 2 px or 2 ppt
-        bindsym k resize grow height 2 px or 2 ppt
-        bindsym j resize shrink height 2 px or 1 ppt
-        bindsym l resize grow width 2 px or 2 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -158,7 +158,7 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +2% #i
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -2% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle #mute sound
 
-# Sreen brightness controls
+# Screen brightness controls
 bindsym XF86MonBrightnessUp exec light -A 5 #increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 5 #decrease screen brightness
 
@@ -175,13 +175,16 @@ bindsym $mod+mod1+l exec i3pixellock
 
 # Always executed
 exec_always feh --bg-scale /home/aeolyus/Pictures/islandDay.jpg
-exec_always compton -f --backend glx --glx-no-stencil
-exec_always amixer -c0 sset 'Headphone Mic Boost' 10dB
+exec_always autorandr -c
+#exec compton -f --glx-no-stencil --vsync opengl-swc --refresh-rate 60 --opacity-rule 80:'class_g*="URxvt"'
+exec_always compton -f --opacity-rule 80:'class_g*="URxvt"'
 
 # i3 gaps
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 3
 gaps inner 0
 gaps outer 0
 
 for_window [class="Nautilus"] floating enable
 for_window [window_role="pop-up"] floating enable
+
+for_window [class="Spotify"] move to workspace 9
