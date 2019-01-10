@@ -5,6 +5,7 @@ Just my dotfiles for:
 - i3
 - neovim
 - polybar
+- redshift
 - urxvt
 - vim
 - xmap
