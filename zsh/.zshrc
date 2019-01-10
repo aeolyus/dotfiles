@@ -4,7 +4,7 @@ ZSH=/usr/share/oh-my-zsh/
 
 ZSH_THEME="bullet-train"
 
-DISABLE_AUTO_UPDATE="false"
+DISABLE_AUTO_UPDATE=true
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 
@@ -39,5 +39,10 @@ fi
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
+# Aliases
 alias vi='nvim'
-alias cls='clear'
+alias irc='weechat'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='find . -printf "%P\\n"'
+export FZF_CTRL_T_COMMAND='find . -printf "%P\\n"'
