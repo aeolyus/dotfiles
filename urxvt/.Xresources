@@ -44,6 +44,12 @@ URxvt.color7: #c5c8c6
 URxvt.color15: #ffffff
 
 ! URxvt Extensions
+URxvt.keysym.C-plus:   font-size:increase
+URxvt.keysym.C-minus:  font-size:decrease
+URxvt.keysym.C-S-Up:   font-size:incglobal
+URxvt.keysym.C-S-Down: font-size:decglobal
+URxvt.keysym.C-equal:  font-size:reset
+URxvt.keysym.C-slash:  font-size:show
 
 
 ! rofi settings
