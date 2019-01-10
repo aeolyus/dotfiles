@@ -1,5 +1,11 @@
 # Dotfiles
 Just my dotfiles for:
-- git
 - atom
+- git
+- i3
+- neovim
+- polybar
+- urxvt
 - vim
+- xmap
+- zsh
