@@ -23,7 +23,7 @@ secondary = #F3F3BA
 
 
 [bar/default]
-;monitor = ${env:MONITOR:HDMI-1}
+monitor = ${env:MONITOR:}
 width = 100%
 height = 20
 offset-x = 0%
