@@ -158,6 +158,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 exec polybar -r default
+exec_always $(killall -q polybar;for m in $(polybar --list-monitors | cut -d":" -f1); do MONITOR=$m polybar -r default & done)
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2% #increase sound volume
@@ -179,11 +180,13 @@ bindsym XF86AudioPrev exec playerctl previous
 # Lock screen
 bindsym $mod+mod1+l exec i3pixellock
 
+exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
+
 # Always executed
-exec_always feh --bg-scale /home/aeolyus/Pictures/islandDay.jpg
+exec_always feh --bg-fill /home/aeolyus/Pictures/islandDay.jpg
 exec_always autorandr -c
-#exec compton -f --glx-no-stencil --vsync opengl-swc --refresh-rate 60 --opacity-rule 80:'class_g*="URxvt"'
-exec_always compton -f --opacity-rule 80:'class_g*="URxvt"'
+exec compton -f --glx-no-stencil --vsync opengl-swc --refresh-rate 60
+#exec_always compton -f --opacity-rule 80:'class_g*="URxvt"'
 
 # i3 gaps
 for_window [class="^.*"] border pixel 3
