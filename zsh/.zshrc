@@ -42,6 +42,7 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 # Aliases
 alias vi='nvim'
 alias irc='weechat'
+alias rr='ranger'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='find . -printf "%P\\n"'

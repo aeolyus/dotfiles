@@ -1,5 +1,4 @@
-let mapleader = ';'
-
+"Automate Plugins
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
   silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -21,6 +20,8 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'w0rg/ale'
 call plug#end()
 
 "General Settings
@@ -55,13 +56,24 @@ let NERDTreeDirArrows = 1
 
 autocmd VimResized * wincmd =
 
-"Colours
+"Aesthetics
 if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
 endif
 colorscheme base16-tomorrow-night
 let g:airline_theme='base16'
+let g:airline_symbols = {}
+let g:airline_symbols.linenr = 'Ξ'
+let g:airline_powerline_fonts = 1
+let g:airline_skip_empty_sections = 1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#branch#empty_message = ''
+let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#whitespace#symbol= '!'
+
+"Ale
+let g:ale_java_checkstyle_options = 'google_java_format'
 
 "Deoplete
 set completeopt+=noinsert
@@ -79,6 +91,7 @@ nmap <leader>g :Goyo<CR>
 tnoremap <Esc> <C-\><C-n>
 
 "Keybindings
+let mapleader = ';'
 nmap <C-\> :NERDTreeToggle<CR>
 
 nnoremap <C-Space> :FZF<CR>
