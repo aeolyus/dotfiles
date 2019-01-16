@@ -10,3 +10,4 @@ Just my dotfiles for:
 - vim
 - xmap
 - zsh
+and scripts!
