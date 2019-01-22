@@ -21,7 +21,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
-Plug 'w0rg/ale'
+Plug 'w0rp/ale'
 call plug#end()
 
 "General Settings
