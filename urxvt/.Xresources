@@ -8,7 +8,7 @@ URxvt.termName: rxvt-unicode-256color
 URxvt.depth: 32
 
 !URxvt font
-URxvt.font: xft:Hack:size=9
+URxvt.font: xft:Hack:size=10
 URxvt.letterSpace: -1
 
 !URxvt color scheme
