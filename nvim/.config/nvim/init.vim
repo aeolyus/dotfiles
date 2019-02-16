@@ -41,6 +41,7 @@ set expandtab
 set conceallevel=2
 set cursorline
 set mouse=a
+let mapleader = ';'
 
 "Navigation
 nnoremap <C-h> <C-w>h
@@ -91,7 +92,6 @@ nmap <leader>g :Goyo<CR>
 tnoremap <Esc> <C-\><C-n>
 
 "Keybindings
-let mapleader = ';'
 nmap <C-\> :NERDTreeToggle<CR>
 
 nnoremap <C-Space> :FZF<CR>
@@ -101,5 +101,5 @@ imap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
 imap <expr> <cr>    pumvisible() ? deoplete#close_popup() : "\<cr>"
 
 nnoremap <leader><space> :nohlsearch<CR>
-nnoremap <leader>d :bd<CR>
 nnoremap <leader>s :w<CR>
+nnoremap <leader>y "+y
