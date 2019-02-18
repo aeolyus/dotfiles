@@ -82,9 +82,6 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 nmap <leader>g :Goyo<CR>
 
-"Terminal
-tnoremap <Esc> <C-\><C-n>
-
 "Keybindings
 nmap <C-\> :NERDTreeToggle<CR>
 
