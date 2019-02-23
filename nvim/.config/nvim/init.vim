@@ -39,7 +39,6 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set conceallevel=2
-set cursorline
 set mouse=a
 let mapleader = ';'
 
