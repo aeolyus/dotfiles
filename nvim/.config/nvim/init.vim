@@ -42,13 +42,18 @@ set conceallevel=2
 set mouse=a
 let mapleader = ';'
 
-"Navigation
+"Window Navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-nnoremap <C-n> :tabnext<CR>
-nnoremap <C-p> :tabprevious<CR>
+"Tab Navigation
+nnoremap th  :tabfirst<CR>
+nnoremap tj  :tabnext<CR>
+nnoremap tk  :tabprev<CR>
+nnoremap tl  :tablast<CR>
+nnoremap td  :tabclose<CR>
+nnoremap tn :tabnew<CR>
 
 "NerdTree
 let NERDTreeMinimalUI = 1

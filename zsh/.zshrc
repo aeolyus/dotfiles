@@ -1,4 +1,4 @@
-export PATH=$PATH:/home/aeolyus/.gem/ruby/2.5.0/bin
+export PATH=$PATH:/home/aeolyus/.gem/ruby/2.6.0/bin
 
 ZSH=/usr/share/oh-my-zsh/
 
