@@ -43,7 +43,9 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 alias vi='nvim'
 alias irc='weechat'
 alias rr='ranger'
+se(){du -a . | awk '{print $2}' | fzf | xargs -r $EDITOR ;}
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='find . -printf "%P\\n"'
 export FZF_CTRL_T_COMMAND='find . -printf "%P\\n"'
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse'
