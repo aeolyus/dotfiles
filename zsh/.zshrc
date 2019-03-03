@@ -43,9 +43,15 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 alias vi='nvim'
 alias irc='weechat'
 alias rr='ranger'
-se(){du -a . | awk '{print $2}' | fzf | xargs -r $EDITOR ;}
+se(){du -a . 2>/dev/null | awk '{print $2}' | fzf $FZF_PREVIEW | xargs -r $EDITOR ;}
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='find . -printf "%P\\n"'
-export FZF_CTRL_T_COMMAND='find . -printf "%P\\n"'
-export FZF_DEFAULT_OPTS='--height 40% --layout=reverse'
+export FZF_DEFAULT_COMMAND='find . -printf "%P\\n" 2>/dev/null'
+export FZF_CTRL_T_COMMAND='find . -printf "%P\\n" 2>/dev/null | fzf $FZF_PREVIEW'
+export FZF_DEFAULT_OPTS='--height 50% --layout=reverse --preview-window right:70%'
+export FZF_PREVIEW='--preview="[[ $(file --mime {}) =~ binary ]] &&
+                         echo {} is a binary file ||
+                         (highlight -O ansi -l {} ||
+                         coderay {} ||
+                         rougify {} ||
+                         cat {}) 2> /dev/null | head -500"'
