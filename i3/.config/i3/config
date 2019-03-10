@@ -187,8 +187,6 @@ exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 # Always executed
 exec_always feh --bg-fill /home/aeolyus/Pictures/islandDay.jpg
 exec_always autorandr -c
-exec compton -f --glx-no-stencil --vsync opengl-swc --refresh-rate 60
-#exec_always compton -f --opacity-rule 80:'class_g*="URxvt"'
 
 # i3 gaps
 for_window [class="^.*"] border pixel 3
