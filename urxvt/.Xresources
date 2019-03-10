@@ -6,9 +6,13 @@ URxvt.scrollBar: False
 URxvt.cursorBlink: True
 URxvt.termName: rxvt-unicode-256color
 URxvt.depth: 32
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: true
+URxvt*scrollTtyKeypress: true
+URxvt*saveLines: 10000
 
 !URxvt font
-URxvt.font: xft:Hack:size=11
+URxvt.font: xft:Hack:size=10
 URxvt.letterSpace: -1
 
 !URxvt color scheme
