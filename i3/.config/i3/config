@@ -195,5 +195,16 @@ gaps outer 0
 
 for_window [class="Nautilus"] floating enable
 for_window [window_role="pop-up"] floating enable
-
 for_window [class="Spotify"] move to workspace 9
+
+# Colors
+set $bg-color            #383C4A
+set $bd-color            #E5C07B
+set $text-color          #F3F4F5
+set $inactive-text-color #676E7D
+# class                 border      backgr      text                   indicator   child_border
+client.focused          $bd-color   $bg-color   $text-color            $bd-color   $bd-color
+client.unfocused        $bg-color   $bg-color   $inactive-text-color   $bg-color   $bg-color
+client.focused_inactive $bg-color   $bg-color   $inactive-text-color   $bg-color   $bg-color
+client.urgent           $bg-color   $bg-color   $text-color            $bg-color   $bg-color
+client.background       $bg-color
