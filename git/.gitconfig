@@ -3,7 +3,7 @@
 	email = richardhuang.huang@gmail.com
 	signingkey = 8B4D6658
 [core]
-	editor = vim
+	editor = nvim
 	pager = less -F -X
 
 [color]
