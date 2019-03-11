@@ -1,5 +1,6 @@
 # PATH stuff
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:/home/aeolyus/.gem/ruby/2.6.0/bin:$PATH"
+export EDITOR=nvim
 
 
 # Oh My Zsh!
