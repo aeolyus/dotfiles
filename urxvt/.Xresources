@@ -10,6 +10,8 @@ URxvt*scrollTtyOutput: false
 URxvt*scrollWithBuffer: true
 URxvt*scrollTtyKeypress: true
 URxvt*saveLines: 10000
+URxvt.iso14755: false
+URxvt.iso14755_52: false
 
 !URxvt font
 URxvt.font: xft:Hack:size=10
