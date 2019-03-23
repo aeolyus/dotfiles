@@ -1,11 +1,12 @@
-# Dotfiles
-Just my dotfiles for:
+# dots
+My dotfiles for:
 - atom
 - dunst
 - git
 - i3
 - neovim
 - polybar
+- ranger
 - redshift
 - urxvt
 - vim
