@@ -1,4 +1,4 @@
-#!/usr/bin/envbash
+#!/bin/bash
 
 tex_file=$(mktemp)## Random temp file name
 
