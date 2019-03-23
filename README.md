@@ -1,6 +1,7 @@
 # Dotfiles
 Just my dotfiles for:
 - atom
+- dunst
 - git
 - i3
 - neovim
