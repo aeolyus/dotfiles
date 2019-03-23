@@ -1,0 +1,52 @@
+!base16 tomorrow color scheme
+*background: #1d1f21
+*foreground: #c5c8c6
+! black dark/light
+*color0: #1d1f21
+*color8: #969896
+! red dark/light
+*color1: #cc6666
+*color9: #cc6666
+! green dark/light
+*color2: #b5bd68
+*color10: #b5bd68
+! yellow dark/light
+*color3: #f0c674
+*color11: #f0c674
+! blue dark/light
+*color4: #81a2be
+*color12: #81a2be
+! magenta dark/light
+*color5: #b294bb
+*color13: #b294bb
+! cyan dark/light
+*color6: #8abeb7
+*color14: #8abeb7
+! white dark/light
+*color7: #c5c8c6
+*color15: #ffffff
+
+!URxvt General Settings
+URxvt.scrollBar: False
+URxvt.cursorBlink: True
+URxvt.termName: rxvt-unicode-256color
+URxvt.depth: 32
+URxvt.scrollTtyOutput: false
+URxvt.scrollWithBuffer: true
+URxvt.scrollTtyKeypress: true
+URxvt.saveLines: 1000
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+!URxvt Font
+URxvt.font: xft:Hack:size=10
+URxvt.letterSpace: -1
+! URxvt Extensions
+URxvt.keysym.C-plus:   font-size:increase
+URxvt.keysym.C-minus:  font-size:decrease
+URxvt.keysym.C-S-Up:   font-size:incglobal
+URxvt.keysym.C-S-Down: font-size:decglobal
+URxvt.keysym.C-equal:  font-size:reset
+URxvt.keysym.C-slash:  font-size:show
+
+! General X Settings
+Xcursor.size: 16
