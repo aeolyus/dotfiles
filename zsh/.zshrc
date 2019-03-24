@@ -1,11 +1,6 @@
-# PATH stuff
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:/home/aeolyus/.gem/ruby/2.6.0/bin:$PATH"
-export EDITOR=nvim
-
-
 # Oh My Zsh!
 ZSH=/usr/share/oh-my-zsh/
-ZSH_THEME="bullet-train"
+ZSH_THEME="refined"
 DISABLE_AUTO_UPDATE=true
 COMPLETION_WAITING_DOTS=true
 export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
@@ -26,6 +21,9 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 
+# ZSH Settings
+bindkey -v
+
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='find . -printf "%P\\n" 2>/dev/null'
@@ -33,13 +31,8 @@ export FZF_CTRL_T_COMMAND='find . -printf "%P\\n" 2>/dev/null'
 export FZF_DEFAULT_OPTS='--height 50% --layout=reverse --preview-window right:70%'
 
 
-# Custom Commands
-se(){du -a . 2>/dev/null | awk '{print $2}' | fzf --preview='[[ $(file --mime {}) =~ binary ]] &&
-                                                             echo {} is a binary file ||
-                                                             (highlight -O ansi -l {} ||
-                                                             coderay {} ||
-                                                             rougify {} ||
-                                                             cat {}) 2> /dev/null | head -500' | xargs -r $EDITOR ;}
+# Environment Variables
+export EDITOR=nvim
 
 
 # Aliases
@@ -49,3 +42,15 @@ alias rr='ranger'
 alias irc='weechat'
 alias vpnu='nmcli con up protonvpn'
 alias vpnd='nmcli con down protonvpn'
+
+
+# Custom Commands
+se() {
+    du -a . 2>/dev/null | awk '{print $2}' |
+    fzf --preview='[[ $(file --mime {}) =~ binary ]] &&
+                   echo {} is a binary file ||
+                   (highlight -O ansi -l {} ||
+                   coderay {} ||
+                   rougify {} ||
+                   cat {}) 2> /dev/null | head -500' | xargs -r $EDITOR ;
+}
