@@ -50,3 +50,10 @@ URxvt.keysym.C-slash:  font-size:show
 
 ! General X Settings
 Xcursor.size: 16
+Xft.dpi: 96
+Xft.rgba: rgb
+Xft.hinting: 1
+Xft.autohint: 0
+Xft.antialias: 1
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
