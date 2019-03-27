@@ -7,21 +7,19 @@ endif
 
 "Plugins
 call plug#begin('~/.local/share/nvim/plugged')
-Plug 'zchee/deoplete-jedi'
 Plug 'scrooloose/nerdtree'
+Plug 'lilydjwg/colorizer'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-jedi'
+Plug 'w0rp/ale'
 Plug 'chriskempson/base16-vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
-Plug 'w0rp/ale'
 call plug#end()
 
 "General Settings
@@ -30,13 +28,12 @@ filetype plugin on
 syntax on
 set lazyredraw
 set updatetime=500
-set number
 set relativenumber
 set list
 set listchars=tab:\|\ ,trail:.,extends:>,precedes:<,nbsp:␣
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set expandtab
 set conceallevel=2
 set mouse=a
@@ -47,6 +44,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
 "Tab Navigation
 nnoremap th  :tabfirst<CR>
 nnoremap tj  :tabnext<CR>
@@ -58,16 +56,13 @@ nnoremap tn :tabnew<CR>
 "NerdTree
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
-
-autocmd VimResized * wincmd =
+let NERDTreeQuitOnOpen = 1
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 "Aesthetics
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
+let base16colorspace=256
 colorscheme base16-tomorrow-night
-let g:airline_theme='base16'
+let g:airline_theme='base16_tomorrow'
 let g:airline_symbols = {}
 let g:airline_symbols.linenr = 'Ξ'
 let g:airline_powerline_fonts = 1
