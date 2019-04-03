@@ -1,10 +1,10 @@
 !Rofi Settings
 rofi.lines: 12
-rofi.width: 60
+rofi.width: 40
 rofi.columns: 3
 rofi.padding: 18
 rofi.location: 0
-rofi.font: Hack 14
+rofi.font: Hack 11
 rofi.sidebar-mode: true
 rofi.color-enabled: true
 rofi.modi: drun,run,window

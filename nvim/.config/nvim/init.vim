@@ -28,6 +28,7 @@ filetype plugin on
 syntax on
 set lazyredraw
 set updatetime=500
+set number
 set relativenumber
 set list
 set listchars=tab:\|\ ,trail:.,extends:>,precedes:<,nbsp:␣
@@ -40,10 +41,14 @@ set mouse=a
 let mapleader = ';'
 
 "Window Navigation
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <leader>h <C-w>h
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <leader>l <C-w>l
+nnoremap <C-H> :vertical resize -5<CR>
+nnoremap <C-J> :resize +5<CR>
+nnoremap <C-K> :resize -5<CR>
+nnoremap <C-L> :vertical resize +5<CR>
 
 "Tab Navigation
 nnoremap th  :tabfirst<CR>
