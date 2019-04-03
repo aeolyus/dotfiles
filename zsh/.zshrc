@@ -19,7 +19,7 @@ plugins=(
   git
   zsh-syntax-highlighting
   zsh-autosuggestions
-
+  colored-man-pages
 )
 export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 source $ZSH/oh-my-zsh.sh
