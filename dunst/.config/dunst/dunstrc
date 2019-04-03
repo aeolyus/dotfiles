@@ -2,7 +2,7 @@
     ### Display ###
     monitor = 0
     follow = keyboard
-    geometry = "0x5-15+30"
+    geometry = "300x5-20+30"
     indicate_hidden = yes
     shrink = no
     transparency = 15
