@@ -6,7 +6,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 "Plugins
-call plug#begin('~/.local/share/nvim/plugged')
+call plug#begin('~/.local/share/vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
@@ -53,10 +53,7 @@ let NERDTreeDirArrows = 1
 autocmd VimResized * wincmd =
 
 "Aesthetics
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
+let base16colorspace=256
 colorscheme base16-tomorrow-night
 let g:airline_theme='base16'
 let g:airline_symbols = {}

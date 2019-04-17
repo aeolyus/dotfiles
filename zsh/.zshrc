@@ -16,6 +16,7 @@ if [[ ! -d $ZSH_CACHE_DIR ]]; then
 fi
 ZSH_COMPDUMP="${ZDOTDIR:-${HOME}}/.cache/oh-my-zsh/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
 plugins=(
+  z
   git
   zsh-syntax-highlighting
   zsh-autosuggestions
@@ -30,6 +31,7 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 
 # ZSH Settings
 bindkey -v
+_Z_DATA=$HOME/.cache/.z
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
