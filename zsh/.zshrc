@@ -41,6 +41,8 @@ export FZF_DEFAULT_OPTS='--height 50% --layout=reverse --preview-window right:70
 
 # Environment Variables
 export EDITOR=nvim
+export GOPATH=$HOME/go
+export PATH=$PATH:$HOME/dotfiles/spells:$GOPATH/bin
 
 # Aliases
 alias g='git'
