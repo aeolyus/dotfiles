@@ -5,7 +5,7 @@ set from = "richardhuang.huang@gmail.com"
 set realname = "Richard Huang"
 
 set spoolfile = "+INBOX"
-set record = "+[Gmail]/Sent"
+set record = ""
 set trash = "+[Gmail]/Trash"
 set postponed = "+[Gmail]/Drafts"
 set mail_check = 5
@@ -13,19 +13,48 @@ set mail_check = 5
 set edit_headers
 set editor = "nvim +/^$ ++1"
 set move = no
+set mailcap_path = ~/.config/mutt/mailcap
+set sort = "reverse-date"
+
+# Sidebar mappings
+set sidebar_visible = yes
+set sidebar_width = 22
+set sidebar_short_path = yes
+set sidebar_next_new_wrap = yes
+set mail_check_stats
+set sidebar_format = '%B%?F? [%F]?%* %?N?%N/? %?S?%S?'
+bind index,pager \Ck sidebar-prev
+bind index,pager \Cj sidebar-next
+bind index,pager \Co sidebar-open
+bind index,pager \Cp sidebar-prev-new
+bind index,pager \Cn sidebar-next-new
+bind index,pager B sidebar-toggle-visible
+
+# General remappings
+bind index g noop
+bind index G last-entry
+bind index gg first-entry
+bind pager j next-line
+bind pager k previous-line
+bind browser h goto-parent
+bind browser l select-entry
+bind pager,browser gg top-page
+bind pager,browser G bottom-page
+bind index,browser d half-down
+bind index,browser u half-up
+bind index D delete-message
+bind index U undelete-message
 
 # Gmail-style keyboard shortcuts
-bind index g noop
 bind editor <space> noop
 macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
 macro index ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"
 macro index gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
-macro index gs "<change-folder>=[Gmail]/Sent<enter>" "Go to sent messages"
+macro index gs "<change-folder>=[Gmail]/Sent Mail<enter>" "Go to sent messages"
 macro index gt "<change-folder>=[Gmail]/Trash<enter>" "Go to trash"
-macro index,pager d "<save-message>=[Gmail]/Trash<enter><enter>" "Trash"
 macro index,pager e "<save-message>=[Gmail]/All Mail<enter><enter>" "Archive"
 
-mailboxes =INBOX =[Gmail]/Sent\ Mail =[Gmail]/Drafts =[Gmail]/Spam =[Gmail]/Trash
+mailboxes =INBOX =[Gmail]/Sent\ Mail =[Gmail]/All\ Mail =[Gmail]/Drafts =[Gmail]/Spam =[Gmail]/Trash
 source "gpg -d ~/.config/mutt/passwords.gpg |"
 
 # Default index colors:
@@ -50,7 +79,7 @@ mono underline underline
 mono indicator reverse
 mono error bold
 color normal default default
-color indicator brightblack white
+color indicator black white
 color sidebar_highlight red default
 color sidebar_divider brightblack black
 color sidebar_flagged red black

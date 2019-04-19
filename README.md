@@ -4,6 +4,7 @@ My dotfiles for:
 - dunst
 - git
 - i3
+- mutt
 - neovim
 - polybar
 - ranger
