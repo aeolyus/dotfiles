@@ -1,4 +1,4 @@
-set folder = "imaps://richardhuang.huang@gmail.com@imap.gmail.com:993"
+set folder = "~/mail"
 set smtp_url = "smtps://richardhuang.huang@gmail.com@smtp.gmail.com:465"
 
 set from = "richardhuang.huang@gmail.com"
@@ -15,6 +15,12 @@ set editor = "nvim +/^$ ++1"
 set move = no
 set mailcap_path = ~/.config/mutt/mailcap
 set sort = "reverse-date"
+
+timeout-hook 'exec sync-mailbox'
+startup-hook 'exec sync-mailbox'
+shutdown-hook 'exec sync-mailbox'
+
+macro index S "<shell-escape>mbsync -Va >/dev/null 2>&1 &<enter>" "Check for new mail"
 
 # Sidebar mappings
 set sidebar_visible = yes
@@ -55,7 +61,7 @@ macro index gt "<change-folder>=[Gmail]/Trash<enter>" "Go to trash"
 macro index,pager e "<save-message>=[Gmail]/All Mail<enter><enter>" "Archive"
 
 mailboxes =INBOX =[Gmail]/Sent\ Mail =[Gmail]/All\ Mail =[Gmail]/Drafts =[Gmail]/Spam =[Gmail]/Trash
-source "gpg -d ~/.config/mutt/passwords.gpg |"
+source "gpg -qd ~/.config/mutt/mutt_secrets.gpg |"
 
 # Default index colors:
 color index yellow default '.*'

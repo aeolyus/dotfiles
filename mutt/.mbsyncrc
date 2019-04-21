@@ -1,0 +1,20 @@
+IMAPStore mail-remote
+Host imap.gmail.com
+Port 993
+User richardhuang.huang@gmail.com
+PassCmd "gpg -qd ~/.config/mutt/passwords.gpg"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore mail-local
+Path ~/mail/
+Inbox ~/mail/INBOX
+Subfolders Verbatim
+
+Channel mail
+Master :mail-remote:
+Slave :mail-local:
+Create Both
+Expunge Both
+Patterns *
+SyncState *
