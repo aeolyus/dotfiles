@@ -41,12 +41,14 @@ URxvt.iso14755_52: false
 URxvt.font: xft:Hack:size=10
 URxvt.letterSpace: -1
 ! URxvt Extensions
-URxvt.keysym.C-plus:   font-size:increase
-URxvt.keysym.C-minus:  font-size:decrease
-URxvt.keysym.C-S-Up:   font-size:incglobal
-URxvt.keysym.C-S-Down: font-size:decglobal
-URxvt.keysym.C-equal:  font-size:reset
-URxvt.keysym.C-slash:  font-size:show
+URxvt.perl-ext-common: default,matcher,resize-font,url-select,keyboard-select
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.resize-font.bigger: C-equal
+URxvt.resize-font.smaller: C-minus
+URxvt.resize-font.reset: C-0
 
 ! General X Settings
 Xcursor.size: 16
