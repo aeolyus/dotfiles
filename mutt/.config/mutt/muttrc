@@ -9,18 +9,25 @@ set record = ""
 set trash = "+[Gmail]/Trash"
 set postponed = "+[Gmail]/Drafts"
 set mail_check = 5
+set header_cache = "~/.cache/mutt/"
+set message_cachedir = "~/.cache/mutt/"
 
 set edit_headers
 set editor = "nvim +/^$ ++1"
 set move = no
 set mailcap_path = ~/.config/mutt/mailcap
 set sort = "reverse-date"
+set wait_key = no # shut up, mutt
+set quit
 
 timeout-hook 'exec sync-mailbox'
 startup-hook 'exec sync-mailbox'
 shutdown-hook 'exec sync-mailbox'
 
 macro index S "<shell-escape>mbsync -Va >/dev/null 2>&1 &<enter>" "Check for new mail"
+
+mailboxes =INBOX =[Gmail]/Sent\ Mail =[Gmail]/All\ Mail =[Gmail]/Drafts =[Gmail]/Spam =[Gmail]/Trash
+source "gpg -qd ~/.config/mutt/mutt_secrets.gpg |"
 
 # Sidebar mappings
 set sidebar_visible = yes
@@ -60,9 +67,6 @@ macro index gs "<change-folder>=[Gmail]/Sent Mail<enter>" "Go to sent messages"
 macro index gt "<change-folder>=[Gmail]/Trash<enter>" "Go to trash"
 macro index,pager e "<save-message>=[Gmail]/All Mail<enter><enter>" "Archive"
 
-mailboxes =INBOX =[Gmail]/Sent\ Mail =[Gmail]/All\ Mail =[Gmail]/Drafts =[Gmail]/Spam =[Gmail]/Trash
-source "gpg -qd ~/.config/mutt/mutt_secrets.gpg |"
-
 # Default index colors:
 color index yellow default '.*'
 color index_author red default '.*'
@@ -86,6 +90,7 @@ mono indicator reverse
 mono error bold
 color normal default default
 color indicator black white
+color progress black green
 color sidebar_highlight red default
 color sidebar_divider brightblack black
 color sidebar_flagged red black
