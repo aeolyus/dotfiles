@@ -1,9 +1,9 @@
 audio/*; /usr/bin/xdg-open %s
 
-image/*; /usr/bin/xdg-open %s
+image/*; /usr/bin/xdg-open %s >/dev/null
 
 application/msword; /usr/bin/xdg-open %s
-application/pdf; /usr/bin/xdg-open %s
+application/pdf; llpp %s
 application/postscript ; /usr/bin/xdg-open %s
 
 text/html;  /usr/bin/firefox %s >/dev/null 2>&1; needsterminal
