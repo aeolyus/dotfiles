@@ -37,6 +37,7 @@ URxvt.scrollTtyKeypress: true
 URxvt.saveLines: 1000
 URxvt.iso14755: false
 URxvt.iso14755_52: false
+URxvt.print-pipe: "cat > /dev/null"
 !URxvt Font
 URxvt.font: xft:Hack:size=10
 URxvt.letterSpace: -1
