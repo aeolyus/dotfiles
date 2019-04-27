@@ -12,6 +12,7 @@ Plug 'lilydjwg/colorizer'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
+Plug 'deoplete-plugins/deoplete-go'
 Plug 'fatih/vim-go'
 Plug 'w0rp/ale'
 Plug 'chriskempson/base16-vim'
