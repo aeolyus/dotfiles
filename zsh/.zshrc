@@ -53,12 +53,3 @@ alias vpnu='nmcli con up protonvpn'
 alias vpnd='nmcli con down protonvpn'
 
 # Custom Commands
-se() {
-    du -a . 2>/dev/null | awk '{print $2}' |
-    fzf --preview='[[ $(file --mime {}) =~ binary ]] &&
-                   echo {} is a binary file ||
-                   (highlight -O ansi -l {} ||
-                   coderay {} ||
-                   rougify {} ||
-                   cat {}) 2> /dev/null | head -500' | xargs -r $EDITOR ;
-}
