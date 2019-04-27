@@ -179,7 +179,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Lock screen
-bindsym $mod+mod1+l exec i3pixellock
+bindsym $mod+mod1+l exec ~/dotfiles/spells/i3pixellock
 
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 
