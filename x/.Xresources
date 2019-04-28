@@ -26,7 +26,7 @@
 *color7: #c5c8c6
 *color15: #ffffff
 
-!URxvt General Settings
+! URxvt General Settings
 URxvt.scrollBar: False
 URxvt.cursorBlink: True
 URxvt.termName: rxvt-unicode-256color
@@ -35,10 +35,11 @@ URxvt.scrollTtyOutput: false
 URxvt.scrollWithBuffer: true
 URxvt.scrollTtyKeypress: true
 URxvt.saveLines: 1000
+! Shut up rxvt
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 URxvt.print-pipe: "cat > /dev/null"
-!URxvt Font
+! URxvt Font
 URxvt.font: xft:Hack:size=10
 URxvt.letterSpace: -1
 ! URxvt Extensions
