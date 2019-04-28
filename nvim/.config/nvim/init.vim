@@ -14,6 +14,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
 Plug 'deoplete-plugins/deoplete-go'
 Plug 'fatih/vim-go'
+Plug 'scrooloose/nerdcommenter'
 Plug 'w0rp/ale'
 Plug 'chriskempson/base16-vim'
 Plug 'junegunn/goyo.vim'
