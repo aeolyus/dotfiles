@@ -95,6 +95,9 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 nmap <leader>g :Goyo<CR>
 
+"Vim-go
+let g:go_fmt_fail_silently = 1
+
 "Terminal
 tnoremap <Esc> <C-\><C-n>
 

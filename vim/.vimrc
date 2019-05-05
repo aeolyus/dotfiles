@@ -54,7 +54,6 @@ autocmd VimResized * wincmd =
 
 "Aesthetics
 let base16colorspace=256
-colorscheme base16-tomorrow-night
 let g:airline_theme='base16'
 let g:airline_symbols = {}
 let g:airline_symbols.linenr = 'Ξ'
