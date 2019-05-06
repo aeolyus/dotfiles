@@ -45,11 +45,10 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$HOME/dotfiles/spells:$GOPATH/bin
 
 # Aliases
+alias ls='ls --group-directories-first --color=auto'
 alias g='git'
 alias v='nvim'
 alias rr='ranger'
 alias irc='weechat'
 alias vpnu='nmcli con up protonvpn'
 alias vpnd='nmcli con down protonvpn'
-
-# Custom Commands
