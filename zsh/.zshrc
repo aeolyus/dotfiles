@@ -22,7 +22,6 @@ plugins=(
   zsh-autosuggestions
   colored-man-pages
 )
-export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 source $ZSH/oh-my-zsh.sh
 
 # Base 16 shell
@@ -32,6 +31,7 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 # ZSH Settings
 bindkey -v
 _Z_DATA=$HOME/.cache/.z
+HISTFILE=$HOME/.cache/.zsh_history
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -45,10 +45,11 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$HOME/dotfiles/spells:$GOPATH/bin
 
 # Aliases
-alias ls='ls --group-directories-first --color=auto'
 alias g='git'
 alias v='nvim'
 alias rr='ranger'
 alias irc='weechat'
+alias emacs='emacs -nw'
 alias vpnu='nmcli con up protonvpn'
 alias vpnd='nmcli con down protonvpn'
+alias ls='ls --group-directories-first --color=auto'
