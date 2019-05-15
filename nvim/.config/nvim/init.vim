@@ -23,6 +23,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 call plug#end()
 
 "General Settings
@@ -97,6 +98,9 @@ nmap <leader>g :Goyo<CR>
 
 "Vim-go
 let g:go_fmt_fail_silently = 1
+
+"Markdown
+nmap <C-p> <Plug>MarkdownPreviewToggle
 
 "Terminal
 tnoremap <Esc> <C-\><C-n>
