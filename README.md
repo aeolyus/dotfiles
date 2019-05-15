@@ -20,7 +20,7 @@
 # Usage
 I use [stow](https://www.gnu.org/software/stow/) to manage my dotfiles
 ```
-$ git clone https://github.com/aeolyus/dotfiles.git ~/dotfiles
-$ cd ~/dotfiles
-$ stow zsh # ...and whatever else you want
+git clone https://github.com/aeolyus/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+stow zsh # ...and whatever else you want
 ```
