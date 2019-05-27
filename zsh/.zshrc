@@ -30,8 +30,16 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 
 # ZSH Settings
 bindkey -v
+# zsh history
 _Z_DATA=$HOME/.cache/.z
 HISTFILE=$HOME/.cache/.zsh_history
+# up arrow completion
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
