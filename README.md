@@ -12,6 +12,7 @@
  rofi       > application launcher
  spells     > some automation scripts
  ssh        > ssh-agent service config
+ tmux       > terminal multiplexer
  urxvt      > 256 color terminal and some extensions
  xmap       > some keybindings
  zsh        > oh-my-zsh plugins and themes
