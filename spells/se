@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 du -a . 2>/dev/null | awk '{print $2}' |
-  fzf --preview="[[ $(file --mime {}) =~ binary ]] &&
+  fzf --preview='[[ $(file --mime {}) =~ binary ]] &&
   echo {} is a binary file ||
   (highlight -O ansi -l {} ||
   coderay {} ||
   rougify {} ||
-  cat {}) 2> /dev/null | head -500" | xargs -r "$EDITOR" ;
+  cat {}) 2> /dev/null | head -500' | xargs -r "$EDITOR" ;
