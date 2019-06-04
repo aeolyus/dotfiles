@@ -8,6 +8,7 @@ endif
 "Plugins
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdtree'
+Plug 'sheerun/vim-polygot'
 Plug 'lilydjwg/colorizer'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -15,7 +16,6 @@ Plug 'zchee/deoplete-jedi'
 Plug 'deoplete-plugins/deoplete-go'
 Plug 'fatih/vim-go'
 Plug 'scrooloose/nerdcommenter'
-Plug 'w0rp/ale'
 Plug 'chriskempson/base16-vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
@@ -78,11 +78,7 @@ let g:airline_powerline_fonts = 1
 let g:airline_skip_empty_sections = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#branch#empty_message = ''
-let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#whitespace#symbol= '!'
-
-"Ale
-let g:ale_java_checkstyle_options = 'google_java_format'
 
 "Deoplete
 set completeopt+=noinsert

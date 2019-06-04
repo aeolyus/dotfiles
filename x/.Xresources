@@ -35,6 +35,7 @@ URxvt.scrollTtyOutput: false
 URxvt.scrollWithBuffer: true
 URxvt.scrollTtyKeypress: true
 URxvt.saveLines: 1000
+! URxvt.internalBorder: 10
 ! Shut up rxvt
 URxvt.iso14755: false
 URxvt.iso14755_52: false
