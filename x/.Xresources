@@ -35,13 +35,13 @@ URxvt.scrollTtyOutput: false
 URxvt.scrollWithBuffer: true
 URxvt.scrollTtyKeypress: true
 URxvt.saveLines: 1000
-! URxvt.internalBorder: 10
+URxvt.internalBorder: 5
 ! Shut up rxvt
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 URxvt.print-pipe: "cat > /dev/null"
 ! URxvt Font
-URxvt.font: xft:Hack:size=10
+URxvt.font: xft:Hack:size=12
 URxvt.letterSpace: -1
 ! URxvt Extensions
 URxvt.perl-ext-common: default,matcher,resize-font,url-select,keyboard-select
@@ -60,5 +60,5 @@ Xft.rgba: rgb
 Xft.hinting: 1
 Xft.autohint: 0
 Xft.antialias: 1
-Xft.hintstyle: hintslight
+Xft.hintstyle: hintfull
 Xft.lcdfilter: lcddefault

@@ -8,7 +8,7 @@ endif
 "Plugins
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdtree'
-Plug 'sheerun/vim-polygot'
+Plug 'sheerun/vim-polyglot'
 Plug 'lilydjwg/colorizer'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
