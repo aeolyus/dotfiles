@@ -21,6 +21,7 @@ HISTFILE=~/.cache/.zsh_history
 SAVEHIST=10000
 
 # Environment Variables
+export TERM=xterm-256color
 export EDITOR=nvim
 export GOPATH=$HOME/go
 export PATH=$PATH:$HOME/dotfiles/spells:$GOPATH/bin
@@ -51,6 +52,7 @@ alias g='git'
 alias v='nvim'
 alias rr='ranger'
 alias irc='weechat'
+alias less='less -R'
 alias emacs='emacs -nw'
 alias vpnu='nmcli con up protonvpn'
 alias vpnd='nmcli con down protonvpn'
