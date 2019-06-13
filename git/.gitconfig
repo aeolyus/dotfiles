@@ -37,9 +37,12 @@
   s = status
   branches = branch -a
   remotes = remote -v
-  l = log --pretty=oneline --graph --abbrev-commit
+  l = log --relative-date --graph --abbrev-commit
   go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
   db = branch -d
+
+[format]
+  pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
 
 [gpg]
   program = gpg2
