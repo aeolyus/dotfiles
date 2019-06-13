@@ -36,6 +36,8 @@ set shiftwidth=4
 set expandtab
 set conceallevel=2
 set mouse=a
+set modelines=0
+set nomodeline
 let mapleader = ';'
 
 "Navigation
