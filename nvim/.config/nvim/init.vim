@@ -28,6 +28,7 @@ call plug#end()
 
 "General Settings
 set nocompatible "be IMproved, required
+set nomodeline "for security
 filetype plugin on
 syntax on
 set lazyredraw
