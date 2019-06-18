@@ -184,7 +184,7 @@ bindsym $mod+mod1+l exec --no-startup-id ~/dotfiles/spells/i3pixellock
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 
 # Always executed
-exec_always --no-startup-id feh --bg-fill /home/aeolyus/Pictures/wallpapers/catCoffee.jpg
+exec_always --no-startup-id feh --bg-fill /home/aeolyus/Pictures/wallpapers/tokyo.jpg
 exec_always --no-startup-id autorandr -c
 
 # i3 gaps

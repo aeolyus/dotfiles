@@ -3,6 +3,8 @@ alias antibody='antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh'
 [[ ! -f ~/.zsh_plugins.sh ]] && antibody
 source ~/.zsh_plugins.sh
 
+PURE_PROMPT_SYMBOL=λ
+
 # ZSH Vi Mode
 bindkey -v
 
