@@ -8,6 +8,7 @@ endif
 "Plugins
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'sheerun/vim-polyglot'
 Plug 'lilydjwg/colorizer'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -24,6 +25,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 "General Settings
@@ -66,7 +68,7 @@ nnoremap tn :tabnew<CR>
 "NerdTree
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
-let NERDTreeQuitOnOpen = 1
+"let NERDTreeQuitOnOpen = 1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 "Aesthetics
