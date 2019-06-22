@@ -12,6 +12,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'sheerun/vim-polyglot'
 Plug 'lilydjwg/colorizer'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
 Plug 'deoplete-plugins/deoplete-go'
@@ -108,6 +109,7 @@ tnoremap <Esc> <C-\><C-n>
 nmap <C-\> :NERDTreeToggle<CR>
 
 nnoremap <C-Space> :FZF<CR>
+nnoremap <C-g> :Rg<CR>
 inoremap <silent><expr><C-Space> deoplete#mappings#manual_complete()
 imap <expr> <tab>   pumvisible() ? "\<c-n>" : "\<tab>"
 imap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
