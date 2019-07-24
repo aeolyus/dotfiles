@@ -188,9 +188,10 @@ exec_always --no-startup-id feh --bg-fill /home/aeolyus/Pictures/wallpapers/toky
 exec_always --no-startup-id autorandr -c
 
 # i3 gaps
-for_window [class="^.*"] border pixel 3
-gaps inner 0
+for_window [class="^.*"] border pixel 0
+gaps inner 10
 gaps outer 0
+border_radius 2
 
 for_window [class="Nautilus"] floating enable
 for_window [window_role="pop-up"] floating enable
