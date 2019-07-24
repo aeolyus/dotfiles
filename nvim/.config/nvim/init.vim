@@ -53,6 +53,10 @@ nnoremap <leader>h <C-w>h
 nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
 nnoremap <leader>l <C-w>l
+nnoremap <leader>H <C-w>H
+nnoremap <leader>J <C-w>J
+nnoremap <leader>K <C-w>K
+nnoremap <leader>L <C-w>L
 nnoremap <C-H> :vertical resize -5<CR>
 nnoremap <C-J> :resize +5<CR>
 nnoremap <C-K> :resize -5<CR>
@@ -110,6 +114,7 @@ nmap <C-\> :NERDTreeToggle<CR>
 
 nnoremap <C-Space> :FZF<CR>
 nnoremap <C-g> :Rg<CR>
+nnoremap <C-b> :Buffers<CR>
 inoremap <silent><expr><C-Space> deoplete#mappings#manual_complete()
 imap <expr> <tab>   pumvisible() ? "\<c-n>" : "\<tab>"
 imap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
@@ -118,3 +123,4 @@ imap <expr> <cr>    pumvisible() ? deoplete#close_popup() : "\<cr>"
 nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <leader>s :w<CR>
 nnoremap <leader>y "+y
+nnoremap <leader><leader> ;
