@@ -7,26 +7,33 @@ endif
 
 "Plugins
 call plug#begin('~/.local/share/nvim/plugged')
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'sheerun/vim-polyglot'
-Plug 'lilydjwg/colorizer'
+"Autocomplete
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-jedi', { 'for': 'python' }
+Plug 'deoplete-plugins/deoplete-go', { 'for': 'go' }
+Plug 'fatih/vim-go', { 'for': 'go' }
+"Text Manipulation
+Plug 'tpope/vim-surround'
+"Tools
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-jedi'
-Plug 'deoplete-plugins/deoplete-go'
-Plug 'fatih/vim-go'
 Plug 'scrooloose/nerdcommenter'
-Plug 'chriskempson/base16-vim'
-Plug 'junegunn/goyo.vim'
+Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': { -> mkdp#util#install() } }
+"Git
+Plug 'tpope/vim-fugitive'
+"Writing
+Plug 'junegunn/goyo.vim', {'on': 'Goyo'}
 Plug 'junegunn/limelight.vim'
+"Visuals
+Plug 'mhinz/vim-signify'
+Plug 'lilydjwg/colorizer'
+Plug 'sheerun/vim-polyglot'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle'}
+Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle'}
+"Aesthetics
+Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'mhinz/vim-signify'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
@@ -72,6 +79,7 @@ nnoremap td  :tabclose<CR>
 nnoremap tn :tabnew<CR>
 
 "NerdTree
+nmap <C-\> :NERDTreeToggle<CR>
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 "let NERDTreeQuitOnOpen = 1
@@ -101,7 +109,7 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 nmap <leader>g :Goyo<CR>
 
-"Vim-go
+"Vim-Go
 let g:go_fmt_fail_silently = 1
 
 "Markdown
@@ -111,8 +119,6 @@ nmap <C-p> <Plug>MarkdownPreviewToggle
 tnoremap <Esc> <C-\><C-n>
 
 "Keybindings
-nmap <C-\> :NERDTreeToggle<CR>
-
 nnoremap <C-Space> :FZF<CR>
 nnoremap <C-g> :Rg<CR>
 nnoremap <C-b> :Buffers<CR>
@@ -120,7 +126,6 @@ inoremap <silent><expr><C-Space> deoplete#mappings#manual_complete()
 imap <expr> <tab>   pumvisible() ? "\<c-n>" : "\<tab>"
 imap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
 imap <expr> <cr>    pumvisible() ? deoplete#close_popup() : "\<cr>"
-
 nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <leader>s :w<CR>
 nnoremap <leader>y "+y
