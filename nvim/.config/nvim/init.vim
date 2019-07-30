@@ -126,6 +126,7 @@ inoremap <silent><expr><C-Space> deoplete#mappings#manual_complete()
 imap <expr> <tab>   pumvisible() ? "\<c-n>" : "\<tab>"
 imap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
 imap <expr> <cr>    pumvisible() ? deoplete#close_popup() : "\<cr>"
+nnoremap <space><space> :buffer #<CR>
 nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <leader>s :w<CR>
 nnoremap <leader>y "+y
