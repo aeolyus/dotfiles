@@ -49,7 +49,8 @@
   s = status
   branches = branch -a
   remotes = remote -v
-  l = log --relative-date --graph --abbrev-commit
+  l = log --relative-date --graph --abbrev-commit -10
+  ll = log --relative-date --graph --abbrev-commit
   go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
   db = branch -d
 
