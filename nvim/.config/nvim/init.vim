@@ -42,6 +42,8 @@ set nocompatible "be IMproved, required
 set nomodeline "for security
 filetype plugin on
 syntax on
+set sb
+set spr
 set lazyredraw
 set updatetime=500
 set number
