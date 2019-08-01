@@ -124,15 +124,16 @@ nnoremap <C-Space> :FZF<CR>
 nnoremap <C-g> :Rg<CR>
 nnoremap <C-b> :Buffers<CR>
 nnoremap <C-c> :Commands<CR>
-inoremap <silent><expr><C-Space> deoplete#mappings#manual_complete()
-imap <expr> <tab>   pumvisible() ? "\<c-n>" : "\<tab>"
-imap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
-imap <expr> <cr>    pumvisible() ? deoplete#close_popup() : "\<cr>"
 nnoremap <space><space> :buffer #<CR>
 nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <leader>/ :BLines<CR>
 nnoremap <leader>s :w<CR>
-nnoremap <leader>z :xa<CR>
+nnoremap <leader>z :x<CR>
+nnoremap <leader>x :xa<CR>
 nnoremap <leader>q :qa<CR>
 nnoremap <leader>y "+y
 nnoremap <leader><leader> ;
+inoremap <silent><expr><C-Space> deoplete#mappings#manual_complete()
+imap <expr> <tab>   pumvisible() ? "\<c-n>" : "\<tab>"
+imap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
+imap <expr> <cr>    pumvisible() ? deoplete#close_popup() : "\<cr>"
