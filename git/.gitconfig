@@ -21,6 +21,18 @@
 [commit]
   gpgsign = true
 
+[merge]
+  tool = vimdiff
+
+[diff]
+  tool = vimdiff
+
+[mergetool "vimdiff"]
+  cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
+
+[difftool "vimdiff"]
+  cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
+
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
