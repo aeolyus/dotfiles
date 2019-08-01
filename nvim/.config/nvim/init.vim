@@ -116,7 +116,8 @@ let g:go_fmt_fail_silently = 1
 nmap <C-p> <Plug>MarkdownPreviewToggle
 
 "Terminal
-tnoremap <Esc> <C-\><C-n>
+au TermOpen * tnoremap <Esc> <c-\><c-n>
+au FileType fzf tunmap <Esc>
 
 "Keybindings
 nnoremap <C-Space> :FZF<CR>
