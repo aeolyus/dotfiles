@@ -2,7 +2,7 @@
     ### Display ###
     monitor = 0
     follow = keyboard
-    geometry = "300x5-20+30"
+    geometry = "300x5-10+30"
     indicate_hidden = yes
     shrink = no
     transparency = 15
@@ -10,11 +10,12 @@
     separator_height = 2
     padding = 8
     horizontal_padding = 8
-    frame_width = 1.
-    frame_color = "#ffffff"
+    frame_width = 5
+    frame_color = "#c5c8c6"
     separator_color = frame
     sort = yes
     idle_threshold = 120
+    corner_radius = 2
 
     ### Text ###
     font = Hack 10
