@@ -71,6 +71,7 @@ nnoremap <C-H> :vertical resize -5<CR>
 nnoremap <C-J> :resize +5<CR>
 nnoremap <C-K> :resize -5<CR>
 nnoremap <C-L> :vertical resize +5<CR>
+autocmd VimResized * wincmd =
 
 "Tab Navigation
 nnoremap th  :tabfirst<CR>
