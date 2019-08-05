@@ -197,7 +197,8 @@ exec_always --no-startup-id feh --bg-fill /home/aeolyus/Pictures/wallpapers/toky
 exec_always --no-startup-id autorandr -c
 
 # i3 gaps
-for_window [class="^.*"] border pixel 3
+new_window pixel 5
+new_float  pixel 5
 gaps inner 10
 gaps outer 0
 border_radius 2
@@ -207,13 +208,14 @@ for_window [window_role="pop-up"] floating enable
 for_window [class="Spotify"] move to workspace 9
 
 # Colors
-set $bg-color            #383C4A
-set $bd-color            #E5C07B
-set $text-color          #F3F4F5
-set $inactive-text-color #676E7D
+set $fallback #000000
+set_from_resource $bg-color            color8  $fallback
+set_from_resource $bd-color            color7  $fallback
+set_from_resource $text-color          color0  $fallback
+set_from_resource $inactive-text-color color15 $fallback
 # class                 border      backgr      text                   indicator   child_border
-client.focused          $bd-color   $bg-color   $text-color            $bd-color   $bd-color
+client.focused          $bd-color   $bd-color   $text-color            $bd-color   $bd-color
 client.unfocused        $bg-color   $bg-color   $inactive-text-color   $bg-color   $bg-color
 client.focused_inactive $bg-color   $bg-color   $inactive-text-color   $bg-color   $bg-color
-client.urgent           $bg-color   $bg-color   $text-color            $bg-color   $bg-color
+client.urgent           $bg-color   $bg-color   $inactive-text-color   $bg-color   $bg-color
 client.background       $bg-color
