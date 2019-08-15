@@ -29,3 +29,4 @@ then
 fi
 playerctl pause
 i3lock -e -u -n -i /tmp/screen.png
+rm /tmp/screen.png 2>/dev/null
