@@ -57,6 +57,7 @@ set expandtab
 set conceallevel=2
 set mouse=a
 let mapleader = ';'
+let g:netrw_dirhistmax = 0
 
 "Window Navigation
 nnoremap <leader>h <C-w>h
