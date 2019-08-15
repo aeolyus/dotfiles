@@ -41,6 +41,7 @@
 
 [alias]
   a = add
+  b = branch
   aa = add --all
   co = checkout
   ec = config --global -e
