@@ -54,6 +54,8 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab
+set foldmethod=indent
+set foldlevel=99
 set conceallevel=2
 set mouse=a
 let mapleader = ';'
