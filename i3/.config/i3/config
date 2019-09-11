@@ -194,7 +194,7 @@ exec --no-startup-id xidlehook \
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 
 # Always executed
-exec_always --no-startup-id feh --bg-fill /home/aeolyus/Pictures/wallpapers/tokyo.jpg
+exec_always --no-startup-id ~/.fehbg
 exec_always --no-startup-id autorandr -c
 
 # i3 gaps
