@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+tmux new-session -d -s latex
+tmux new-window
+tmux send-keys "watchexec -e tex 'pdflatex -halt-on-error $1.tex 1>/dev/null && rm -f *.aux *.log' &" Enter
+tmux send-keys "zathura $1.pdf &" Enter
+tmux select-window -t 1
+tmux send-keys "$EDITOR $1.tex" Enter
+tmux attach-session -t latex
