@@ -137,7 +137,7 @@ nnoremap <leader>s :w<CR>
 nnoremap <leader>z :x<CR>
 nnoremap <leader>x :xa<CR>
 nnoremap <leader>q :qa<CR>
-nnoremap <leader>y "+y
+noremap <leader>y "+y
 nnoremap <leader><leader> ;
 inoremap <silent><expr><C-Space> deoplete#mappings#manual_complete()
 imap <expr> <tab>   pumvisible() ? "\<c-n>" : "\<tab>"
