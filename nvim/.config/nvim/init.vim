@@ -22,6 +22,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': { -> mkdp#util#i
 "Git
 Plug 'tpope/vim-fugitive'
 "Writing
+Plug 'lervag/vimtex'
 Plug 'junegunn/goyo.vim', {'on': 'Goyo'}
 Plug 'junegunn/limelight.vim'
 "Visuals
@@ -109,6 +110,12 @@ set completeopt+=noselect
 set completeopt-=preview
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_camel_case = 1
+
+"Vimtex
+let g:vimtex_fold_enabled = 1
+let g:vimtex_view_method = 'zathura'
+let g:vimtex_view_general_viewer = 'zathura'
+call deoplete#custom#var('omni', 'input_patterns', {'tex': g:vimtex#re#deoplete})
 
 "Goyo/Limelight
 autocmd! User GoyoEnter Limelight
