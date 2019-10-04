@@ -41,13 +41,14 @@
 
 [alias]
   a = add
+  p = push
   b = branch
+  s = status
   aa = add --all
   co = checkout
   ec = config --global -e
   cm = commit -m
   amend = commit -a --amend
-  s = status
   branches = branch -a
   remotes = remote -v
   l = log --relative-date --graph --abbrev-commit -10
