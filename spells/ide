@@ -1,0 +1,9 @@
+#! /usr/bin/env sh
+
+tmux new-session -d -s ide
+tmux send-keys "$EDITOR -c 'NERDTreeToggle|wincmd l'" Enter
+tmux splitw -t 1
+tmux send-keys "ufetch" Enter
+tmux resize-pane -t 2 -y 1
+tmux select-pane -t 1
+tmux attach-session -t ide
