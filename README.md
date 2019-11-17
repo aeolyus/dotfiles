@@ -6,6 +6,7 @@
  i3         > tiling window manager
  mutt       > email client
  nvim       > text editor config
+ picom      > pico compositor
  polybar    > status bar
  ranger     > file manager
  redshift   > screen color temperature

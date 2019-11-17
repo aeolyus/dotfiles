@@ -158,6 +158,7 @@ bindsym $mod+r mode "resize"
 # Start polybar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 exec_always --no-startup-id $(killall -q polybar;for m in $(polybar --list-monitors | cut -d":" -f1); do MONITOR=$m polybar -r default & done)
+exec --no-startup-id "picom -b"
 
 #exec --no-startup-id redshift -v
 
