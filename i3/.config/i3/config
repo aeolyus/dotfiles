@@ -196,8 +196,7 @@ exec_always --no-startup-id ~/.fehbg
 exec_always --no-startup-id autorandr -c
 
 # i3 gaps
-new_window pixel 5
-new_float  pixel 5
+for_window [class="^.*"] border pixel 0
 gaps inner 10
 gaps outer 0
 border_radius 2
