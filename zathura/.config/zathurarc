@@ -1,7 +1,7 @@
 # Base16 OneDark
 set default-bg                  "#282c34"
 set default-fg                  "#353b45"
-set statusbar-fg                "#565c64"
+set statusbar-fg                "#c8ccd4"
 set statusbar-bg                "#3e4451"
 set inputbar-bg                 "#282c34"
 set inputbar-fg                 "#c8ccd4"
