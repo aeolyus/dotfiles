@@ -16,6 +16,7 @@
  tmux       > terminal multiplexer
  urxvt      > 256 color terminal and some extensions
  xmap       > some keybindings
+ zathura    > document viewer
  zsh        > oh-my-zsh plugins and themes
  ```
 
