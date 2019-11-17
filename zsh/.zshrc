@@ -84,6 +84,7 @@ export FZF_DEFAULT_OPTS='--height 50% --layout=reverse --preview-window right:70
 alias ls='ls --group-directories-first --color=auto'
 alias l='ls -lah'
 alias ll='ls -l'
+alias rg='rg --hidden'
 alias g='git'
 alias t='tmux'
 alias v='nvim'
