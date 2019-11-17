@@ -188,15 +188,6 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 # Lock screen
 bindsym $mod+mod1+l exec --no-startup-id ~/dotfiles/spells/i3pixellock
 bindsym $mod+mod1+s exec --no-startup-id systemctl suspend
-exec --no-startup-id xidlehook \
-  --not-when-fullscreen \
-  --not-when-audio \
-  --timer normal 270 \
-    "notify-send -u critical -t 29500 -- 'Locking screen in 30 seconds...'"\
-    '' \
-  --timer primary 30 \
-    ~/dotfiles/spells/i3pixellock \
-    ''
 
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 
