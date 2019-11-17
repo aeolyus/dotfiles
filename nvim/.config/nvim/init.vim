@@ -21,12 +21,12 @@ Plug 'tpope/vim-commentary'
 Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': { -> mkdp#util#install() } }
 "Git
 Plug 'tpope/vim-fugitive'
+Plug 'mhinz/vim-signify'
 "Writing
 Plug 'lervag/vimtex'
 Plug 'junegunn/goyo.vim', {'on': 'Goyo'}
 Plug 'junegunn/limelight.vim'
 "Visuals
-Plug 'mhinz/vim-signify'
 Plug 'lilydjwg/colorizer'
 Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle'}
@@ -85,6 +85,11 @@ nnoremap tl  :tablast<CR>
 nnoremap td  :tabclose<CR>
 nnoremap tn :tabnew<CR>
 
+" Center searches
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *N
+
 "NerdTree
 nmap <C-\> :NERDTreeToggle<CR>
 let NERDTreeMinimalUI = 1
@@ -124,6 +129,7 @@ nmap <leader>g :Goyo<CR>
 
 "Vim-Go
 let g:go_fmt_fail_silently = 1
+let g:go_fmt_experimental=1
 
 "Markdown
 nmap <C-p> <Plug>MarkdownPreviewToggle
@@ -140,6 +146,7 @@ nnoremap <C-c> :Commands<CR>
 nnoremap <space><space> :buffer #<CR>
 nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <leader>/ :BLines<CR>
+nnoremap <leader>d :bd<CR>
 nnoremap <leader>s :w<CR>
 nnoremap <leader>z :x<CR>
 nnoremap <leader>x :xa<CR>
