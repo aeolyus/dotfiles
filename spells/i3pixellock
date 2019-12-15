@@ -1,6 +1,6 @@
 #!/bin/bash
 
-scrot /tmp/screen.png
+scrot -o /tmp/screen.png
 gm convert /tmp/screen.png -scale 10% -scale 1000% /tmp/screen.png
 
 if [[ -f $HOME/.config/screen-lock.png ]]
@@ -28,5 +28,4 @@ then
     done
 fi
 playerctl pause
-i3lock -e -u -n -i /tmp/screen.png
-rm /tmp/screen.png 2>/dev/null
+i3lock -e -u -i /tmp/screen.png
