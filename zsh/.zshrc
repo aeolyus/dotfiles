@@ -19,7 +19,7 @@ setopt hist_save_no_dups
 setopt hist_ignore_space
 setopt hist_verify
 HISTSIZE=10000
-HISTFILE=~/.cache/.zsh_history
+HISTFILE=~/.zsh_history
 SAVEHIST=10000
 
 # Up Arrow Completion
@@ -73,6 +73,7 @@ export TERM=xterm-256color
 export EDITOR=nvim
 export GOPATH=$HOME/go
 export PATH=$PATH:$HOME/dotfiles/spells:$GOPATH/bin
+export LESSHISTFILE=-
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
