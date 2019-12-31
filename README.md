@@ -1,4 +1,8 @@
 # dotfiles
+There's no place like ~/
+
+![screenshot](https://i.imgur.com/TeOS6uh.png)
+
 ```
  dunst      > notification daemon
  git        > git config and aliases
