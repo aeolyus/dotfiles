@@ -72,7 +72,7 @@ zstyle ':completion:*:*:kill:*' menu yes select
 export TERM=xterm-256color
 export EDITOR=nvim
 export GOPATH=$HOME/go
-export PATH=$PATH:$HOME/dotfiles/spells:$GOPATH/bin
+export PATH=$PATH:$HOME/dotfiles/spells:$GOPATH/bin:$HOME/bin
 export LESSHISTFILE=-
 
 # FZF
