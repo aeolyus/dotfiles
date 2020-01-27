@@ -8,16 +8,17 @@ endif
 "Plugins
 call plug#begin('~/.local/share/nvim/plugged')
 "Autocomplete
+Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi', { 'for': 'python' }
 Plug 'deoplete-plugins/deoplete-go', { 'for': 'go' }
 Plug 'fatih/vim-go', { 'for': 'go' }
 "Text Manipulation
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 "Tools
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-commentary'
 Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': { -> mkdp#util#install() } }
 "Git
 Plug 'tpope/vim-fugitive'
@@ -45,6 +46,7 @@ filetype plugin on
 syntax on
 set sb
 set spr
+set hidden
 set lazyredraw
 set updatetime=500
 set number
@@ -180,3 +182,20 @@ function! FloatingFZF()
         \ }
   call nvim_open_win(buf, v:true, opts)
 endfunction
+
+
+" Language Server
+let g:LanguageClient_serverCommands = {
+    \ 'python': ['pyls'],
+    \ 'cpp': ['ccls'],
+    \ 'c': ['ccls'],
+    \ 'go': ['gopls'],
+    \ 'sh': ['bash-language-server', 'start'],
+    \ 'css': ['css-languageserver', '--stdio'],
+    \ 'html': ['html-languageserver', '--stdio'],
+    \ }
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<cr>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+nnoremap <silent> <F3> :call LanguageClient#textDocument_references()<CR>
