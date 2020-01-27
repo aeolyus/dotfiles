@@ -10,9 +10,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 "Autocomplete
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-jedi', { 'for': 'python' }
-Plug 'deoplete-plugins/deoplete-go', { 'for': 'go' }
-Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'Shougo/echodoc.vim'
 "Text Manipulation
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
@@ -117,6 +115,10 @@ set completeopt+=noselect
 set completeopt-=preview
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_camel_case = 1
+
+"Echodoc
+let g:echodoc#enable_at_startup = 1
+let g:echodoc#type = 'floating'
 
 "Vimtex
 let g:vimtex_fold_enabled = 1
