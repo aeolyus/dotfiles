@@ -1,0 +1,6 @@
+#! /usr/bin/env sh
+sudo cryptsetup open --type luks $1 backup && \
+sudo mount /dev/mapper/backup /mnt && \
+backup-remote /mnt && \
+sudo umount /mnt && \
+sudo cryptsetup close /dev/mapper/backup
