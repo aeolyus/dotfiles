@@ -58,6 +58,7 @@ set expandtab
 set foldmethod=indent
 set foldlevel=99
 set conceallevel=2
+set noshowmode
 set mouse=a
 let mapleader = ';'
 let g:netrw_dirhistmax = 0
@@ -105,9 +106,14 @@ let g:airline_symbols = {}
 let g:airline_symbols.linenr = 'Ξ'
 let g:airline_powerline_fonts = 1
 let g:airline_skip_empty_sections = 1
+let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#branch#empty_message = ''
 let g:airline#extensions#whitespace#symbol= '!'
+let g:airline_left_sep=''
+let g:airline_left_alt_sep=''
+let g:airline_right_sep=''
+let g:airline_right_alt_sep=''
 
 "Deoplete
 set completeopt+=noinsert
