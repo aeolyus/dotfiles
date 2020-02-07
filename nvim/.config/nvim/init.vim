@@ -189,8 +189,8 @@ endfunction
 " Language Server
 let g:LanguageClient_serverCommands = {
     \ 'python': ['pyls'],
-    \ 'cpp': ['ccls'],
-    \ 'c': ['ccls'],
+    \ 'cpp': ['clangd'],
+    \ 'c': ['clangd'],
     \ 'go': ['gopls'],
     \ 'sh': ['bash-language-server', 'start'],
     \ 'css': ['css-languageserver', '--stdio'],
