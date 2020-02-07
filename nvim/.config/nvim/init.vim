@@ -100,7 +100,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 "Aesthetics
 let base16colorspace=256
 colorscheme base16-tomorrow-night
-let g:airline_theme='base16_tomorrow'
+
+"Airline
+let g:airline_theme='deus'
 let g:airline_symbols = {}
 let g:airline_symbols.linenr = 'Ξ'
 let g:airline_powerline_fonts = 1
