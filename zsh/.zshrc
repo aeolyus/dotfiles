@@ -74,6 +74,7 @@ export EDITOR=nvim
 export GOPATH=$HOME/go
 export PATH=$PATH:$HOME/dotfiles/spells:$GOPATH/bin:$HOME/bin
 export LESSHISTFILE=-
+export GPG_TTY=$(tty)
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
