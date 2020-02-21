@@ -54,7 +54,7 @@
   l = log --relative-date --graph --abbrev-commit -10
   ll = log --relative-date --graph --abbrev-commit
   go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
-  db = branch -d
+  bd = branch -d
 
 [format]
   pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
