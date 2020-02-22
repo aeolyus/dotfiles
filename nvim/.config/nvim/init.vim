@@ -22,7 +22,6 @@ Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': { -> mkdp#util#i
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 "Writing
-Plug 'lervag/vimtex'
 Plug 'junegunn/goyo.vim', {'on': 'Goyo'}
 Plug 'junegunn/limelight.vim'
 "Visuals
@@ -127,12 +126,6 @@ let g:deoplete#enable_camel_case = 1
 let g:echodoc#enable_at_startup = 1
 let g:echodoc#type = 'floating'
 
-"Vimtex
-let g:vimtex_fold_enabled = 1
-let g:vimtex_view_method = 'zathura'
-let g:vimtex_view_general_viewer = 'zathura'
-call deoplete#custom#var('omni', 'input_patterns', {'tex': g:vimtex#re#deoplete})
-
 "Goyo/Limelight
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
@@ -200,6 +193,7 @@ let g:LanguageClient_serverCommands = {
     \ 'c': ['clangd'],
     \ 'go': ['gopls'],
     \ 'sh': ['bash-language-server', 'start'],
+    \ 'tex': ['texlab'],
     \ 'css': ['css-languageserver', '--stdio'],
     \ 'html': ['html-languageserver', '--stdio'],
     \ }
