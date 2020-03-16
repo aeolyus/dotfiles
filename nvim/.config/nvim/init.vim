@@ -199,10 +199,14 @@ let g:LanguageClient_serverCommands = {
     \ 'cpp': ['clangd'],
     \ 'c': ['clangd'],
     \ 'go': ['gopls'],
-    \ 'sh': ['bash-language-server', 'start'],
+    \ 'javascript': ['javascript-typescript-stdio'],
+    \ 'typescript': ['javascript-typescript-stdio'],
+    \ 'javascriptreact': ['javascript-typescript-stdio'],
+    \ 'typescriptreact': ['javascript-typescript-stdio'],
     \ 'tex': ['texlab'],
-    \ 'css': ['css-languageserver', '--stdio'],
+    \ 'sh': ['bash-language-server', 'start'],
     \ 'html': ['html-languageserver', '--stdio'],
+    \ 'css': ['css-languageserver', '--stdio'],
     \ }
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<cr>
