@@ -37,6 +37,12 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
+" Get off my lawn
+nnoremap <Left> h:echoe "Use h"<CR>
+nnoremap <Right> l:echoe "Use l"<CR>
+nnoremap <Up> k:echoe "Use k"<CR>
+nnoremap <Down> j:echoe "Use j"<CR>
+
 "General Settings
 set nocompatible "be IMproved, required
 set nomodeline "for security
