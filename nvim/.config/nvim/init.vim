@@ -17,6 +17,7 @@ Plug 'tpope/vim-commentary'
 "Tools
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'jamessan/vim-gnupg'
 Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': { -> mkdp#util#install() } }
 "Git
 Plug 'tpope/vim-fugitive'
