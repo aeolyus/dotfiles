@@ -44,7 +44,7 @@
   p = push
   b = branch
   bb = branch -a
-  s = status
+  s = status -s
   aa = add --all
   co = checkout
   ec = config --global -e
