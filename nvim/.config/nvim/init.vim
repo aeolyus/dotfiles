@@ -17,6 +17,7 @@ Plug 'tpope/vim-commentary'
 "Tools
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'lervag/vimtex'
 Plug 'jamessan/vim-gnupg'
 Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': { -> mkdp#util#install() } }
 "Git
@@ -140,6 +141,11 @@ nmap <leader>g :Goyo<CR>
 "Vim-Go
 let g:go_fmt_fail_silently = 1
 let g:go_fmt_experimental=1
+
+"Vimtex
+let g:vimtex_view_method='zathura'
+let g:polyglot_disabled=['latex'] "https://git.io/JvPrf
+let g:vimtex_quickfix_latexlog = {'default' : 0}
 
 "Markdown
 nmap <C-p> <Plug>MarkdownPreviewToggle
