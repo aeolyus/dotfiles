@@ -5,7 +5,7 @@ gpg --batch -d $HOME/.secrets/fde-passphrase.gpg 2>/dev/null |
 sudo cryptsetup open --type luks $1 backup && \
 
 sudo mount /dev/mapper/backup /mnt && \
-backup-remote /mnt
+backup /mnt
 
 # Clean up
 sudo umount /mnt >/dev/null
