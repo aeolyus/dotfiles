@@ -70,6 +70,12 @@ set mouse=a
 let mapleader = ';'
 let g:netrw_dirhistmax = 0
 
+"Move cursor by display lines when wrapped
+nnoremap j gj
+nnoremap gj j
+nnoremap k gk
+nnoremap gk k
+
 "Window Navigation
 nnoremap <leader>h <C-w>h
 nnoremap <leader>j <C-w>j
