@@ -1,11 +1,14 @@
 #! /usr/bin/env sh
 
-# Get borg passphrase
-export BORG_PASSPHRASE="$(gpg -d $HOME/.secrets/borg-passphrase.gpg 2>/dev/null)"
+PASS_FILE="$HOME/.secrets/borg-passphrase.gpg"
+BORG_PASSPHRASE="$(gpg -d "$PASS_FILE" 2>/dev/null)"
+
+# Get borg passphrase if it exists
+[ -f "$PASS_FILE" ] && export BORG_PASSPHRASE
 
 # Create backup archive
 sudo -E borg create \
   --rsh "ssh -i ~/.ssh/id_rsa -p 222" \
   -spC zstd \
   --exclude-from ~/Documents/backup-exclude.txt \
-  $1::$(hostname)-$(date --iso-8601) /
+  "$1"::"$(hostname)"-"$(date --iso-8601)" /
