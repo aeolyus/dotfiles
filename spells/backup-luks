@@ -1,6 +1,6 @@
 #! /usr/bin/env sh
 
-PASS_FILE="$HOME/.secrets/fde-passphrase.gpg"
+PASS_FILE="$HOME/.secrets/luks-passphrase.gpg"
 
 # Get LUKS passphrase and open LUKS partition
 [ -f "$PASS_FILE" ] &&
