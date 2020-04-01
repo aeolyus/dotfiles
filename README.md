@@ -21,7 +21,7 @@ There's no place like ~/
  urxvt      > 256 color terminal and some extensions
  xmap       > some keybindings
  zathura    > document viewer
- zsh        > oh-my-zsh plugins and themes
+ zsh        > plugins, themes, and config
  ```
 
 # Usage
