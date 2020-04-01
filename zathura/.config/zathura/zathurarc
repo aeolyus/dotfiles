@@ -23,3 +23,7 @@ set recolor                     "true"
 set recolor-keephue             "true"
 
 set selection-clipboard clipboard
+
+# Synctex
+set synctex true
+set synctex-editor-command "nvim +%{line} %{input}"
