@@ -73,10 +73,10 @@ bindsym $mod+mod1+shift+k move workspace to output up
 bindsym $mod+mod1+shift+l move workspace to output right
 
 # split in horizontal orientation
-bindsym $mod+c split h
+bindsym $mod+comma split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+period split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -85,9 +85,9 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+b sticky toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+apostrophe layout stacking
+bindsym $mod+semicolon layout tabbed
+bindsym $mod+slash layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
