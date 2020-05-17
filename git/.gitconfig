@@ -51,6 +51,7 @@
   cm = commit -m
   amend = commit --amend
   remotes = remote -v
+  cherry-pit = "!f() { git rebase -p --onto \"$1\"^ \"$1\"; }; f"
   l = log --relative-date --graph --abbrev-commit -10
   ll = log --relative-date --graph --abbrev-commit
   go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
