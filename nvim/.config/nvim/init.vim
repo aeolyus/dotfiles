@@ -70,11 +70,9 @@ set mouse=a
 let mapleader = ';'
 let g:netrw_dirhistmax = 0
 
-"Move cursor by display lines when wrapped
-nnoremap j gj
-nnoremap gj j
-nnoremap k gk
-nnoremap gk k
+" Use g[jk] for vertical movement in wrapped lines when no count is specified
+nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
+nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
 
 "Window Navigation
 nnoremap <leader>h <C-w>h
