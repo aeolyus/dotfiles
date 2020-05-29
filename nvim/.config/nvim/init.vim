@@ -20,6 +20,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'lervag/vimtex'
 Plug 'jamessan/vim-gnupg'
 Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': { -> mkdp#util#install() } }
+Plug 'junegunn/vim-easy-align'
 "Git
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
@@ -153,6 +154,12 @@ let g:vimtex_quickfix_latexlog = {'default' : 0}
 
 "Markdown
 nmap <C-p> <Plug>MarkdownPreviewToggle
+
+" EasyAlign
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 "Terminal
 au TermOpen * tnoremap <Esc> <c-\><c-n>
