@@ -19,6 +19,7 @@ There's no place like ~/
  ssh        > ssh-agent service config
  tmux       > terminal multiplexer
  urxvt      > 256 color terminal and some extensions
+ vscode     > code editor
  xmap       > some keybindings
  zathura    > document viewer
  zsh        > plugins, themes, and config
