@@ -1,0 +1,49 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "alt+enter",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "extension.vim_ctrl+pageup",
+        "when": "editorTextFocus && vim.active && vim.use<C-pageup> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "extension.vim_ctrl+pagedown",
+        "when": "editorTextFocus && vim.active && vim.use<C-pagedown> && !inDebugRepl"
+    },
+    {
+        "key": "; h",
+        "command": "workbench.action.navigateLeft"
+    },
+    {
+        "key": "; j",
+        "command": "workbench.action.navigateDown"
+    },
+    {
+        "key": "; k",
+        "command": "workbench.action.navigateUp"
+    },
+    {
+        "key": "; l",
+        "command": "workbench.action.navigateRight"
+    },
+    {
+        "key": "; s",
+        "command": "workbench.action.files.save"
+    },
+    {
+        "key": "; d",
+        "command": "workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "alt+s",
+        "command": "fb-hg.toggle-interactive-smartlog"
+    },
+    {
+        "key": "ctrl+\\",
+        "command": "workbench.view.explorer"
+    }
+]
