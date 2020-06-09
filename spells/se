@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-du -a . 2>/dev/null | awk '{print $2}' |
+fd -H 2>/dev/null |
   fzf --preview='[[ $(file --mime {}) =~ binary ]] &&
   echo {} is a binary file ||
   (highlight -O ansi -l {} ||
