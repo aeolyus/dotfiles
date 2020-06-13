@@ -19,7 +19,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'lervag/vimtex'
 Plug 'jamessan/vim-gnupg'
-Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': { -> mkdp#util#install() } }
 Plug 'junegunn/vim-easy-align'
 "Git
 Plug 'tpope/vim-fugitive'
@@ -151,9 +150,6 @@ let g:go_fmt_experimental=1
 let g:vimtex_view_method='zathura'
 let g:polyglot_disabled=['latex'] "https://git.io/JvPrf
 let g:vimtex_quickfix_latexlog = {'default' : 0}
-
-"Markdown
-nmap <C-p> <Plug>MarkdownPreviewToggle
 
 " EasyAlign
 " Start interactive EasyAlign in visual mode (e.g. vipga)
