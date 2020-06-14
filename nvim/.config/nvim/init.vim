@@ -46,6 +46,7 @@ nnoremap <Down> j:echoe "Use j"<CR>
 
 "General Settings
 set nocompatible "be IMproved, required
+set guicursor= "https://git.io/JfbFH
 set nomodeline "for security
 filetype plugin on
 syntax on
