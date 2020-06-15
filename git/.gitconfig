@@ -41,6 +41,8 @@
 
 [alias]
   a = add
+  d = diff
+  ds = diff --staged -w
   p = push
   b = branch
   bb = branch -a
