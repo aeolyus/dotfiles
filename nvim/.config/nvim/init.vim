@@ -7,7 +7,7 @@ endif
 
 "Plugins
 call plug#begin('~/.local/share/nvim/plugged')
-"Autocomplete
+"Autocompletion
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/echodoc.vim'
@@ -111,7 +111,7 @@ let NERDTreeDirArrows = 1
 
 "Aesthetics
 let base16colorspace=256
-colorscheme base16-tomorrow-night
+colorscheme base16-nord
 
 "Airline
 let g:airline_theme='base16_tomorrow'
