@@ -171,7 +171,8 @@ nnoremap <C-c> :Commands<CR>
 nnoremap <space><space> :buffer #<CR>
 nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <leader>/ :BLines<CR>
-nnoremap <leader>d :bd<CR>
+nnoremap <leader>d :bp<bar>bd#<CR>
+
 nnoremap <leader>s :w<CR>
 nnoremap <leader>z :x<CR>
 nnoremap <leader>x :xa<CR>
