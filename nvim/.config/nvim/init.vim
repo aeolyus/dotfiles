@@ -198,7 +198,7 @@ function! FloatingFZF()
   let height = float2nr(min([10, &lines/2]))
   let width = float2nr(min([80, &columns/2]))
   let horizontal = float2nr((&columns - width) / 2)
-  let vertical = 1
+  let vertical = 2
   let opts = {
         \ 'relative': 'editor',
         \ 'row': vertical,
