@@ -196,6 +196,9 @@ bindsym Shift + Print exec maim -u | xclip -selection clipboard -t image/png
 bindsym $mod+mod1+l exec --no-startup-id ~/dotfiles/spells/i3pixellock
 bindsym $mod+mod1+s exec --no-startup-id ~/dotfiles/spells/i3pixellock && systemctl suspend
 
+# Swap ctrl and caps
+bindsym $mod+x exec xmodmap ~/dotfiles/xmap/.Xmodmap
+
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 
 # Always executed
