@@ -66,6 +66,18 @@ cmd - 8      : yabai -m space --focus 8
 cmd - 9      : yabai -m space --focus 9
 cmd - 0      : yabai -m space --focus 10
 
+# Move windows to another workspace
+cmd + shift - 1 : yabai -m window --space 1
+cmd + shift - 2 : yabai -m window --space 2
+cmd + shift - 3 : yabai -m window --space 3
+cmd + shift - 4 : yabai -m window --space 4
+cmd + shift - 5 : yabai -m window --space 5
+cmd + shift - 6 : yabai -m window --space 6
+cmd + shift - 7 : yabai -m window --space 7
+cmd + shift - 8 : yabai -m window --space 8
+cmd + shift - 9 : yabai -m window --space 9
+cmd + shift - 0 : yabai -m window --space 10
+
 # Terminal
 cmd - return : ~/dotfiles/spells/yabai-terminal
 
