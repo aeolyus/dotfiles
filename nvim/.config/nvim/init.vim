@@ -40,10 +40,10 @@ Plug 'ryanoasis/vim-devicons', { 'on': 'NERDTreeToggle'}
 call plug#end()
 
 " Get off my lawn
-nnoremap <Left> h:echoe "Use h"<CR>
-nnoremap <Right> l:echoe "Use l"<CR>
-nnoremap <Up> k:echoe "Use k"<CR>
-nnoremap <Down> j:echoe "Use j"<CR>
+nnoremap <silent> <Left> h:echoe "Use h"<CR>
+nnoremap <silent> <Right> l:echoe "Use l"<CR>
+nnoremap <silent> <Up> k:echoe "Use k"<CR>
+nnoremap <silent> <Down> j:echoe "Use j"<CR>
 
 "General Settings
 set nocompatible "be IMproved, required
@@ -73,38 +73,38 @@ let mapleader = ';'
 let g:netrw_dirhistmax = 0
 
 " Use g[jk] for vertical movement in wrapped lines when no count is specified
-nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
-nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
+nnoremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+nnoremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 
 "Window Navigation
-nnoremap <leader>h <C-w>h
-nnoremap <leader>j <C-w>j
-nnoremap <leader>k <C-w>k
-nnoremap <leader>l <C-w>l
-nnoremap <leader>H <C-w>H
-nnoremap <leader>J <C-w>J
-nnoremap <leader>K <C-w>K
-nnoremap <leader>L <C-w>L
-nnoremap <C-H> :vertical resize -5<CR>
-nnoremap <C-J> :resize +5<CR>
-nnoremap <C-K> :resize -5<CR>
-nnoremap <C-L> :vertical resize +5<CR>
+nnoremap <silent> <leader>h <C-w>h
+nnoremap <silent> <leader>j <C-w>j
+nnoremap <silent> <leader>k <C-w>k
+nnoremap <silent> <leader>l <C-w>l
+nnoremap <silent> <leader>H <C-w>H
+nnoremap <silent> <leader>J <C-w>J
+nnoremap <silent> <leader>K <C-w>K
+nnoremap <silent> <leader>L <C-w>L
+nnoremap <silent> <C-H> :vertical resize -5<CR>
+nnoremap <silent> <C-J> :resize +5<CR>
+nnoremap <silent> <C-K> :resize -5<CR>
+nnoremap <silent> <C-L> :vertical resize +5<CR>
 
 "Tab Navigation
-nnoremap th  :tabfirst<CR>
-nnoremap tj  :tabnext<CR>
-nnoremap tk  :tabprev<CR>
-nnoremap tl  :tablast<CR>
-nnoremap td  :tabclose<CR>
-nnoremap tn :tabnew<CR>
+nnoremap <silent> th  :tabfirst<CR>
+nnoremap <silent> tj  :tabnext<CR>
+nnoremap <silent> tk  :tabprev<CR>
+nnoremap <silent> tl  :tablast<CR>
+nnoremap <silent> td  :tabclose<CR>
+nnoremap <silent> tn :tabnew<CR>
 
 " Center searches
-nnoremap n nzz
-nnoremap N Nzz
-nnoremap * *N
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+nnoremap <silent> * *N
 
 "NerdTree
-nmap <C-\> :NERDTreeToggle<CR>
+nmap <silent> <C-\> :NERDTreeToggle<CR>
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 "let NERDTreeQuitOnOpen = 1
@@ -142,7 +142,7 @@ let g:echodoc#type = 'floating'
 "Goyo/Limelight
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
-nmap <leader>g :Goyo<CR>
+nmap <silent> <silent> <leader>g :Goyo<CR>
 
 "Vim-Go
 let g:go_fmt_fail_silently = 1
@@ -155,34 +155,34 @@ let g:vimtex_quickfix_latexlog = {'default' : 0}
 
 " EasyAlign
 " Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
+xmap <silent> ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
+nmap <silent> ga <Plug>(EasyAlign)
 
 "Terminal
 au TermOpen * tnoremap <Esc> <c-\><c-n>
 au FileType fzf tunmap <Esc>
 
 "Keybindings
-nnoremap <C-Space> :FZF<CR>
-nnoremap <C-g> :Rg<CR>
-nnoremap <C-b> :Buffers<CR>
-nnoremap <C-c> :Commands<CR>
-nnoremap <space><space> :buffer #<CR>
-nnoremap <leader><space> :nohlsearch<CR>
-nnoremap <leader>/ :BLines<CR>
-nnoremap <leader>d :bp<bar>bd#<CR>
+nnoremap <silent> <C-Space> :FZF<CR>
+nnoremap <silent> <C-g> :Rg<CR>
+nnoremap <silent> <C-b> :Buffers<CR>
+nnoremap <silent> <C-c> :Commands<CR>
+nnoremap <silent> <space><space> :buffer #<CR>
+nnoremap <silent> <leader><space> :nohlsearch<CR>
+nnoremap <silent> <leader>/ :BLines<CR>
+nnoremap <silent> <leader>d :bp<bar>bd#<CR>
 
-nnoremap <leader>s :w<CR>
-nnoremap <leader>z :x<CR>
-nnoremap <leader>x :xa<CR>
-nnoremap <leader>q :qa<CR>
-noremap <leader>y "+y
-nnoremap <leader><leader> ;
-inoremap <silent><expr><C-Space> deoplete#mappings#manual_complete()
-imap <expr> <tab>   pumvisible() ? "\<c-n>" : "\<tab>"
-imap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
-imap <expr> <cr>    pumvisible() ? deoplete#close_popup() : "\<cr>"
+nnoremap <silent> <leader>s :w<CR>
+nnoremap <silent> <leader>z :x<CR>
+nnoremap <silent> <leader>x :xa<CR>
+nnoremap <silent> <leader>q :qa<CR>
+noremap <silent> <leader>y "+y
+nnoremap <silent> <leader><leader> ;
+inoremap <silent> <expr><C-Space> deoplete#mappings#manual_complete()
+imap <silent> <expr> <tab>   pumvisible() ? "\<c-n>" : "\<tab>"
+imap <silent> <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
+imap <silent> <expr> <cr>    pumvisible() ? deoplete#close_popup() : "\<cr>"
 
 " FZF
 let $FZF_DEFAULT_COMMAND =  "rg --files --hidden 2>/dev/null"
@@ -226,7 +226,7 @@ let g:LanguageClient_serverCommands = {
     \ 'html': ['html-languageserver', '--stdio'],
     \ 'css': ['css-languageserver', '--stdio'],
     \ }
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+nnoremap <silent> <F5> :call LanguageClient_contextMenu()<CR>
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<cr>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
