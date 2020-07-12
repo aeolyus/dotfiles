@@ -32,9 +32,9 @@ Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle'}
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle'}
 "Aesthetics
+Plug 'arcticicestudio/nord-vim'
 Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': 'NERDTreeToggle'}
 Plug 'ryanoasis/vim-devicons', { 'on': 'NERDTreeToggle'}
 call plug#end()
@@ -111,10 +111,9 @@ let NERDTreeDirArrows = 1
 
 "Aesthetics
 let base16colorspace=256
-colorscheme base16-nord
+colorscheme nord
 
 "Airline
-let g:airline_theme='base16_tomorrow'
 let g:airline_symbols = {}
 let g:airline_symbols.linenr = 'Ξ'
 let g:airline_powerline_fonts = 1
