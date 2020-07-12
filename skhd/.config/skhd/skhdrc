@@ -24,7 +24,7 @@ yabai -m window --grid 4:4:1:1:2:2
 alt - f : yabai -m window --toggle zoom-fullscreen
 shift + alt - f : yabai -m window --toggle native-fullscreen
 
-# Resize windows 
+# Resize windows
 ctrl + alt - h : \
     yabai -m window --resize left:-20:0 ; \
     yabai -m window --resize right:-20:0
@@ -85,3 +85,6 @@ cmd - return : ~/dotfiles/spells/yabai-terminal
 alt - p : yabai -m window --toggle sticky;\
 yabai -m window --toggle topmost;\
 yabai -m window --toggle pip
+
+# Restart
+cmd + shift - r : brew services restart skhd && brew services restart yabai
