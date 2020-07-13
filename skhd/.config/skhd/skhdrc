@@ -79,7 +79,9 @@ cmd + shift - 9 : yabai -m window --space 9
 cmd + shift - 0 : yabai -m window --space 10
 
 # Terminal
-cmd - return : ~/dotfiles/spells/yabai-terminal
+cmd - return : pgrep -f "iTerm" \
+  && osascript -e 'tell application "iTerm2" to create window with default profile' \
+  || open - a "/Applications/iTerm.app"
 
 # Toggle sticky(+float), topmost, picture-in-picture
 alt - p : yabai -m window --toggle sticky;\
