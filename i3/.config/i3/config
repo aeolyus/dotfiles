@@ -169,7 +169,7 @@ bindsym $mod+r mode "resize"
 exec_always --no-startup-id $(killall -q polybar;for m in $(polybar --list-monitors | cut -d":" -f1); do MONITOR=$m polybar -r default & done)
 
 # Compositor
-exec --no-startup-id "picom -b"
+# exec --no-startup-id "picom -b"
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2% #increase sound volume
