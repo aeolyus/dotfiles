@@ -205,8 +205,8 @@ exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 exec_always --no-startup-id ~/.fehbg
 exec_always --no-startup-id autorandr -c
 
-# i3 gaps
-for_window [class="^.*"] border pixel 0
+# Gaps
+for_window [class="^.*"] border pixel 4
 gaps inner 10
 gaps outer 0
 border_radius 2
