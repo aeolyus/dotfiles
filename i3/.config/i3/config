@@ -219,12 +219,13 @@ for_window [class="Spotify"] move to workspace 9
 
 # Colors
 set $fallback #000000
-set_from_resource $bg-color            color8  $fallback
+set $bg-color #2e3440
+set_from_resource $active              color6  $fallback
 set_from_resource $bd-color            color7  $fallback
 set_from_resource $text-color          color0  $fallback
 set_from_resource $inactive-text-color color15 $fallback
 # class                 border      backgr      text                   indicator   child_border
-client.focused          $bd-color   $bd-color   $text-color            $bd-color   $bd-color
+client.focused          $active     $active     $text-color            $active     $active
 client.unfocused        $bg-color   $bg-color   $inactive-text-color   $bg-color   $bg-color
 client.focused_inactive $bg-color   $bg-color   $inactive-text-color   $bg-color   $bg-color
 client.urgent           $bg-color   $bg-color   $inactive-text-color   $bg-color   $bg-color
