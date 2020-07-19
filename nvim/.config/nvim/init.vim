@@ -53,6 +53,8 @@ filetype plugin on
 syntax on
 set sb
 set spr
+set ignorecase
+set smartcase
 set hidden
 set lazyredraw
 set updatetime=500
