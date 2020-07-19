@@ -141,6 +141,7 @@ let g:echodoc#enable_at_startup = 1
 let g:echodoc#type = 'floating'
 
 "Goyo/Limelight
+let g:limelight_conceal_ctermfg = 240
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 nmap <silent> <silent> <leader>g :Goyo<CR>
