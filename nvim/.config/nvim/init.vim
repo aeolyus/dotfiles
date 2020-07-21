@@ -71,6 +71,7 @@ set foldlevel=99
 set conceallevel=2
 set noshowmode
 set mouse=a
+set winminheight=0
 let mapleader = ';'
 let g:netrw_dirhistmax = 0
 
