@@ -176,68 +176,6 @@ cursor-scroll =
 
 ################################################################################
 ################################################################################
-############                    MAINBAR-OPENBOX                     ############
-################################################################################
-################################################################################
-
-[bar/mainbar-openbox]
-monitor = ${env:MONITOR}
-;monitor-fallback = HDMI1
-width = 100%
-height = 20
-;offset-x = 1%
-;offset-y = 1%
-radius = 0.0
-fixed-center = true
-bottom = false
-separator =
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 2
-line-color = #E06C75
-
-border-size = 0
-;border-left-size = 25
-;border-right-size = 25
-;border-top-size = 0
-;border-bottom-size = 25
-border-color = #00000000
-
-padding-left = 1
-padding-right = 0
-
-module-margin-left = 0
-module-margin-right = 0
-
-; Enable support for inter-process messaging
-; See the Messaging wiki page for more details.
-enable-ipc = true
-
-;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "UbuntuMono Nerd Font:size=10;2"
-font-1 = "UbuntuMono Nerd Font:size=16;3"
-font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=8;1"
-font-3 = "Font Awesome 5 Free:style=Solid:pixelsize=8;1"
-font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
-
-modules-left = ewmh xwindow
-modules-center =
-modules-right = arrow1 networkspeedup networkspeeddown arrow2 memory2 arrow3 cpu2 arrow4 battery arrow5 pamac-manager arrow6 date arrow7
-
-tray-detached = false
-tray-offset-x = 0
-tray-offset-y = 0
-tray-padding = 4
-tray-maxsize = 20
-tray-scale = 1.0
-tray-position = right
-tray-background = ${colors.background}
-
-
-################################################################################
-################################################################################
 ############                       MODULE I3                        ############
 ################################################################################
 ################################################################################
