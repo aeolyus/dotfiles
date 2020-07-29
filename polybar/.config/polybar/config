@@ -279,6 +279,7 @@ label-unfocused-underline =
 label-visible = %icon% %name%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
+label-visible-foreground = ${self.label-focused-foreground}
 label-visible-padding = 2
 
 ; Available tokens:
