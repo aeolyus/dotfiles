@@ -258,9 +258,9 @@ label-mode-background = #282C34
 ; Default: %icon%  %name%
 ; focused = Active workspace on focused monitor
 label-focused = %icon% %name%
-label-focused-background = ${colors.background}
-label-focused-foreground = ${colors.foreground}
-label-focused-underline = #E06C75
+label-focused-background = #88c0d0
+label-focused-foreground = ${colors.background}
+label-focused-underline = #88c0d0
 label-focused-padding = 2
 
 ; Available tokens:
