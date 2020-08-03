@@ -1,0 +1,15 @@
+#! /usr/bin/env sh
+
+PASS_FILE="$HOME/.secrets/borg-passphrase.gpg"
+BORG_PASSPHRASE="$(gpg -d "$PASS_FILE" 2>/dev/null)"
+
+# Get borg passphrase if it exists
+[ -f "$PASS_FILE" ] && export BORG_PASSPHRASE
+
+# Create backup archive
+sudo -E borg prune "$1" -sp\
+  --rsh "ssh -i ~/.ssh/id_rsa -p 222" \
+  --keep-daily   30 \
+  --keep-weekly  52 \
+  --keep-monthly 60 \
+  --keep-yearly  100
