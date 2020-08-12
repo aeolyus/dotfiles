@@ -1,17 +1,23 @@
 #! /usr/bin/env sh
 
+export BORG_RELOCATED_REPO_ACCESS_IS_OK=yes
 PASS_FILE="$HOME/.secrets/luks-passphrase.gpg"
+NAME="backup-$(tr -cd '[:lower:]' < /dev/urandom | head -c 5)"
+MOUNT="/mnt/$NAME"
+CRYPTMOUNT="/dev/mapper/$NAME"
+
+sudo mkdir -p "$MOUNT"
 
 # Get LUKS passphrase and open LUKS partition
 [ -f "$PASS_FILE" ] &&
 gpg --batch -d "$PASS_FILE" 2>/dev/null |
-sudo cryptsetup open --type luks "$1" backup ||
-sudo cryptsetup open --type luks "$1" backup &&
+sudo cryptsetup open --type luks "$1" "$NAME" ||
+sudo cryptsetup open --type luks "$1" "$NAME" &&
 
-
-sudo mount /dev/mapper/backup /mnt &&
-backup /mnt
+sudo mount "$CRYPTMOUNT" "$MOUNT" &&
+backup "$MOUNT"
 
 # Clean up
-sudo umount /mnt >/dev/null
-sudo cryptsetup close /dev/mapper/backup >/dev/null
+sudo umount "$MOUNT" >/dev/null
+sudo cryptsetup close "$CRYPTMOUNT" >/dev/null
+sudo rmdir "$MOUNT"
