@@ -44,9 +44,10 @@
 
 [alias]
   a = add
-  sh = show --color-words=.
-  d = diff --color-words=.
-  ds = d --staged -w
+  sh = show --color-words
+  d = diff
+  dw = d --color-words
+  ds = d --color-words --staged -w
   p = push
   b = branch
   bb = branch -a
