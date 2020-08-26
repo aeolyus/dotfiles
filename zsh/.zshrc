@@ -75,6 +75,7 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$HOME/dotfiles/spells:$GOPATH/bin:$HOME/bin
 export LESSHISTFILE=-
 export GPG_TTY=$(tty)
+export BAT_THEME=base16
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
