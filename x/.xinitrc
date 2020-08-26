@@ -1,5 +1,5 @@
 #! usr/bin/env bash
-xset -b
+xset b off
 xrdb ~/.Xresources
 systemctl --user import-environment DISPLAY
 xset s off -dpms
