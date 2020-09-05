@@ -233,18 +233,19 @@ nnoremap <silent> <C-w>o :ZoomToggle<CR>
 
 " Language Server
 let g:LanguageClient_serverCommands = {
-    \ 'python': ['pyls'],
-    \ 'cpp': ['clangd'],
     \ 'c': ['clangd'],
-    \ 'go': ['gopls'],
-    \ 'javascript': ['javascript-typescript-stdio'],
-    \ 'typescript': ['javascript-typescript-stdio'],
-    \ 'javascriptreact': ['javascript-typescript-stdio'],
-    \ 'typescriptreact': ['javascript-typescript-stdio'],
-    \ 'tex': ['texlab'],
-    \ 'sh': ['bash-language-server', 'start'],
-    \ 'html': ['html-languageserver', '--stdio'],
+    \ 'cpp': ['clangd'],
     \ 'css': ['css-languageserver', '--stdio'],
+    \ 'go': ['gopls'],
+    \ 'html': ['html-languageserver', '--stdio'],
+    \ 'java': ['java-language-server', '--stdio'],
+    \ 'javascript': ['javascript-typescript-stdio'],
+    \ 'javascriptreact': ['javascript-typescript-stdio'],
+    \ 'python': ['pyls'],
+    \ 'sh': ['bash-language-server', 'start'],
+    \ 'tex': ['texlab'],
+    \ 'typescript': ['javascript-typescript-stdio'],
+    \ 'typescriptreact': ['javascript-typescript-stdio'],
     \ 'vim': ['vim-language-server', '--stdio'],
     \ }
 nnoremap <silent> <F5> :call LanguageClient_contextMenu()<CR>
