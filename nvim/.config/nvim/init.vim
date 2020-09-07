@@ -153,6 +153,7 @@ let g:go_fmt_fail_silently = 1
 let g:go_fmt_experimental=1
 
 "Vimtex
+let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
 let g:polyglot_disabled=['latex'] "https://git.io/JvPrf
 let g:vimtex_quickfix_latexlog = {'default' : 0}
