@@ -169,7 +169,7 @@ au TermOpen * tnoremap <Esc> <c-\><c-n>
 au FileType fzf tunmap <Esc>
 
 "Keybindings
-nnoremap <silent> <C-Space> :FZF<CR>
+nnoremap <silent> <C-Space> :Files<CR>
 nnoremap <silent> <C-g> :Rg<CR>
 nnoremap <silent> <C-b> :Buffers<CR>
 nnoremap <silent> <C-c> :Commands<CR>
