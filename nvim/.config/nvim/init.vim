@@ -249,9 +249,9 @@ let g:LanguageClient_serverCommands = {
     \ 'typescriptreact': ['javascript-typescript-stdio'],
     \ 'vim': ['vim-language-server', '--stdio'],
     \ }
-nnoremap <silent> <F5> :call LanguageClient_contextMenu()<CR>
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<cr>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-nnoremap <silent> <F3> :call LanguageClient#textDocument_references()<CR>
-nnoremap <silent> <F4> :call LanguageClient#textDocument_formatting()<CR>
+nmap <silent> <F5> <Plug>(lcn-menu)
+nmap <silent> K <Plug>(lcn-hover)
+nmap <silent> gd <Plug>(lcn-definition)
+nmap <silent> <F2> <Plug>(lcn-rename)
+nmap <silent> <F3> <Plug>(lcn-references)
+nmap <silent> <F4> <Plug>(lcn-format)
