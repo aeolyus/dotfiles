@@ -44,24 +44,24 @@
 
 [alias]
   a = add
-  sh = show
-  d = diff
-  sd = d --cached
-  p = push
+  aa = add --all
+  amend = commit --amend
   b = branch
   bb = branch -a
-  s = status -s
-  aa = add --all
-  co = checkout
-  ec = config --global -e
-  cm = commit -m
-  amend = commit --amend
-  remotes = remote -v
+  bd = branch -d
   cherry-pit = "!f() { git rebase -p --onto \"$1\"^ \"$1\"; }; f"
+  cm = commit -m
+  co = checkout
+  d = diff
+  ec = config --global -e
+  go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
   l = log --relative-date --graph --abbrev-commit -10
   ll = log --relative-date --graph --abbrev-commit
-  go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
-  bd = branch -d
+  p = push
+  remotes = remote -v
+  s = status -s
+  sd = d --cached
+  sh = show
 
 [format]
   pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
