@@ -1,38 +1,38 @@
-"Automate Plugins
+""" Automate Plugins
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
   silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-"Plugins
+""" Plugins
 call plug#begin('~/.local/share/nvim/plugged')
-"Autocompletion
+" Autocompletion
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/echodoc.vim'
-"Text Manipulation
+" Text Manipulation
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-"Tools
+" Tools
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'lervag/vimtex'
 Plug 'jamessan/vim-gnupg'
 Plug 'junegunn/vim-easy-align'
 Plug 'azadkuh/vim-cmus'
-"Git
+" Git
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
-"Writing
+" Writing
 Plug 'junegunn/goyo.vim', {'on': 'Goyo'}
 Plug 'junegunn/limelight.vim'
-"Visuals
+" Visuals
 Plug 'lilydjwg/colorizer'
 Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle'}
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle'}
-"Aesthetics
+" Aesthetics
 Plug 'arcticicestudio/nord-vim'
 Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
@@ -41,46 +41,68 @@ Plug 'ryanoasis/vim-devicons', { 'on': 'NERDTreeToggle'}
 call plug#end()
 
 " Get off my lawn
-nnoremap <silent> <Left> h:echoe "Use h"<CR>
+nnoremap <silent> <Left>  h:echoe "Use h"<CR>
 nnoremap <silent> <Right> l:echoe "Use l"<CR>
-nnoremap <silent> <Up> k:echoe "Use k"<CR>
-nnoremap <silent> <Down> j:echoe "Use j"<CR>
+nnoremap <silent> <Up>    k:echoe "Use k"<CR>
+nnoremap <silent> <Down>  j:echoe "Use j"<CR>
 
-"General Settings
-set nocompatible "be IMproved, required
-set guicursor= "https://git.io/JfbFH
-set nomodeline "for security
+""" General Settings
+
+" Be IMproved, required
+set nocompatible
+" Disable cursor changing https://git.io/JfbFH
+set guicursor=
+" For security
+set nomodeline
+" Load plugin files for specific file types
 filetype plugin on
+" Turn on syntax highlighting
 syntax on
+" Split horizontally and jump to right
 set sb
+" Split vertically and jump down
 set spr
+" Ignore case of normal letters
 set ignorecase
+" Ignore case when pattern contains lowercase letters only
 set smartcase
+" Hide buffer when abandoned
+" Required for operations modifying multiple buffers
 set hidden
+" Buffer screen updates
 set lazyredraw
+" Time of inactivity before writing swap file to disk
 set updatetime=500
+" Show line numbers
 set number
+" Set relative line numbering
 set relativenumber
-set list
-set listchars=tab:\|\ ,trail:.,extends:>,precedes:<,nbsp:␣
-set tabstop=2
-set softtabstop=2
+" Visualize certain whitespace characters
+set list lcs=tab:\|\ ,trail:.,extends:>,precedes:<,nbsp:␣
+" Set indent to be 2 spaces
 set shiftwidth=2
+" Uses spaces to insert a <Tab>
 set expandtab
+" Lines with equal indent form a fold
 set foldmethod=indent
-set foldlevel=99
+" Start with no folds closed
+set foldlevelstart=99
+" Concealed text is hidden unless it has replacement defined
 set conceallevel=2
+" Hide mode message
 set noshowmode
+" Enable mouse support
 set mouse=a
+" Minimal height of noncurrent windows
 set winminheight=0
+" Set leader key
 let mapleader = ';'
+" Suppress netrw history
 let g:netrw_dirhistmax = 0
 
-" Use g[jk] for vertical movement in wrapped lines when no count is specified
-nnoremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
-nnoremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+""" Navigation
 
-"Window Navigation
+" Window Navigation
 nnoremap <silent> <leader>h <C-w>h
 nnoremap <silent> <leader>j <C-w>j
 nnoremap <silent> <leader>k <C-w>k
@@ -94,30 +116,36 @@ nnoremap <silent> <C-J> :resize +5<CR>
 nnoremap <silent> <C-K> :resize -5<CR>
 nnoremap <silent> <C-L> :vertical resize +5<CR>
 
-"Tab Navigation
-nnoremap <silent> th  :tabfirst<CR>
-nnoremap <silent> tj  :tabnext<CR>
-nnoremap <silent> tk  :tabprev<CR>
-nnoremap <silent> tl  :tablast<CR>
-nnoremap <silent> td  :tabclose<CR>
+" Tab Navigation
+nnoremap <silent> th :tabfirst<CR>
+nnoremap <silent> tj :tabnext<CR>
+nnoremap <silent> tk :tabprev<CR>
+nnoremap <silent> tl :tablast<CR>
+nnoremap <silent> td :tabclose<CR>
 nnoremap <silent> tn :tabnew<CR>
+
+" Use g[jk] for vertical movement in wrapped lines when no count is specified
+nnoremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+nnoremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 
 " Center searches
 nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
 nnoremap <silent> * *N
 
-"NerdTree
+""" Plugin Configurations
+
+" NerdTree
 nmap <silent> <C-\> :NERDTreeToggle<CR>
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
-"let NERDTreeQuitOnOpen = 1
+" let NERDTreeQuitOnOpen = 1
 
-"Aesthetics
+" Aesthetics
 let base16colorspace=256
 colorscheme nord
 
-"Airline
+" Airline
 let g:airline_symbols = {}
 let g:airline_symbols.linenr = 'Ξ'
 let g:airline_powerline_fonts = 1
@@ -131,31 +159,31 @@ let g:airline_left_alt_sep=''
 let g:airline_right_sep=''
 let g:airline_right_alt_sep=''
 
-"Deoplete
+" Deoplete
 set completeopt+=noinsert
 set completeopt+=noselect
 set completeopt-=preview
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_camel_case = 1
 
-"Echodoc
+" Echodoc
 let g:echodoc#enable_at_startup = 1
 let g:echodoc#type = 'floating'
 
-"Goyo/Limelight
+" Goyo/Limelight
 let g:limelight_conceal_ctermfg = 240
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 nmap <silent> <silent> <leader>g :Goyo<CR>
 
-"Vim-Go
+" Vim-Go
 let g:go_fmt_fail_silently = 1
 let g:go_fmt_experimental=1
 
-"Vimtex
+" Vimtex
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
-let g:polyglot_disabled=['latex'] "https://git.io/JvPrf
+let g:polyglot_disabled=['latex'] " https://git.io/JvPrf
 let g:vimtex_quickfix_latexlog = {'default' : 0}
 
 " EasyAlign
@@ -164,11 +192,11 @@ xmap <silent> ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap <silent> ga <Plug>(EasyAlign)
 
-"Terminal
+" Terminal
 au TermOpen * tnoremap <Esc> <c-\><c-n>
 au FileType fzf tunmap <Esc>
 
-"Keybindings
+" Keybindings
 nnoremap <silent> <C-Space> :Files<CR>
 nnoremap <silent> <C-g> :Rg<CR>
 nnoremap <silent> <C-b> :Buffers<CR>
@@ -195,7 +223,7 @@ let $FZF_DEFAULT_OPTS=' --color=dark
       \ --color=fg:15,bg:-1,hl:1,fg+:#ffffff,bg+:0,hl+:1
       \ --color=info:0,prompt:0,pointer:12,marker:4,spinner:11,header:-1
       \ --layout=reverse --margin=1,4'
-let g:fzf_layout = { 'window': 'call FloatingFZF()' }
+" let g:fzf_layout = { 'window': 'call FloatingFZF()' }
 
 function! FloatingFZF()
   let buf = nvim_create_buf(v:false, v:true)
