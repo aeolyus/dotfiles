@@ -8,6 +8,7 @@ endif
 """ Plugins
 call plug#begin('~/.local/share/nvim/plugged')
 " Autocompletion
+Plug 'vim-test/vim-test'
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/echodoc.vim'
@@ -191,6 +192,11 @@ let g:vimtex_quickfix_latexlog = {'default' : 0}
 xmap <silent> ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap <silent> ga <Plug>(EasyAlign)
+
+" Vimtest
+let test#strategy = "neovim"
+nnoremap <silent> <leader>t :TestNearest<CR>
+nnoremap <silent> <leader>T :TestFile<CR>
 
 " Terminal
 au TermOpen * tnoremap <Esc> <c-\><c-n>
