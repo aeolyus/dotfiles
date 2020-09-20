@@ -207,7 +207,7 @@ exec_always --no-startup-id autorandr -c
 
 # Gaps
 for_window [class="^.*"] border pixel 4
-gaps inner 20
+gaps inner 0
 gaps outer 0
 bindsym $mod+plus gaps inner all plus 2
 bindsym $mod+minus gaps inner all minus 2
