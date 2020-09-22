@@ -92,6 +92,8 @@ set foldlevelstart=99
 set conceallevel=2
 " Hide mode message
 set noshowmode
+" Suppress ins-completion-menu messages
+set shortmess+=c
 " Enable mouse support
 set mouse=a
 " Minimal height of noncurrent windows
