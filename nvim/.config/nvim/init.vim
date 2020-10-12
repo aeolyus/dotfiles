@@ -287,6 +287,7 @@ let g:LanguageClient_serverCommands = {
     \ }
 nmap <silent> <F5> <Plug>(lcn-menu)
 nmap <silent> K <Plug>(lcn-hover)
+nmap <silent> <leader> e <Plug>(lcn-explain-error)
 nmap <silent> gd <Plug>(lcn-definition)
 nmap <silent> <F2> <Plug>(lcn-rename)
 nmap <silent> <F3> <Plug>(lcn-references)
