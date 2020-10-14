@@ -139,7 +139,8 @@ nnoremap <silent> * *N
 """ Plugin Configurations
 
 " NerdTree
-nmap <silent> <C-\> :NERDTreeToggle<CR>
+nnoremap <silent> <C-\> :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeFind<CR>
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 " let NERDTreeQuitOnOpen = 1
