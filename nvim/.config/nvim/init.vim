@@ -276,7 +276,7 @@ let g:LanguageClient_serverCommands = {
     \ 'css': ['css-languageserver', '--stdio'],
     \ 'go': ['gopls'],
     \ 'html': ['html-languageserver', '--stdio'],
-    \ 'java': ['java-language-server', '--stdio'],
+    \ 'java': ['jdtls', '--stdio'],
     \ 'javascript': ['javascript-typescript-stdio'],
     \ 'javascriptreact': ['javascript-typescript-stdio'],
     \ 'python': ['pyls'],
