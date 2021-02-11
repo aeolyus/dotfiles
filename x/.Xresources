@@ -60,7 +60,7 @@ URxvt.print-pipe: "cat > /dev/null"
 URxvt.font: xft:Hack Nerd Font Mono:size=11
 ! URxvt.letterSpace: -1
 ! URxvt Extensions
-URxvt.perl-ext-common: default,matcher,resize-font,url-select,keyboard-select
+URxvt.perl-ext-common: default,matcher,resize-font,url-select,keyboard-select,selection-to-clipboard
 URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.url-select.launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
