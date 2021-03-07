@@ -87,6 +87,21 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden 2>/dev/null'
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 export FZF_DEFAULT_OPTS='--height 50% --layout=reverse --preview-window right:70%'
 
+# Kubernetes
+# Set the default kube context if present
+DEFAULT_KUBE_CONTEXTS="$HOME/.kube/config"
+if [[ -f "${DEFAULT_KUBE_CONTEXTS}" ]]
+then
+	export KUBECONFIG="$DEFAULT_KUBE_CONTEXTS"
+fi
+# Additional contexts should be in ~/.kube/contexts
+CUSTOM_KUBE_CONTEXTS="$HOME/.kube/contexts"
+mkdir -p "$CUSTOM_KUBE_CONTEXTS"
+for context_file in `fd '.*.yml' -t f "$CUSTOM_KUBE_CONTEXTS"`
+do
+	export KUBECONFIG="$context_file:$KUBECONFIG"
+done
+
 # Aliases
 alias ls='ls --group-directories-first --color=auto'
 alias l='ls -lah'
