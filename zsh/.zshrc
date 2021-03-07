@@ -105,3 +105,5 @@ alias dc='docker-compose'
 alias d='docker'
 alias kubectl='kubecolor --force-colors'
 alias k='kubectl'
+alias ze="$EDITOR $HOME/dotfiles/zsh/.zshrc"
+alias ve="$EDITOR $HOME/dotfiles/nvim/.config/nvim/init.vim"
