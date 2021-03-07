@@ -77,6 +77,7 @@ export PATH=$PATH:$HOME/dotfiles/spells:$GOPATH/bin:$HOME/bin
 export LESSHISTFILE=-
 export GPG_TTY=$(tty)
 export BAT_THEME=base16
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
