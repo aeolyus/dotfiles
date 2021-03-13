@@ -5,7 +5,7 @@
 
 [core]
   editor = nvim
-  pager = diff-highlight | less -F -X
+  pager = diff-highlight | less -FRX
 
 [color]
   ui = always
