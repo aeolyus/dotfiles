@@ -225,6 +225,9 @@ imap <silent> <expr> <tab>   pumvisible() ? "\<c-n>" : "\<tab>"
 imap <silent> <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
 imap <silent> <expr> <cr>    pumvisible() ? deoplete#close_popup() : "\<cr>"
 
+" Language specific settings
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
 " FZF
 let $FZF_DEFAULT_COMMAND =  "rg --files --hidden 2>/dev/null"
 let $FZF_DEFAULT_OPTS=' --color=dark
