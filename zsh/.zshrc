@@ -118,7 +118,7 @@ alias mpv='mpv --af=rubberband'
 alias emacs='emacs -nw'
 alias dc='docker-compose'
 alias d='docker'
-alias kubectl='kubecolor --force-colors'
+alias kubectl='kubecolor'
 alias k='kubectl'
 alias ze="$EDITOR $HOME/dotfiles/zsh/.zshrc"
 alias ve="$EDITOR $HOME/dotfiles/nvim/.config/nvim/init.vim"
