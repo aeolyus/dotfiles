@@ -58,7 +58,7 @@ URxvt.iso14755_52: false
 URxvt.print-pipe: "cat > /dev/null"
 ! URxvt Font
 URxvt.font: xft:Hack Nerd Font Mono:size=11
-! URxvt.letterSpace: -1
+URxvt.letterSpace: -1
 ! URxvt Extensions
 URxvt.perl-ext-common: default,matcher,resize-font,url-select,keyboard-select,selection-to-clipboard
 URxvt.keysym.M-u: perl:url-select:select_next
