@@ -1328,9 +1328,9 @@ format-background = ${colors.background}
 [module/vpn]
 type = custom/script
 exec = "echo 'vpn '"
-exec-if = pgrep -x openvpn
+exec-if = "(nmcli c s --active | awk '{print $3}' | grep vpn -q) || pgrep -x openvpn"
 interval = 5
 format-underline = #E06C75
 format-background = #E06C75
-format-prefix = "  "
+format-prefix = "  "
 format-prefix-foreground = #282C34
