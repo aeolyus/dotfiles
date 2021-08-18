@@ -62,7 +62,7 @@ URxvt.letterSpace: -1
 ! URxvt Extensions
 URxvt.perl-ext-common: default,matcher,resize-font,url-select,keyboard-select,selection-to-clipboard
 URxvt.keysym.M-u: perl:url-select:select_next
-URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 URxvt.resize-font.bigger: C-equal
