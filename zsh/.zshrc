@@ -1,7 +1,11 @@
+include () {
+  test -f "$@" && source "$@"
+}
+
 # Antibody
 alias antibody='antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh'
 [[ ! -f ~/.zsh_plugins.sh ]] && antibody
-source ~/.zsh_plugins.sh
+include ~/.zsh_plugins.sh
 
 PURE_PROMPT_SYMBOL=λ
 
@@ -80,9 +84,9 @@ export BAT_THEME=base16
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
-[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
+include ~/.fzf.zsh
+include /usr/share/fzf/key-bindings.zsh
+include /usr/share/fzf/completion.zsh
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden 2>/dev/null'
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 export FZF_DEFAULT_OPTS='--height 50% --layout=reverse --preview-window right:70%'
@@ -120,7 +124,7 @@ alias dc='docker-compose'
 alias d='docker'
 alias kubectl='kubecolor'
 alias k='kubectl'
-source <(kubectl completion zsh)
+include /usr/share/zsh/site-functions/_kubectl
 compdef kubecolor='kubectl' # Make completion work with kubecolor
 alias ze="$EDITOR $HOME/dotfiles/zsh/.zshrc"
 alias ve="$EDITOR $HOME/dotfiles/nvim/.config/nvim/init.vim"
