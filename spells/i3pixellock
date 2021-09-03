@@ -4,7 +4,7 @@ LOCK_ICON=$HOME/Pictures/screen-lock.png
 TMP=/tmp/screen.png
 
 maim $TMP
-gm convert $TMP -scale 10% -scale 1000% $TMP
+gm convert $TMP -scale 5% -scale 2000% $TMP
 
 if [ -f $LOCK_ICON ]
 then
