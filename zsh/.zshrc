@@ -122,9 +122,11 @@ alias mpv='mpv --af=rubberband'
 alias emacs='emacs -nw'
 alias dc='docker-compose'
 alias d='docker'
-alias kubectl='kubecolor'
-alias k='kubectl'
-include /usr/share/zsh/site-functions/_kubectl
-compdef kubecolor='kubectl' # Make completion work with kubecolor
+if [ -x "$(command -v kubectl)" ]; then
+  source <(kubectl completion zsh)
+  compdef kubecolor='kubectl' # Make completion work with kubecolor
+  alias kubectl='kubecolor'
+  alias k='kubectl'
+fi
 alias ze="$EDITOR $HOME/dotfiles/zsh/.zshrc"
 alias ve="$EDITOR $HOME/dotfiles/nvim/.config/nvim/init.vim"
