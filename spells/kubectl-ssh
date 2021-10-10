@@ -1,0 +1,82 @@
+#!/usr/bin/env sh
+# Obtain a shell in a kubernetes node or pod
+#
+# Usage:
+#   kubectl ssh node <kubernetes-node>
+#   kubectl ssh pod <pod> [-n <namespace>] [-c <container>]
+
+set -e
+
+# Creates a privileged container on a specified node with root filesystem view
+# and attaches to it.
+# Arguments:
+#   Kubernetes node name
+ssh_node() {
+  node=$(kubectl get node -o name "$1" 2>/dev/null | sed 's/node\///')
+  if [ "$node" = "" ]; then
+    echo "Please specify a valid node name"
+    exit 1
+  fi
+
+  pod=$(
+    kubectl create -o name -f - <<EOF
+apiVersion: v1
+kind: Pod
+metadata:
+  generateName: ssh-node-pod-
+spec:
+  nodeName: $node
+  containers:
+    - name: ssh-node-pod
+      image: busybox
+      imagePullPolicy: IfNotPresent
+      command: ["chroot", "/host"]
+      tty: true
+      stdin: true
+      stdinOnce: true
+      securityContext:
+        privileged: true
+      volumeMounts:
+        - name: host
+          mountPath: /host
+  volumes:
+    - name: host
+      hostPath:
+        path: /
+  hostNetwork: true
+  hostIPC: true
+  hostPID: true
+  restartPolicy: Never
+EOF
+)
+  delete_ssh_node_pod() {
+    kubectl delete "$pod" --wait=false
+  }
+  trap delete_ssh_node_pod EXIT HUP
+
+  echo "Created $pod"
+  echo "Waiting for container to start..."
+  kubectl wait --for condition=Ready "$pod" >/dev/null
+  kubectl attach -it "$pod"
+}
+
+# Attempts to get a shell to a running pod.
+# Arguments:
+#   Kubernetes pod name
+ssh_pod() {
+  if [ "$1" = "" ]; then
+    echo "Please specify a valid pod name."
+    exit 1
+  fi
+  kubectl exec -it "$@" -- bash || kubectl exec -it "$@" -- sh
+}
+
+if [ "$1" = "node" ]; then
+  ssh_node "$2"
+elif [ "$1" = "pod" ]; then
+  shift
+  ssh_pod "$@"
+else
+  # Print help text and exit.
+  sed -ne '/^#/!q;s/.\{1,2\}//;1d;p' < "$0"
+fi
