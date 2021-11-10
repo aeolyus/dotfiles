@@ -1,34 +1,29 @@
-#!/bin/bash
+#!/bin/sh
 
-LOCK_ICON=$HOME/Pictures/screen-lock.png
-TMP=/tmp/screen.png
-
-maim $TMP
-gm convert $TMP -scale 5% -scale 2000% $TMP
-
-if [ -f $LOCK_ICON ]
-then
-    # placement x/y
-    PX=0
-    PY=0
-    # lockscreen image info
-    R=$(file $LOCK_ICON | grep -o '[0-9]* x [0-9]*')
-    RX=$(echo $R | cut -d' ' -f 1)
-    RY=$(echo $R | cut -d' ' -f 3)
-
-    SR=$(xrandr --query | grep ' connected.*[0-9]x[0-9]' | sed 's/primary //' | cut -f3 -d' ')
-    for RES in $SR
-    do
-        # monitor position/offset
-        SRX=$(echo $RES | cut -d'x' -f 1)                   # x pos
-        SRY=$(echo $RES | cut -d'x' -f 2 | cut -d'+' -f 1)  # y pos
-        SROX=$(echo $RES | cut -d'x' -f 2 | cut -d'+' -f 2) # x offset
-        SROY=$(echo $RES | cut -d'x' -f 2 | cut -d'+' -f 3) # y offset
-        PX=$(($SROX + $SRX/2 - $RX/2))
-        PY=$(($SROY + $SRY/2 - $RY/2))
-
-        gm composite $LOCK_ICON $TMP -geometry +$PX+$PY -matte $TMP
-    done
-fi
-playerctl pause
-i3lock -e -u -i $TMP
+i3lock \
+    --indicator \
+    --ind-pos "x+75:y+75" \
+    --radius 15 \
+    --ring-color "ffffffff" \
+    --ringver-color "ff906bff" \
+    --ringwrong-color "f46060ff" \
+    --separator-color "00000000" \
+    --inside-color "00000000" \
+    --insidever-color "00000000" \
+    --insidewrong-color "00000000" \
+    --line-uses-inside \
+    --verif-text "" \
+    --wrong-text "" \
+    --force-clock \
+    --time-pos "ix+50:iy" \
+    --time-color "ffffffff" \
+    --time-str "%H:%M:%S" \
+    --time-align 1 \
+    --date-str "%A, %F" \
+    --date-color "ffffffff" \
+    --date-align 1 \
+    --pass-media-keys \
+    --pass-volume-keys \
+    --pass-screen-keys \
+    --pass-power-keys \
+    --blur 8
