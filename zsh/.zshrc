@@ -101,7 +101,7 @@ fi
 # Additional contexts should be in ~/.kube/contexts
 CUSTOM_KUBE_CONTEXTS="$HOME/.kube/contexts"
 mkdir -p "$CUSTOM_KUBE_CONTEXTS"
-for context_file in `fd '.*.yml' -t f "$CUSTOM_KUBE_CONTEXTS"`
+for context_file in `fd '.*.yaml' -t f "$CUSTOM_KUBE_CONTEXTS"`
 do
 	export KUBECONFIG="$context_file:$KUBECONFIG"
 done
