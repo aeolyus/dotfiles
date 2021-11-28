@@ -199,6 +199,12 @@ bindsym $mod+mod1+s exec --no-startup-id ~/dotfiles/spells/i3pixellock && system
 # Swap ctrl and caps
 bindsym $mod+x exec xmodmap ~/dotfiles/xmap/.Xmodmap
 
+# Dunst
+bindsym $mod+n exec --no-startup-id dunstctl close
+bindsym $mod+shift+n exec --no-startup-id dunstctl close-all
+bindsym ctrl+grave exec --no-startup-id dunstctl history-pop
+bindsym ctrl+shift+period exec --no-startup-id dunstctl context
+
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 
 # Always executed
