@@ -73,10 +73,10 @@ bindsym $mod+mod1+shift+k move workspace to output up
 bindsym $mod+mod1+shift+l move workspace to output right
 
 # split in horizontal orientation
-bindsym $mod+comma split h
+bindsym $mod+v split h
 
 # split in vertical orientation
-bindsym $mod+period split v
+bindsym $mod+s split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -102,10 +102,10 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # Make the currently focused window a scratchpad
-bindsym $mod+shift+s move scratchpad
+bindsym $mod+shift+minus move scratchpad
 
 # Show the first scratchpad window
-bindsym $mod+s scratchpad show
+bindsym $mod+minus scratchpad show
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -216,9 +216,9 @@ exec_always --no-startup-id autorandr -c
 for_window [class="^.*"] border pixel 4
 gaps inner 0
 gaps outer 0
-bindsym $mod+plus gaps inner all plus 2
-bindsym $mod+minus gaps inner all minus 2
-bindsym $mod+shift+minus gaps inner all set 0
+bindsym $mod+mod1+plus gaps inner all plus 2
+bindsym $mod+mod1+minus gaps inner all minus 2
+bindsym $mod+mod1+shift+minus gaps inner all set 0
 
 for_window [class="Nautilus"] floating enable
 for_window [window_role="pop-up"] floating enable
