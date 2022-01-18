@@ -3,8 +3,11 @@ include () {
 }
 
 # Antibody
-alias antibody='antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh'
-[[ ! -f ~/.zsh_plugins.sh ]] && antibody
+alias antibody_setup='antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh'
+command -v antibody >/dev/null\
+  && [ -f ~/.zsh_plugins.txt ] \
+  && [ ! -f ~/.zsh_plugins.sh ] \
+  && antibody_setup
 include ~/.zsh_plugins.sh
 
 PURE_PROMPT_SYMBOL=λ
@@ -94,16 +97,16 @@ export FZF_DEFAULT_OPTS='--height 50% --layout=reverse --preview-window right:70
 # Kubernetes
 # Set the default kube context if present
 DEFAULT_KUBE_CONTEXTS="$HOME/.kube/config"
-if [[ -f "${DEFAULT_KUBE_CONTEXTS}" ]]
+if [ -f "${DEFAULT_KUBE_CONTEXTS}" ]
 then
-	export KUBECONFIG="$DEFAULT_KUBE_CONTEXTS"
+  export KUBECONFIG="$DEFAULT_KUBE_CONTEXTS"
 fi
 # Additional contexts should be in ~/.kube/contexts
 CUSTOM_KUBE_CONTEXTS="$HOME/.kube/contexts"
 mkdir -p "$CUSTOM_KUBE_CONTEXTS"
 for context_file in `fd '.*.yaml' -t f "$CUSTOM_KUBE_CONTEXTS"`
 do
-	export KUBECONFIG="$context_file:$KUBECONFIG"
+  export KUBECONFIG="$context_file:$KUBECONFIG"
 done
 
 # Aliases
