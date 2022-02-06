@@ -14,6 +14,10 @@ PURE_PROMPT_SYMBOL=λ
 
 # ZSH Vi Mode
 bindkey -v
+bindkey "^?" backward-delete-char
+bindkey "^W" backward-kill-word
+bindkey "^H" backward-delete-char
+bindkey "^U" backward-kill-line
 
 # ZSH History
 setopt extended_history
