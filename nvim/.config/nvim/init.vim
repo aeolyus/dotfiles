@@ -281,7 +281,7 @@ let g:LanguageClient_serverCommands = {
     \ 'java': ['jdtls', '--stdio'],
     \ 'javascript': ['javascript-typescript-stdio'],
     \ 'javascriptreact': ['javascript-typescript-stdio'],
-    \ 'python': ['pyls'],
+    \ 'python': ['pylsp'],
     \ 'scala': ['metals-vim'],
     \ 'sh': ['bash-language-server', 'start'],
     \ 'tex': ['texlab'],
