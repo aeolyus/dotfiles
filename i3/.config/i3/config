@@ -211,6 +211,7 @@ exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 # Always executed
 exec_always --no-startup-id ~/.fehbg
 exec_always --no-startup-id autorandr -c
+exec_always --no-startup-id nm-applet
 
 # Gaps
 for_window [class="^.*"] border pixel 4
