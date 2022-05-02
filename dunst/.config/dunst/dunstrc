@@ -18,7 +18,7 @@
     corner_radius = 2
 
     ### Text ###
-    font = Hack 10
+    font = Hack Nerd Font Mono 10
     line_height = 0
     markup = full
     format = "<b>%s</b>\n%b"
