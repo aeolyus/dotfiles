@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+HISTFILE=~/.zsh_history
+TEMP_HISTFILE=~/.zsh_history_bad
+
+mv $HISTFILE $TEMP_HISTFILE
+# Write all printable strings into a new .zsh_history file
+strings $TEMP_HISTFILE > $HISTFILE
+# Reload the history
+fc -R $HISTFILE
+rm -rf $TEMP_HISTFILE
