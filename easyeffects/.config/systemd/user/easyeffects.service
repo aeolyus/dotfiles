@@ -1,0 +1,12 @@
+[Unit]
+Description=Easy Effects run in background
+StartLimitIntervalSec=500
+StartLimitBurst=5
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/easyeffects --gapplication-service
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
