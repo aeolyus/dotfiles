@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+# Generate a file-sharing URL with 0x0.st
+#
+# Usage:
+#   fileshare <filepath>
+
+if [ "$1" = "" ]; then
+  # Print help text and exit.
+  sed -ne '/^#/!q;s/.\{1,2\}//;1d;p' < "$0"
+  exit 1
+fi
+curl -F 'file=@'"$1" https://0x0.st
