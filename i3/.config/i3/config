@@ -194,7 +194,7 @@ bindsym Shift + Print exec maim -u | xclip -selection clipboard -t image/png
 
 # Lock screen
 bindsym $mod+mod1+l exec --no-startup-id ~/dotfiles/spells/i3blurlock
-bindsym $mod+mod1+s exec --no-startup-id systemctl suspend
+bindsym $mod+mod1+s exec --no-startup-id systemctl suspend-then-hibernate
 bindsym $mod+mod1+h exec --no-startup-id systemctl hibernate
 
 # Swap ctrl and caps
