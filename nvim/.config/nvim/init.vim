@@ -282,6 +282,7 @@ let g:LanguageClient_serverCommands = {
     \ 'typescript': ['javascript-typescript-stdio'],
     \ 'typescriptreact': ['javascript-typescript-stdio'],
     \ 'vim': ['vim-language-server', '--stdio'],
+    \ 'rust': ['rustup', 'run', 'stable', 'rust-analyzer'],
     \ }
 nmap <silent> <F5> <Plug>(lcn-menu)
 nmap <silent> K <Plug>(lcn-hover)
