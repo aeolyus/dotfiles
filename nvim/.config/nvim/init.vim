@@ -18,7 +18,6 @@ Plug 'tpope/vim-commentary'
 " Tools
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'lervag/vimtex'
 Plug 'jamessan/vim-gnupg'
 Plug 'junegunn/vim-easy-align'
 Plug 'azadkuh/vim-cmus'
@@ -183,11 +182,6 @@ nmap <silent> <silent> <leader>g :Goyo<CR>
 " Vim-Go
 let g:go_fmt_fail_silently = 1
 let g:go_fmt_experimental=1
-
-" Vimtex
-let g:tex_flavor='latex'
-let g:vimtex_view_method='zathura'
-let g:vimtex_quickfix_latexlog = {'default' : 0}
 
 " EasyAlign
 " Start interactive EasyAlign in visual mode (e.g. vipga)
