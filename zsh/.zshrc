@@ -89,6 +89,7 @@ export LESSHISTFILE=-
 export GPG_TTY=$(tty)
 export BAT_THEME=base16
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+export LEDGER_FILE=$HOME/Documents/finance/ledger/journals/current.journal
 
 # FZF
 include ~/.fzf.zsh
@@ -137,3 +138,4 @@ if [ -x "$(command -v kubectl)" ]; then
 fi
 alias ze="$EDITOR $HOME/dotfiles/zsh/.zshrc"
 alias ve="$EDITOR $HOME/dotfiles/nvim/.config/nvim/init.vim"
+alias hl=hledger
