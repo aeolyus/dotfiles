@@ -37,7 +37,13 @@ return require('packer').startup(function(use)
 	  {'hrsh7th/nvim-cmp'},     -- Required
 	  {'hrsh7th/cmp-nvim-lsp'}, -- Required
 	  {'L3MON4D3/LuaSnip'},     -- Required
-  }
+  },
+  use {
+	  'shaunsingh/nord.nvim',
+	  config = function()
+		  vim.cmd('colorscheme nord')
+	  end
+  },
 }
   -- My plugins here
   -- use 'foo1/bar1.nvim'
