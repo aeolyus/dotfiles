@@ -1,5 +1,13 @@
 vim.g.mapleader = ";"
 
+-- General
+vim.keymap.set("n", "<leader>s", ":w<CR>")
+vim.keymap.set("n", "<leader>z", ":x<CR>")
+vim.keymap.set("n", "<leader>x", ":xa<CR>")
+vim.keymap.set("n", "<leader>q", ":qa<CR>")
+vim.keymap.set("n", "<leader>y", "+y")
+vim.keymap.set("n", "<leader><leader>", ";")
+
 -- Window Navigation
 vim.keymap.set("n", "<leader>h", "<C-w>h")
 vim.keymap.set("n", "<leader>j", "<C-w>j")
