@@ -25,3 +25,8 @@ vim.keymap.set("n", "tn", ":tabnew<CR>")
 -- Use g[jk] for vertical movement in wrapped lines when no count is specified
 vim.keymap.set("n",  "<expr> k", "(v:count == 0 ? 'gk' : 'k'")
 vim.keymap.set("n",  "<expr> j", "(v:count == 0 ? 'gj' : 'j'")
+
+-- Center searches
+vim.keymap.set("n", "n", "nzz")
+vim.keymap.set("n", "N", "Nzz")
+vim.keymap.set("n", "*", "*N")
