@@ -1,2 +1,15 @@
 vim.g.mapleader = ";"
-vim.keymap.set("n", "<C-space>", vim.cmd.Ex)
+
+-- Window Navigation
+vim.keymap.set("n", "<leader>h", "<C-w>h")
+vim.keymap.set("n", "<leader>j", "<C-w>j")
+vim.keymap.set("n", "<leader>k", "<C-w>k")
+vim.keymap.set("n", "<leader>l", "<C-w>l")
+vim.keymap.set("n", "<leader>H", "<C-w>H")
+vim.keymap.set("n", "<leader>J", "<C-w>J")
+vim.keymap.set("n", "<leader>K", "<C-w>K")
+vim.keymap.set("n", "<leader>L", "<C-w>L")
+vim.keymap.set("n", "<C-H>", ":vertical resize -5<CR>")
+vim.keymap.set("n", "<C-J>", ":resize +5<CR>")
+vim.keymap.set("n", "<C-K>", ":resize -5<CR>")
+vim.keymap.set("n", "<C-L>", ":vertical resize +5<CR>")
