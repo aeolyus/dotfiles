@@ -13,3 +13,11 @@ vim.keymap.set("n", "<C-H>", ":vertical resize -5<CR>")
 vim.keymap.set("n", "<C-J>", ":resize +5<CR>")
 vim.keymap.set("n", "<C-K>", ":resize -5<CR>")
 vim.keymap.set("n", "<C-L>", ":vertical resize +5<CR>")
+
+-- Tab Navigation
+vim.keymap.set("n", "th", ":tabfirst<CR>")
+vim.keymap.set("n", "tj", ":tabnext<CR>")
+vim.keymap.set("n", "tk", ":tabprev<CR>")
+vim.keymap.set("n", "tl", ":tablast<CR>")
+vim.keymap.set("n", "td", ":tabclose<CR>")
+vim.keymap.set("n", "tn", ":tabnew<CR>")
