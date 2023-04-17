@@ -43,6 +43,7 @@ return require('packer').startup(function(use)
 }
   -- Tools
   use 'nvim-tree/nvim-tree.lua'
+  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
   -- Source Code Management
   use 'mhinz/vim-signify'
   use 'tpope/vim-fugitive'
