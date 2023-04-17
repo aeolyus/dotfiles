@@ -7,6 +7,9 @@ vim.keymap.set("n", "<leader>x", ":xa<CR>")
 vim.keymap.set("n", "<leader>q", ":qa<CR>")
 vim.keymap.set("n", "<leader>y", "+y")
 vim.keymap.set("n", "<leader><leader>", ";")
+vim.keymap.set("n", "<space><space>", ":buffer #<CR>")
+vim.keymap.set("n", "<leader><space>", ":nohlsearch<CR>")
+vim.keymap.set("n", "<leader>d", ":bp<bar>bd#<CR>")
 
 -- Window Navigation
 vim.keymap.set("n", "<leader>h", "<C-w>h")
