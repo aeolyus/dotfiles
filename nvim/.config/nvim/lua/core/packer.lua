@@ -49,6 +49,10 @@ return require('packer').startup(function(use)
 		  vim.cmd('colorscheme nord')
 	  end
   }
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
   -- Text manipulation
   use 'tpope/vim-surround'
   use 'tpope/vim-commentary'
