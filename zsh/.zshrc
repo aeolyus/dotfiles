@@ -137,5 +137,5 @@ if [ -x "$(command -v kubectl)" ]; then
   alias k='kubectl'
 fi
 alias ze="$EDITOR $HOME/dotfiles/zsh/.zshrc"
-alias ve="$EDITOR $HOME/dotfiles/nvim/.config/nvim/init.vim"
+alias ve="$EDITOR $HOME/dotfiles/nvim/.config/nvim/init.lua"
 alias hl=hledger
