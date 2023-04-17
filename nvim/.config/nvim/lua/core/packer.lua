@@ -59,8 +59,9 @@ return require('packer').startup(function(use)
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
   -- Text manipulation
-  use 'tpope/vim-surround'
   use 'tpope/vim-commentary'
+  use 'tpope/vim-repeat'
+  use 'tpope/vim-surround'
   -- Automatically set up configuration after cloning packer.nvim
   if packer_bootstrap then
     require('packer').sync()

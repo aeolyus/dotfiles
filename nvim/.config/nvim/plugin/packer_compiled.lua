@@ -170,6 +170,11 @@ _G.packer_plugins = {
     path = "/home/aeolyus/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
+  ["vim-repeat"] = {
+    loaded = true,
+    path = "/home/aeolyus/.local/share/nvim/site/pack/packer/start/vim-repeat",
+    url = "https://github.com/tpope/vim-repeat"
+  },
   ["vim-signify"] = {
     loaded = true,
     path = "/home/aeolyus/.local/share/nvim/site/pack/packer/start/vim-signify",
