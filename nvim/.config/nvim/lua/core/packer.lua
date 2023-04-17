@@ -38,19 +38,21 @@ return require('packer').startup(function(use)
 	  {'hrsh7th/cmp-nvim-lsp'}, -- Required
 	  {'L3MON4D3/LuaSnip'},     -- Required
   },
+}
+  -- Source Code Management
+  use 'mhinz/vim-signify'
+  use 'tpope/vim-fugitive'
+  -- Aesthetics
   use {
 	  'shaunsingh/nord.nvim',
 	  config = function()
 		  vim.cmd('colorscheme nord')
 	  end
-  },
-}
-  -- My plugins here
-  -- use 'foo1/bar1.nvim'
-  -- use 'foo2/bar2.nvim'
-
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
+  }
+  -- Text manipulation
+  use 'tpope/vim-surround'
+  use 'tpope/vim-commentary'
+  -- Automatically set up configuration after cloning packer.nvim
   if packer_bootstrap then
     require('packer').sync()
   end
