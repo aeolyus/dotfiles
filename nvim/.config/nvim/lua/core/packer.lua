@@ -45,6 +45,7 @@ return require('packer').startup(function(use)
   use 'nvim-tree/nvim-tree.lua'
   use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
   use 'lukas-reineke/indent-blankline.nvim'
+  use 'jamessan/vim-gnupg'
   -- Source Code Management
   use 'mhinz/vim-signify'
   use 'tpope/vim-fugitive'
