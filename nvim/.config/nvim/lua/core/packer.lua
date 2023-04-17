@@ -39,6 +39,8 @@ return require('packer').startup(function(use)
 	  {'L3MON4D3/LuaSnip'},     -- Required
   },
 }
+  -- Tools
+  use 'nvim-tree/nvim-tree.lua'
   -- Source Code Management
   use 'mhinz/vim-signify'
   use 'tpope/vim-fugitive'
