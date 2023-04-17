@@ -41,3 +41,9 @@ vim.keymap.set("n",  "<expr> j", "(v:count == 0 ? 'gj' : 'j'")
 vim.keymap.set("n", "n", "nzz")
 vim.keymap.set("n", "N", "Nzz")
 vim.keymap.set("n", "*", "*N")
+
+-- Get off my lawn
+vim.keymap.set("n", "<Left>", 'h:echoerr "Use h"<CR>')
+vim.keymap.set("n", "<Down>", 'j:echoerr "Use j"<CR>')
+vim.keymap.set("n", "<Up>", 'k:echoerr "Use k"<CR>')
+vim.keymap.set("n", "<Right>", 'l:echoerr "Use l"<CR>')
