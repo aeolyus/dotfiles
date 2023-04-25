@@ -56,12 +56,7 @@ return require('packer').startup(function(use)
   use 'mhinz/vim-signify'
   use 'tpope/vim-fugitive'
   -- Aesthetics
-  use {
-    'shaunsingh/nord.nvim',
-    config = function()
-      vim.cmd('colorscheme nord')
-    end
-  }
+  use 'shaunsingh/nord.nvim'
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
