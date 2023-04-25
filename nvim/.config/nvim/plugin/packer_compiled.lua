@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/home/aeolyus/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["cmp-nvim-lua"] = {
+    loaded = true,
+    path = "/home/aeolyus/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua",
+    url = "https://github.com/hrsh7th/cmp-nvim-lua"
+  },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/home/aeolyus/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
