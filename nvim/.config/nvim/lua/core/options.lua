@@ -30,7 +30,7 @@ opt.relativenumber = true
 opt.list = true
 opt.listchars = "tab:| ,trail:.,extends:>,precedes:<,nbsp:␣"
 -- Set indent to be 2 spaces
-opt.shiftwidth=2
+opt.shiftwidth = 2
 -- Uses spaces to insert a tab
 opt.expandtab = true
 -- Lines with equal indent form a fold
