@@ -1,14 +1,14 @@
 # Navigation
-cmd - h : yabai -m window --focus west
-cmd - j : yabai -m window --focus south
-cmd - k : yabai -m window --focus north
-cmd - l : yabai -m window --focus east
+alt - h : yabai -m window --focus west
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - l : yabai -m window --focus east
 
 # Moving windows
-shift + cmd - h : yabai -m window --warp west
-shift + cmd - j : yabai -m window --warp south
-shift + cmd - k : yabai -m window --warp north
-shift + cmd - l : yabai -m window --warp east
+shift + alt - h : yabai -m window --warp west
+shift + alt - j : yabai -m window --warp south
+shift + alt - k : yabai -m window --warp north
+shift + alt - l : yabai -m window --warp east
 
 # Move floating window
 shift + alt - h : yabai -m window --move rel:-20:0
@@ -17,7 +17,7 @@ shift + alt - k : yabai -m window --move rel:0:-20
 shift + alt - l : yabai -m window --move rel:20:0
 
 # Float/unfloat windows
-shift + cmd - space : yabai -m window --toggle float; \
+shift + alt - space : yabai -m window --toggle float; \
 yabai -m window --grid 4:4:1:1:2:2
 
 # Fullscreen
@@ -55,31 +55,31 @@ ctrl + alt - n      : yabai -m space --create && \
 ctrl + alt - d      : yabai -m space --destroy
 
 # Workspace focus
-cmd - 1      : yabai -m space --focus 1
-cmd - 2      : yabai -m space --focus 2
-cmd - 3      : yabai -m space --focus 3
-cmd - 4      : yabai -m space --focus 4
-cmd - 5      : yabai -m space --focus 5
-cmd - 6      : yabai -m space --focus 6
-cmd - 7      : yabai -m space --focus 7
-cmd - 8      : yabai -m space --focus 8
-cmd - 9      : yabai -m space --focus 9
-cmd - 0      : yabai -m space --focus 10
+alt - 1      : yabai -m space --focus 1
+alt - 2      : yabai -m space --focus 2
+alt - 3      : yabai -m space --focus 3
+alt - 4      : yabai -m space --focus 4
+alt - 5      : yabai -m space --focus 5
+alt - 6      : yabai -m space --focus 6
+alt - 7      : yabai -m space --focus 7
+alt - 8      : yabai -m space --focus 8
+alt - 9      : yabai -m space --focus 9
+alt - 0      : yabai -m space --focus 10
 
 # Move windows to another workspace
-cmd + shift - 1 : yabai -m window --space 1
-cmd + shift - 2 : yabai -m window --space 2
-cmd + shift - 3 : yabai -m window --space 3
-cmd + shift - 4 : yabai -m window --space 4
-cmd + shift - 5 : yabai -m window --space 5
-cmd + shift - 6 : yabai -m window --space 6
-cmd + shift - 7 : yabai -m window --space 7
-cmd + shift - 8 : yabai -m window --space 8
-cmd + shift - 9 : yabai -m window --space 9
-cmd + shift - 0 : yabai -m window --space 10
+alt + shift - 1 : yabai -m window --space 1
+alt + shift - 2 : yabai -m window --space 2
+alt + shift - 3 : yabai -m window --space 3
+alt + shift - 4 : yabai -m window --space 4
+alt + shift - 5 : yabai -m window --space 5
+alt + shift - 6 : yabai -m window --space 6
+alt + shift - 7 : yabai -m window --space 7
+alt + shift - 8 : yabai -m window --space 8
+alt + shift - 9 : yabai -m window --space 9
+alt + shift - 0 : yabai -m window --space 10
 
 # Terminal
-cmd - return : pgrep -f "iTerm" \
+alt - return : pgrep -f "iTerm" \
   && osascript -e 'tell application "iTerm2" to create window with default profile' \
   || open - a "/Applications/iTerm.app"
 
@@ -89,4 +89,4 @@ yabai -m window --toggle topmost;\
 yabai -m window --toggle pip
 
 # Restart
-cmd + shift - r : brew services restart skhd && brew services restart yabai
+alt + shift - r : brew services restart skhd && brew services restart yabai
