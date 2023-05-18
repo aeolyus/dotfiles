@@ -1,0 +1,23 @@
+#!/usr/bin/env sh
+
+spacebar -m config position bottom
+spacebar -m config text_font "Hack Nerd Font Mono:Regular:14"
+spacebar -m config icon_font "Hack Nerd Font Mono:Regular:14"
+spacebar -m config clock_format         "%Y-%m-%d %R"
+spacebar -m config title                on
+spacebar -m config spaces               on
+spacebar -m config clock                on
+spacebar -m config power                on
+spacebar -m config space_icon_strip          
+
+spacebar -m config padding_left         20
+spacebar -m config padding_right        20
+spacebar -m config spacing_left         25
+spacebar -m config spacing_right        40
+
+spacebar -m config power_icon_strip      
+spacebar -m config space_icon           
+spacebar -m config clock_icon           
+spacebar -m config dnd_icon             
+
+echo "spacebar configuration loaded.."
