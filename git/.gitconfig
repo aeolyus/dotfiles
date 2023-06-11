@@ -52,7 +52,7 @@
   b = branch
   bb = branch -a
   bd = branch -d
-  cherry-pit = "!f() { git rebase -p --onto \"$1\"^ \"$1\"; }; f"
+  cherry-pit = "!f() { git rebase --rebase-merges --onto \"$1\"^ \"$1\"; }; f"
   cm = commit -m
   co = checkout
   d = diff
