@@ -47,3 +47,6 @@ vim.keymap.set("n", "<Left>", 'h:echoerr "Use h"<CR>')
 vim.keymap.set("n", "<Down>", 'j:echoerr "Use j"<CR>')
 vim.keymap.set("n", "<Up>", 'k:echoerr "Use k"<CR>')
 vim.keymap.set("n", "<Right>", 'l:echoerr "Use l"<CR>')
+
+-- Diagnotics
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
