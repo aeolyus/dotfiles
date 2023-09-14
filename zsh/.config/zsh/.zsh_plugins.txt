@@ -7,6 +7,5 @@ robbyrussell/oh-my-zsh path:plugins/gitfast
 robbyrussell/oh-my-zsh path:plugins/colored-man-pages
 
 # Theme
-arcticicestudio/nord-xresources path:src
 chriskempson/base16-shell
 sindresorhus/pure
