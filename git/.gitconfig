@@ -41,6 +41,7 @@
   amend = commit --amend
   b = branch
   bb = branch -a
+  bc = "!f() { git branch --merged | grep -Ev '(^\\*|master|main)' | xargs -r git branch -d; }; f"
   bd = branch -d
   cherry-pit = "!f() { git rebase --rebase-merges --onto \"$1\"^ \"$1\"; }; f"
   cm = commit -m
