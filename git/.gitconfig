@@ -62,4 +62,4 @@
   pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
 
 [gpg]
-  program = gpg2
+  program = gpg
