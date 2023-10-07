@@ -1,3 +1,21 @@
+# Start profiling (uncomment when necessary)
+# See https://stackoverflow.com/a/4351664/11443630
+
+# Per command profiling
+# logfile=$(mktemp zsh_profile.XXXXXX)
+# echo "logging to $logfile"
+# # Set debugging trace line prefix to unix epoch
+# zmodload zsh/datetime
+# PS4='+$EPOCHREALTIME %N:%i> '
+# # Save stderr to fd 3 and redirect stderr (including trace output) to a file
+# # with the script's PID as an extension
+# exec 3>&2 2> $logfile
+# # Turn on tracing and expansion of commands contained in the prompt
+# setopt xtrace prompt_subst
+
+# Per function profiling
+# zmodload zsh/zprof
+
 include () {
   test -f "$@" && source "$@"
 }
@@ -148,3 +166,14 @@ fi
 alias ze="$EDITOR $HOME/dotfiles/zsh/.zshrc"
 alias ve="$EDITOR $HOME/dotfiles/nvim/.config/nvim/init.lua"
 alias hl=hledger
+
+# End profiling
+
+# # Per command profiling
+# # Turn off tracing
+# unsetopt xtrace
+# # Restore stderr to the value saved in fd 3
+# exec 2>&3 3>&-
+
+# Per function profiling
+# zprof
