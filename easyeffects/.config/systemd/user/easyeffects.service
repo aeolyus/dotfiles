@@ -9,4 +9,4 @@ ExecStart=/usr/bin/easyeffects --gapplication-service
 Restart=always
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
