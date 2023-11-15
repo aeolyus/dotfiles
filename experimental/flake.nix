@@ -18,11 +18,30 @@
     };
   };
 
-  outputs = { nixpkgs, darwin, ... }: {
+  outputs = { nixpkgs, darwin, home-manager, ... }: {
     darwinConfigurations."aarch64-darwin" = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       modules = [
         ./darwin
+        {
+          users.users.richardhuang.name = "richardhuang";
+          users.users.richardhuang.home = "/Users/richardhuang";
+        }
+
+        home-manager.darwinModules.home-manager
+        {
+          # By default, Home Manager uses a private pkgs instance that is
+          # configured via the home-manager.users.$USERNAME.nixpkgs options.
+          # Instead, this saves an extra Nixpkgs evaluation, adds consistency,
+          # and removes the dependency on NIX_PATH, which is otherwise used for
+          # importing Nixpkgs.
+          home-manager.useGlobalPkgs = true;
+          # By default user packages will not be ignored in favor of
+          # environment.systemPackages. Instead, they will be installed to
+          # /etc/profiles/per-user/$USERNAME
+          home-manager.useUserPackages = true;
+          home-manager.users.richardhuang = import ./home;
+        }
       ];
     };
 
