@@ -90,7 +90,6 @@ zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm"
 zstyle ':completion:*:*:kill:*' menu yes select
 
 # Environment Variables
-export TERM=xterm-256color
 export EDITOR=nvim
 export GOPATH=$HOME/go
 export PATH=$PATH:$HOME/dotfiles/spells:$GOPATH/bin:$HOME/bin:$HOME/.cargo/bin
