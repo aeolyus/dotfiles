@@ -1,2 +1,4 @@
+# nix build out symlink
+result*
 # packer.nvim generated plugin loader code
 packer_compiled.lua
