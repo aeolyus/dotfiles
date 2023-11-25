@@ -1,11 +1,30 @@
 {
-  description = "A very basic flake";
+  description = "macOS configuration";
 
-  outputs = { self, nixpkgs }: {
+  # A set of nix.conf options specific to this flake
+  nixConfig = {
+    experimental-features = [ "nix-command" "flakes" ];
+  };
 
-    packages.aarch64-darwin.hello = nixpkgs.legacyPackages.aarch64-darwin.hello;
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    darwin = {
+      url = "github:lnl7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
 
-    packages.aarch64-darwin.default = self.packages.aarch64-darwin.hello;
+  outputs = { nixpkgs, darwin, ... }: {
+    darwinConfigurations."aarch64-darwin" = darwin.lib.darwinSystem {
+      system = "aarch64-darwin";
+      modules = [
+        ./modules/nix.nix
+        ./modules/system.nix
+      ];
+    };
 
+    # nix fmt formatter
+    formatter.aarch64-darwin =
+      nixpkgs.legacyPackages.aarch64-darwin.nixpkgs-fmt;
   };
 }
