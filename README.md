@@ -23,7 +23,6 @@ There's no place like ~/
  urxvt      > 256 color terminal and some extensions
  vscode     > code editor
  xmap       > some keybindings
- yabai      > tiling window manager for macOS
  zathura    > document viewer
  zsh        > plugins, themes, and config
  ```
