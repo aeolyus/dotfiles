@@ -20,6 +20,7 @@
       modules = [
         ./modules/nix.nix
         ./modules/system.nix
+        ./modules/services
       ];
     };
 
