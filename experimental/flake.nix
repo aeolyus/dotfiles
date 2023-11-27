@@ -24,6 +24,13 @@
       ];
     };
 
+    nixosConfigurations."toaster" = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./nixos/configuration.nix
+      ];
+    };
+
     # nix fmt formatter
     formatter.aarch64-darwin =
       nixpkgs.legacyPackages.aarch64-darwin.nixpkgs-fmt;
