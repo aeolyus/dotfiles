@@ -1,3 +1,30 @@
+# Default mode
+:: default
+
+# Workspace focus
+alt - 1 : yabai -m space --focus 1
+alt - 2 : yabai -m space --focus 2
+alt - 3 : yabai -m space --focus 3
+alt - 4 : yabai -m space --focus 4
+alt - 5 : yabai -m space --focus 5
+alt - 6 : yabai -m space --focus 6
+alt - 7 : yabai -m space --focus 7
+alt - 8 : yabai -m space --focus 8
+alt - 9 : yabai -m space --focus 9
+alt - 0 : yabai -m space --focus 10
+
+# Move windows to another workspace
+alt + shift - 1 : yabai -m window --space 1
+alt + shift - 2 : yabai -m window --space 2
+alt + shift - 3 : yabai -m window --space 3
+alt + shift - 4 : yabai -m window --space 4
+alt + shift - 5 : yabai -m window --space 5
+alt + shift - 6 : yabai -m window --space 6
+alt + shift - 7 : yabai -m window --space 7
+alt + shift - 8 : yabai -m window --space 8
+alt + shift - 9 : yabai -m window --space 9
+alt + shift - 0 : yabai -m window --space 10
+
 # Navigation
 alt - h : yabai -m window --focus west
 alt - j : yabai -m window --focus south
@@ -25,12 +52,15 @@ alt - f : yabai -m window --toggle zoom-fullscreen
 shift + alt - f : yabai -m window --toggle native-fullscreen
 
 # Resize mode
-:: resize @ : yabai -m config window_border on
-:: default : yabai -m config window_border off
-# Enter resize mode
+:: resize @
+
+## Enter resize mode
 alt - r ; resize
-# Leave resize mode
+
+## Leave resize mode
 resize < escape ; default
+
+## Resize mode key bindings
 resize < h : \
     yabai -m window --resize left:-20:0 ; \
     yabai -m window --resize right:-20:0
@@ -69,34 +99,10 @@ shift + alt - 0 : yabai -m space --balance
 ctrl + alt - 0 : yabai -m space --balance
 
 # Workspace init
-ctrl + alt - n      : yabai -m space --create && \
+ctrl + alt - n : yabai -m space --create && \
                       index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
                       yabai -m space --focus "${index}"
-ctrl + alt - d      : yabai -m space --destroy
-
-# Workspace focus
-alt - 1      : yabai -m space --focus 1
-alt - 2      : yabai -m space --focus 2
-alt - 3      : yabai -m space --focus 3
-alt - 4      : yabai -m space --focus 4
-alt - 5      : yabai -m space --focus 5
-alt - 6      : yabai -m space --focus 6
-alt - 7      : yabai -m space --focus 7
-alt - 8      : yabai -m space --focus 8
-alt - 9      : yabai -m space --focus 9
-alt - 0      : yabai -m space --focus 10
-
-# Move windows to another workspace
-alt + shift - 1 : yabai -m window --space 1
-alt + shift - 2 : yabai -m window --space 2
-alt + shift - 3 : yabai -m window --space 3
-alt + shift - 4 : yabai -m window --space 4
-alt + shift - 5 : yabai -m window --space 5
-alt + shift - 6 : yabai -m window --space 6
-alt + shift - 7 : yabai -m window --space 7
-alt + shift - 8 : yabai -m window --space 8
-alt + shift - 9 : yabai -m window --space 9
-alt + shift - 0 : yabai -m window --space 10
+ctrl + alt - d : yabai -m space --destroy
 
 # Terminal
 alt - return : pgrep -f "iTerm" \
