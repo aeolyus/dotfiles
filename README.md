@@ -16,7 +16,6 @@ There's no place like ~/
  ranger     > file manager
  redshift   > screen color temperature
  rofi       > application launcher
- skhd       > keyboard daemon for macOS
  spells     > some automation scripts
  ssh        > ssh-agent service config
  tmux       > terminal multiplexer
