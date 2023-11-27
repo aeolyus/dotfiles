@@ -104,7 +104,7 @@ alt - return : pgrep -f "iTerm" \
   || open - a "/Applications/iTerm.app"
 
 # Toggle sticky(+float), topmost, picture-in-picture
-alt - p : yabai -m window --toggle sticky;\
+cmd - p : yabai -m window --toggle sticky;\
 yabai -m window --toggle topmost;\
 yabai -m window --toggle pip
 
