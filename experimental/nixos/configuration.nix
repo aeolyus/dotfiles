@@ -38,9 +38,8 @@
   services.xserver.enable = true;
 
 
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  # Enable the i3 window manager
+  services.xserver.windowManager.i3.enable = true;
 
 
   # Configure keymap in X11
@@ -105,6 +104,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
-
 }
-
