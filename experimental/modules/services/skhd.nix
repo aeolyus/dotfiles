@@ -95,8 +95,8 @@
           yabai -m window --resize right:20:0 ; \
           yabai -m window --resize left:20:0
 
-      # Toggle window split type
-      alt - e : yabai -m window --toggle split
+      # Toggle window split type with semicolon
+      alt - 0x29 : yabai -m window --toggle split
 
       # Balance size of windows
       shift + alt - 0 : yabai -m space --balance
