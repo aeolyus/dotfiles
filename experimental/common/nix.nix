@@ -10,8 +10,6 @@
   nix.settings.auto-optimise-store = true;
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  # Enable the Nix daemon
-  services.nix-daemon.enable = true;
   # Do garbage collection weekly to keep disk usage low
   nix.gc = {
     automatic = true;

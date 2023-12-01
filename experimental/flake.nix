@@ -18,9 +18,7 @@
     darwinConfigurations."aarch64-darwin" = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       modules = [
-        ./modules/nix.nix
-        ./modules/system.nix
-        ./modules/services
+        ./darwin
       ];
     };
 
