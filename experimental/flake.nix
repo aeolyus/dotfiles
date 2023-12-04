@@ -30,7 +30,9 @@
     };
 
     # nix fmt formatter
-    formatter.aarch64-darwin =
-      nixpkgs.legacyPackages.aarch64-darwin.nixpkgs-fmt;
+    formatter = {
+      aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.nixpkgs-fmt;
+      x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
+    };
   };
 }
