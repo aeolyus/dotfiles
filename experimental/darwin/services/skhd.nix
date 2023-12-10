@@ -111,7 +111,7 @@
       # Terminal
       alt - return : pgrep -f "iTerm" \
         && osascript -e 'tell application "iTerm2" to create window with default profile' \
-        || open - a "/Applications/iTerm.app"
+        || open -a "/Applications/iTerm.app"
 
       # Toggle sticky(+float), topmost, picture-in-picture
       cmd - p : yabai -m window --toggle sticky;\
