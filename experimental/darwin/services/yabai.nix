@@ -28,8 +28,11 @@
       # Add padding for external status bar
       external_bar = "all:0:26";
     };
-    # Load scripting addition
     extraConfig = ''
+      # Float system settings
+      yabai -m rule --add app="^System Settings$" manage=off
+
+      # Load scripting addition
       yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
       sudo yabai --load-sa
     '';
