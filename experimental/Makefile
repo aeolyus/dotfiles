@@ -8,10 +8,14 @@ deploy: ## Bootstrap
 
 	./result/sw/bin/darwin-rebuild switch --flake .#aarch64-darwin
 
+.PHONY: lint
+lint: ## Run nix fmt and nix flake check
+	nix fmt
+	nix flake check --all-systems
+
 .PHONY: help
 help: Makefile ## Print this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
 		| sort \
 		| awk 'BEGIN {FS = ":.*?## "}; \
 		{printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
-
