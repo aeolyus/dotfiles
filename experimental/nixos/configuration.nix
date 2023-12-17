@@ -59,14 +59,18 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  # users.users.alice = {
-  #   isNormalUser = true;
-  #   extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-  #   packages = with pkgs; [
-  #     firefox
-  #     tree
-  #   ];
-  # };
+  users.users.aeolyus = {
+    isNormalUser = true;
+    # Don't forget to set a new password after login!
+    # https://xkcd.com/936/
+    initialPassword = "correct horse battery staple";
+    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    packages = with pkgs; [
+      git
+      google-chrome
+      vim
+    ];
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
