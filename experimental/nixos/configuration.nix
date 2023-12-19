@@ -64,7 +64,10 @@
     # Don't forget to set a new password after login!
     # https://xkcd.com/936/
     initialPassword = "correct horse battery staple";
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [
+      "wheel" # Enable ‘sudo’ for the user.
+      "networkmanager" # Allow changing network settings
+    ];
     packages = with pkgs; [
       git
       google-chrome
