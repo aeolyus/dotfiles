@@ -77,6 +77,7 @@
       google-chrome
       vim
     ];
+    shell = pkgs.zsh;
   };
 
   # List packages installed in system profile. To search, run:
@@ -85,6 +86,8 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     git
   ];
+
+  programs.zsh.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
