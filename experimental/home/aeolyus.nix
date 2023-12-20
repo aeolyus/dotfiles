@@ -3,8 +3,9 @@ let
 in
 {
   imports = [
-    ./zsh.nix
     ./fzf.nix
+    ./urxvt.nix
+    ./zsh.nix
   ];
 
   # Let Home Manager install and manage itself.
