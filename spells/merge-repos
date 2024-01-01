@@ -4,18 +4,18 @@
 #
 # The command is assumed to run in a new empty git repository. The list of
 # repos must be a space-delimited list of strings that are each composed of a
-# prefix to repo path mapping that is delimited by a colon. The prefix is the
-# subdirectory under which the repo will be placed.
+# prefix to repo path mapping that is delimited by a double colon "::". The
+# prefix is the subdirectory under which the repo will be placed.
 #
 # Usage:
-#   merge-repos (<prefix>:<repo>)...
+#   merge-repos (<prefix>::<repo>)...
 
 # Inspired by
 # https://detunized.net/posts/2019-02-15-git-fu-merge-multiple-repos-with-linear-history/
 
 set -e
 
-DELIMITER=":"
+DELIMITER="::"
 
 if [ "$1" = "" ] || [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
   # Print help text and exit.
@@ -29,8 +29,8 @@ branches=""
 # Put each repo in its own branch and rewrite the history to move all files in
 # each commit into a prefix subfolder
 for repo_info in $repo_infos; do
-  prefix=$(echo "$repo_info" | cut -d "$DELIMITER" -f1)
-  repo=$(echo "$repo_info" | cut -d "$DELIMITER" -f2)
+  prefix=$(echo "$repo_info" | awk -F"$DELIMITER" '{print $1}')
+  repo=$(echo "$repo_info" | awk -F"$DELIMITER" '{print $2}')
   remote="$prefix"
   branch="$prefix"
   branches="$branches $branch"
@@ -55,8 +55,8 @@ done
 
 # Clean up by deleting branches and running gargage collection
 for repo_info in $repo_infos; do
-  prefix=$(echo "$repo_info" | cut -d "$DELIMITER" -f1)
-  repo=$(echo "$repo_info" | cut -d "$DELIMITER" -f2)
+  prefix=$(echo "$repo_info" | awk -F"$DELIMITER" '{print $1}')
+  repo=$(echo "$repo_info" | awk -F"$DELIMITER" '{print $2}')
   remote="$prefix"
   branch="$prefix"
   git branch -D "$branch"
