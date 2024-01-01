@@ -1,12 +1,14 @@
 #!/usr/bin/env sh
-# Merges a list of repos together in a linear fashion
+# Merges a list of repos together with a linear history and puts each repo in
+# its own subdirectory in the resulting repo.
 #
-# The list of repos must be a space-delimited list of strings that are each
-# composed of a prefix to repo path mapping that is delimited by a colon. This
-# assumes the command is run in a new empty git repository.
+# The command is assumed to run in a new empty git repository. The list of
+# repos must be a space-delimited list of strings that are each composed of a
+# prefix to repo path mapping that is delimited by a colon. The prefix is the
+# subdirectory under which the repo will be placed.
 #
 # Usage:
-#   merge-repos <prefixA:repoA> [prefixB:repoB ...]
+#   merge-repos (<prefix>:<repo>)...
 
 # Inspired by
 # https://detunized.net/posts/2019-02-15-git-fu-merge-multiple-repos-with-linear-history/
