@@ -1,0 +1,64 @@
+#!/usr/bin/env sh
+# Merges a list of repos together in a linear fashion
+#
+# The list of repos must be a space-delimited list of strings that are each
+# composed of a prefix to repo path mapping that is delimited by a colon. This
+# assumes the command is run in a new empty git repository.
+#
+# Usage:
+#   merge-repos <prefixA:repoA> [prefixB:repoB ...]
+
+# Inspired by
+# https://detunized.net/posts/2019-02-15-git-fu-merge-multiple-repos-with-linear-history/
+
+set -e
+
+DELIMITER=":"
+
+if [ "$1" = "" ] || [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
+  # Print help text and exit.
+  sed -ne '/^#/!q;s/.\{1,2\}//;1d;p' < "$0"
+  exit 1
+fi
+
+repo_infos="$*"
+branches=""
+
+# Put each repo in its own branch and rewrite the history to move all files in
+# each commit into a prefix subfolder
+for repo_info in $repo_infos; do
+  prefix=$(echo "$repo_info" | cut -d "$DELIMITER" -f1)
+  repo=$(echo "$repo_info" | cut -d "$DELIMITER" -f2)
+  remote="$prefix"
+  branch="$prefix"
+  branches="$branches $branch"
+  git remote add "$remote" "$repo"
+  git fetch "$remote"
+  git checkout -b "$branch" "$remote/master"
+  git filter-branch \
+    -f \
+    --tree-filter \
+      "mkdir -p $prefix && rsync -a --remove-source-files ./ $prefix" \
+    "$branch"
+done
+
+# Create a clean master branch
+git checkout --orphan master
+git rm -rf .
+
+# Cherry pick the commits in chronological order into master branch
+for i in $(git rev-list --reverse --author-date-order $branches); do
+  git cherry-pick "$i"
+done
+
+# Clean up by deleting branches and running gargage collection
+for repo_info in $repo_infos; do
+  prefix=$(echo "$repo_info" | cut -d "$DELIMITER" -f1)
+  repo=$(echo "$repo_info" | cut -d "$DELIMITER" -f2)
+  remote="$prefix"
+  branch="$prefix"
+  git branch -D "$branch"
+  git remote remove "$remote"
+  git update-ref -d refs/original/refs/heads/"$branch"
+done
+git gc --aggressive
