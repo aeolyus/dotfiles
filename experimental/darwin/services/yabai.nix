@@ -31,6 +31,7 @@
     extraConfig = ''
       # Float system settings
       yabai -m rule --add app="^System Settings$" manage=off
+      yabai -m rule --add app="^System Information$" label="^About This Mac$" manage=off
 
       # Load scripting addition
       yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
