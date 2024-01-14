@@ -44,7 +44,7 @@
   bc = "!f() { git branch --merged | grep -Ev '(^\\*|master|main)' | xargs -r git branch -d; }; f"
   bd = branch -d
   bdf = "!f() { git branch | grep -v \"^*\" | fzf --height=20% --reverse --info=inline | xargs -r git branch -d; }; f"
-  bf = "!f() { git branch | grep -v \"^*\" | fzf --height=20% --reverse --info=inline | xargs -r git checkout; }; f"
+  bf = "!f() { git branch --format='%(refname:short)|%(objectname:short)|%(contents:subject)' --sort=-committerdate | column -t -s '|' | grep -v \"^*\" | fzf --height=20% --reverse --info=inline | awk '{print $1}' | xargs -r git checkout; }; f"
   cherry-pit = "!f() { git rebase --rebase-merges --onto \"$1\"^ \"$1\"; }; f"
   cm = commit -m
   co = checkout
