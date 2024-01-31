@@ -138,6 +138,7 @@ alias mpv='mpv --af=rubberband'
 alias emacs='emacs -nw'
 alias dc='docker-compose'
 alias d='docker'
+alias tf='terraform'
 if [ -x "$(command -v kubectl)" ]; then
   source <(kubectl completion zsh)
   compdef kubecolor='kubectl' # Make completion work with kubecolor
