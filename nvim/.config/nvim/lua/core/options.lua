@@ -45,6 +45,8 @@ opt.showmode = false
 opt.shortmess:append('c')
 -- Enable mouse support
 opt.mouse = 'a'
+-- Highlight screen column 80
+opt.colorcolumn = '80'
 
 -- Suppress netrw history
 g.netrw_dirhistmax = 0
