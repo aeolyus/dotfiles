@@ -8,6 +8,14 @@ vim.keymap.set('n', '<C-c>', builtin.commands, {})
 
 telescope.load_extension('fzf')
 telescope.setup({
+  defaults = {
+    mappings = {
+      i = {
+        -- Default mapped to scroll up, disable to allow clear
+        ["<C-u>"] = false
+      },
+    },
+  },
   pickers = {
     find_files = {
       hidden = true
