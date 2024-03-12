@@ -18,7 +18,7 @@
     };
   };
 
-  outputs = { nixpkgs, darwin, ... }: {
+  outputs = { nixpkgs, darwin, home-manager, ... }: {
     darwinConfigurations."aarch64-darwin" = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       modules = [
@@ -29,7 +29,9 @@
     nixosConfigurations."toaster" = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
+        home-manager.nixosModules.home-manager
         ./nixos/configuration.nix
+        ./home
       ];
     };
 
