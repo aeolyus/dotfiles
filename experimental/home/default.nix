@@ -10,5 +10,9 @@
     # By default packages will be installed to $HOME/.nix-profile. Instead,
     # install to /etc/profiles
     useUserPackages = true;
+
+    users = {
+      aeolyus = import ./aeolyus.nix;
+    };
   };
 }
