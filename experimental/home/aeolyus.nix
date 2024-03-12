@@ -4,6 +4,7 @@ in
 {
   imports = [
     ./zsh.nix
+    ./fzf.nix
   ];
 
   # Let Home Manager install and manage itself.
