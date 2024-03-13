@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 let
   # Nord XResources
   # https://github.com/arcticicestudio/nord-xresources
@@ -33,6 +34,14 @@ in
     };
     # Disable ISO 14755 Ctrl+Shift keybind
     iso14755 = false;
+    fonts = [
+      "xft:DejaVu Sans Mono:size=9"
+    ];
+    keybindings = {
+      "C-equal" = "resize-font:bigger";
+      "C-minus" = "resize-font:smaller";
+      "C-0" = "resize-font:reset";
+    };
     extraConfig = {
       # Disable printing the terminal contents when pressing PrintScreen
       print-pipe = "cat > /dev/null";
@@ -59,6 +68,13 @@ in
       color13 = nord15;
       color14 = nord7;
       color15 = nord6;
+
+      # Extensions
+      perl-lib = "${pkgs.rxvt-unicode}/lib/urxvt/perl";
+      perl-ext-common = builtins.concatStringsSep "," [
+        "default" # Keep default extensions
+        "resize-font" # Enable font resizing
+      ];
     };
   };
 }
