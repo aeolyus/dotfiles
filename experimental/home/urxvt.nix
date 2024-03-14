@@ -74,6 +74,7 @@ in
       perl-ext-common = builtins.concatStringsSep "," [
         "default" # Keep default extensions
         "resize-font" # Enable font resizing
+        "selection-to-clipboard" # Auto copy selection to the clipboard
         "-confirm-paste" # Disable confirmation before pasting multiline text
       ];
     };
