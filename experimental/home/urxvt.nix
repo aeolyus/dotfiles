@@ -73,6 +73,7 @@ in
       perl-lib = "${pkgs.rxvt-unicode}/lib/urxvt/perl";
       perl-ext-common = builtins.concatStringsSep "," [
         "default" # Keep default extensions
+        "matcher" # Match strings to change their rendition (defaults for URLs)
         "resize-font" # Enable font resizing
         "selection-to-clipboard" # Auto copy selection to the clipboard
         "-confirm-paste" # Disable confirmation before pasting multiline text
