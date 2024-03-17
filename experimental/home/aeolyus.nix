@@ -6,6 +6,7 @@ in
     ./fzf.nix
     ./urxvt.nix
     ./zsh.nix
+    ./i3.nix
   ];
 
   # Let Home Manager install and manage itself.

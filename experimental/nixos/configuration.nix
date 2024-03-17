@@ -41,12 +41,18 @@
   services.xserver = {
     enable = true;
     xkbOptions = "ctrl:swapcaps";
+    # Use a fake session to let Home Manager take care of the X session
+    # https://github.com/nix-community/home-manager/issues/391
+    desktopManager.session = [
+      {
+        name = "home-manager";
+        start = ''
+          ${pkgs.runtimeShell} $HOME/.xsession &
+          waitPID=$!
+        '';
+      }
+    ];
   };
-
-
-  # Enable the i3 window manager
-  services.xserver.windowManager.i3.enable = true;
-
 
   # Configure keymap in X11
   # services.xserver.layout = "us";
