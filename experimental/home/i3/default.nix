@@ -1,6 +1,7 @@
 {
   imports = [
     ./keybindings.nix
+    ./modes.nix
   ];
 
   xsession = {
