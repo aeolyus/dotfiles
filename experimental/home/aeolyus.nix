@@ -7,6 +7,7 @@ in
     ./urxvt.nix
     ./zsh.nix
     ./i3
+    ./gpg.nix
   ];
 
   # Let Home Manager install and manage itself.
