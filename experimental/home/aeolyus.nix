@@ -8,6 +8,7 @@ in
     ./zsh.nix
     ./i3
     ./gpg.nix
+    ./packages.nix
   ];
 
   # Let Home Manager install and manage itself.
