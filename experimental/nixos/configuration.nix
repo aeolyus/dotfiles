@@ -48,7 +48,10 @@
   services.xserver = {
     enable = true;
     xkb.options = "ctrl:swapcaps";
-    libinput.touchpad.naturalScrolling = true;
+    libinput = {
+      touchpad.naturalScrolling = true;
+      mouse.accelProfile = "flat";
+    };
     # Use a fake session to let Home Manager take care of the X session
     # https://github.com/nix-community/home-manager/issues/391
     desktopManager.session = [
