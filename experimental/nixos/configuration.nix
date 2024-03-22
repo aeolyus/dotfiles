@@ -12,6 +12,7 @@
       ../common
       ../home
       ./audio.nix
+      ./sleep.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
