@@ -10,6 +10,7 @@ in
     ./gpg.nix
     ./packages.nix
     ./git.nix
+    ./ssh.nix
   ];
 
   # Let Home Manager install and manage itself.
