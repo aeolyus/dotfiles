@@ -11,6 +11,7 @@
       ./hardware-configuration.nix
       ../common
       ../home
+      ./audio.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
