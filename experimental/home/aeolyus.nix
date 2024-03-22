@@ -9,6 +9,7 @@ in
     ./i3
     ./gpg.nix
     ./packages.nix
+    ./git.nix
   ];
 
   # Let Home Manager install and manage itself.
