@@ -24,6 +24,7 @@
       specialArgs = { inherit self; };
       modules = [
         ./darwin
+        ./overlays
       ];
     };
 
@@ -34,6 +35,7 @@
         home-manager.nixosModules.home-manager
         ./nixos/configuration.nix
         ./home
+        ./overlays
       ];
     };
 
