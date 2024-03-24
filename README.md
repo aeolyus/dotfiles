@@ -35,7 +35,7 @@ cd ~/dotfiles
 stow zsh # ...and whatever else you want
 ```
 
-## experimental
+## nix
 
-The `experimental` directory is an ongoing attempt to create a
-deterministic, hermetic configuration using `nix` for both macOS and Linux.
+The directory is an ongoing attempt to create a deterministic, hermetic
+configuration using `nix` for both macOS and Linux.
