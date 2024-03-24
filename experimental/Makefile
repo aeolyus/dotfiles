@@ -8,9 +8,14 @@ deploy: ## Bootstrap
 
 	./result/sw/bin/darwin-rebuild switch --flake .#aarch64-darwin
 
-.PHONY: lint
-lint: ## Run nix fmt and nix flake check
+.PHONY: fmt
+fmt: ## Format code
 	nix fmt
+
+.PHONY: lint
+lint: ## Lint code
+	nix fmt -- --check .
+	nix run github:astro/deadnix -- --fail
 	nix flake check --all-systems
 
 .PHONY: help
