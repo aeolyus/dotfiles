@@ -1,16 +1,21 @@
 { config, pkgs, ... }:
 let
   mod = config.xsession.windowManager.i3.config.modifier;
+  # Binaries
+  brightnessctl = "${pkgs.brightnessctl}/bin/brightnessctl";
+  dmenu = "${pkgs.dmenu}/bin/dmenu_run";
+  pactl = "${pkgs.pulseaudio}/bin/pactl";
+  urxvt = "${pkgs.rxvt-unicode}/bin/urxvt";
 in
 {
   # Set main modifier key to super key
   xsession.windowManager.i3.config.modifier = "Mod4";
   xsession.windowManager.i3.config.keybindings = {
     # Start a terminal
-    "${mod}+Return" = "exec urxvt";
+    "${mod}+Return" = "exec ${urxvt}";
 
     # Program launcher
-    "${mod}+space" = "exec ${pkgs.dmenu}/bin/dmenu_run";
+    "${mod}+space" = "exec ${dmenu}";
 
     # Kill focused window
     "${mod}+Shift+q" = "kill";
@@ -106,13 +111,15 @@ in
     "${mod}+Shift+r" = "restart";
 
     # PulseAudio controls
-    "XF86AudioRaiseVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ +5%";
-    "XF86AudioLowerVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ -5%";
-    "XF86AudioMute" = "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
+    "XF86AudioRaiseVolume" =
+      "exec ${pactl} set-sink-volume @DEFAULT_SINK@ +5%";
+    "XF86AudioLowerVolume" =
+      "exec ${pactl} set-sink-volume @DEFAULT_SINK@ -5%";
+    "XF86AudioMute" = "exec ${pactl} set-sink-mute @DEFAULT_SINK@ toggle";
 
     # Brightness controls
-    "XF86MonBrightnessUp" = "exec brightnessctl set +5%";
-    "XF86MonBrightnessDown" = "exec brightnessctl set 5%-";
+    "XF86MonBrightnessUp" = "exec ${brightnessctl} set +5%";
+    "XF86MonBrightnessDown" = "exec ${brightnessctl} set 5%-";
 
     # Exit i3 (logs you out of your X session)
     "${mod}+Shift+e" = ''
