@@ -14,6 +14,7 @@ in
     ./tmux.nix
     ./redshift.nix
     ./fonts.nix
+    ./rofi.nix
   ];
 
   # Let Home Manager install and manage itself.

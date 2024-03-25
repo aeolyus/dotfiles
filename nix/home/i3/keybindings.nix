@@ -3,8 +3,8 @@ let
   mod = config.xsession.windowManager.i3.config.modifier;
   # Binaries
   brightnessctl = "${pkgs.brightnessctl}/bin/brightnessctl";
-  dmenu = "${pkgs.dmenu}/bin/dmenu_run";
   pactl = "${pkgs.pulseaudio}/bin/pactl";
+  rofi = "${pkgs.rofi}/bin/rofi";
   urxvt = "${pkgs.rxvt-unicode}/bin/urxvt";
 in
 {
@@ -15,7 +15,7 @@ in
     "${mod}+Return" = "exec ${urxvt}";
 
     # Program launcher
-    "${mod}+space" = "exec ${dmenu}";
+    "${mod}+space" = "exec ${rofi} -show drun";
 
     # Kill focused window
     "${mod}+Shift+q" = "kill";
