@@ -11,6 +11,7 @@ in
     ./packages.nix
     ./git.nix
     ./ssh.nix
+    ./tmux.nix
   ];
 
   # Let Home Manager install and manage itself.

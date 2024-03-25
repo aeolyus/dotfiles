@@ -8,7 +8,6 @@
     pavucontrol # PulseAudio volume control
     pulseaudio # Sound server
     ripgrep # Alternative to grep
-    tmux # Terminal multiplexer
     git-branchless # Enhance git stacked diffs
     brightnessctl # Control device brightness
   ];
