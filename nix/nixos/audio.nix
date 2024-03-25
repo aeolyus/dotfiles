@@ -5,5 +5,13 @@
     enable = true;
     alsa.enable = true;
     pulse.enable = true;
+    # No beeping
+    extraConfig.pipewire = {
+      "99-silent-bell" = {
+        "context.properties" = {
+          "module.x11.bell" = false;
+        };
+      };
+    };
   };
 }
