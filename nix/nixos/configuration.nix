@@ -65,6 +65,9 @@
     ];
   };
 
+  # Automatically set timezone based on IP geolocation
+  services.automatic-timezoned.enable = true;
+
   # Configure keymap in X11
   # services.xserver.layout = "us";
   # services.xserver.xkbOptions = "eurosign:e,caps:escape";
