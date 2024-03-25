@@ -13,5 +13,6 @@
     pavucontrol # PulseAudio volume control
     pulseaudio # Sound server
     ripgrep # Alternative to grep
+    spotify # Music player
   ];
 }
