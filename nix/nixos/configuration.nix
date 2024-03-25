@@ -94,20 +94,8 @@
       "wheel" # Enable ‘sudo’ for the user
       "networkmanager" # Grant permission to change network settings
     ];
-    packages = with pkgs; [
-      git
-      google-chrome
-      vim
-    ];
     shell = pkgs.zsh;
   };
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    git
-  ];
 
   programs.zsh.enable = true;
 
