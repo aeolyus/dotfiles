@@ -13,6 +13,7 @@ in
     ./ssh.nix
     ./tmux.nix
     ./redshift.nix
+    ./fonts.nix
   ];
 
   # Let Home Manager install and manage itself.

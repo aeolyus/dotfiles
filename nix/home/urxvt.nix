@@ -35,6 +35,8 @@ in
     # Disable ISO 14755 Ctrl+Shift keybind
     iso14755 = false;
     fonts = [
+      "xft:Hack Nerd Font Mono:size=9"
+      "xft:FiraCode Nerd Font Mono:size=9"
       "xft:DejaVu Sans Mono:size=9"
     ];
     keybindings = {
