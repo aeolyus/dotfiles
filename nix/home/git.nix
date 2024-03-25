@@ -1,4 +1,8 @@
 { pkgs, ... }:
+let
+  diff-highlight =
+    "${pkgs.git}/share/git/contrib/diff-highlight/diff-highlight";
+in
 {
   programs.git = {
     enable = true;
@@ -54,7 +58,7 @@
     };
     extraConfig = {
       core = {
-        pager = "${pkgs.git}/share/git/contrib/diff-highlight/diff-highlight";
+        pager = "${diff-highlight} | less -FRX";
         # Allow using markdown easily in commits
         commentChar = ";";
       };
