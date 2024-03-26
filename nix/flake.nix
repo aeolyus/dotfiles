@@ -18,7 +18,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, darwin, home-manager, ... }: {
+  outputs = inputs@{ self, nixpkgs, darwin, ... }: {
     darwinConfigurations."aarch64-darwin" = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       specialArgs = { inherit self; };
@@ -28,15 +28,8 @@
       ];
     };
 
-    nixosConfigurations."toaster" = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = { inherit self; };
-      modules = [
-        home-manager.nixosModules.home-manager
-        ./nixos/configuration.nix
-        ./home
-        ./overlays
-      ];
+    nixosConfigurations."toaster" = import ./hosts/toaster {
+      inherit inputs;
     };
 
     # nix fmt formatter
