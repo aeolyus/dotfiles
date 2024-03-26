@@ -15,6 +15,7 @@ in
     ./redshift.nix
     ./fonts.nix
     ./rofi.nix
+    ./picom.nix
   ];
 
   # Let Home Manager install and manage itself.
