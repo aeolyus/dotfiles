@@ -3,19 +3,7 @@ let
 in
 {
   imports = [
-    ./fzf.nix
-    ./urxvt.nix
-    ./zsh.nix
-    ./i3
-    ./gpg.nix
-    ./packages.nix
-    ./git.nix
-    ./ssh.nix
-    ./tmux.nix
-    ./redshift.nix
-    ./fonts.nix
-    ./rofi.nix
-    ./picom.nix
+    ./linux
   ];
 
   # Let Home Manager install and manage itself.
