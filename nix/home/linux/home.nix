@@ -1,17 +1,8 @@
-let
-  username = "aeolyus";
-in
+{ user, ... }:
 {
-  imports = [
-    ./linux
-  ];
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-
   home = {
-    username = username;
-    homeDirectory = "/home/${username}";
+    username = user.username;
+    homeDirectory = "/home/${user.username}";
 
     # This value determines the Home Manager release that your configuration is
     # compatible with. This helps avoid breakage when a new Home Manager

@@ -18,24 +18,28 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, darwin, ... }: {
-    darwinConfigurations."aarch64-darwin" = darwin.lib.darwinSystem {
-      system = "aarch64-darwin";
-      specialArgs = { inherit self; };
-      modules = [
-        ./darwin
-        ./overlays
-      ];
-    };
+  outputs = inputs@{ self, nixpkgs, darwin, ... }:
+    let
+      vars = import ./vars;
+    in
+    {
+      darwinConfigurations."aarch64-darwin" = darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        specialArgs = { inherit self; };
+        modules = [
+          ./darwin
+          ./overlays
+        ];
+      };
 
-    nixosConfigurations."toaster" = import ./hosts/toaster {
-      inherit inputs;
-    };
+      nixosConfigurations."toaster" = import ./hosts/toaster {
+        inherit inputs vars;
+      };
 
-    # nix fmt formatter
-    formatter = {
-      aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.nixpkgs-fmt;
-      x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
+      # nix fmt formatter
+      formatter = {
+        aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.nixpkgs-fmt;
+        x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
+      };
     };
-  };
 }

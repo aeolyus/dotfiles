@@ -1,0 +1,3 @@
+{
+  users = import ./users;
+}

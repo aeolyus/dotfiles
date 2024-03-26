@@ -1,0 +1,3 @@
+{
+  aeolyus = import ./aeolyus.nix;
+}
