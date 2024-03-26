@@ -1,0 +1,6 @@
+{
+  imports = [
+    ../base
+    ./home.nix
+  ];
+}

@@ -1,8 +1,9 @@
 {
   imports = [
-    ./services
-    ./nix.nix
-    ./system.nix
     ../common
+    ./nix.nix
+    ./services
+    ./system.nix
+    ./user.nix
   ];
 }

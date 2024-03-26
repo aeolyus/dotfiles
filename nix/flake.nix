@@ -18,18 +18,13 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, darwin, ... }:
+  outputs = inputs@{ nixpkgs, ... }:
     let
       vars = import ./vars;
     in
     {
-      darwinConfigurations."aarch64-darwin" = darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
-        specialArgs = { inherit self; };
-        modules = [
-          ./darwin
-          ./overlays
-        ];
+      darwinConfigurations."aarch64-darwin" = import ./hosts/darwin {
+        inherit inputs vars;
       };
 
       nixosConfigurations."toaster" = import ./hosts/toaster {
