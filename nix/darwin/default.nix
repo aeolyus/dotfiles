@@ -1,6 +1,7 @@
 {
   imports = [
     ../common
+    ./dock
     ./keybindings
     ./mouse
     ./nix.nix
