@@ -5,7 +5,7 @@
         "New Tab" = "^t";
         "New Window" = "^n";
         "Close Tab" = "^w";
-        "Reopen Closed Tab" = "^\\$t";
+        "Reopen Closed Tab" = "^\$t";
         "Reload This Page" = "^r";
         "Cut" = "^x";
         "Copy" = "^c";
@@ -13,7 +13,7 @@
         "Select All" = "^a";
         "Redo" = "^y";
         "Undo" = "^z";
-        "Find..." = "%f";
+        "Find..." = "^f";
         "Open Location..." = "^l";
       };
     };

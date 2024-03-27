@@ -6,7 +6,9 @@ deploy: ## Bootstrap
 		--experimental-features "nix-command flakes" \
 		--accept-flake-config
 
-	./result/sw/bin/darwin-rebuild switch --flake .#aarch64-darwin
+	./result/sw/bin/darwin-rebuild switch \
+		--flake .#aarch64-darwin \
+		--option accept-flake-config true
 
 .PHONY: fmt
 fmt: ## Format code
