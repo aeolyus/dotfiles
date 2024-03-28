@@ -12,13 +12,13 @@ deploy: ## Bootstrap
 
 .PHONY: fmt
 fmt: ## Format code
-	nix fmt
+	nix fmt --accept-flake-config
 
 .PHONY: lint
 lint: ## Lint code
-	nix fmt -- --check .
+	nix fmt --accept-flake-config -- --check .
 	nix run github:astro/deadnix -- --fail
-	nix flake check --all-systems
+	nix flake check --all-systems --accept-flake-config
 
 .PHONY: help
 help: Makefile ## Print this help
