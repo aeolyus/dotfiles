@@ -9,5 +9,6 @@
     htop # Interactive process viewer
     neovim # Text editor
     ripgrep # Alternative to grep
+    spotify # Music player
   ];
 }
