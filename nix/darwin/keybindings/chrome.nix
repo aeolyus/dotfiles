@@ -10,6 +10,7 @@
         "Cut" = "^x";
         "Copy" = "^c";
         "Paste" = "^v";
+        "Paste and Match Style" = "^\$v";
         "Select All" = "^a";
         "Redo" = "^y";
         "Undo" = "^z";
