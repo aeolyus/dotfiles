@@ -1,7 +1,6 @@
 {
   imports = [
     ../base
-    ./fonts.nix
     ./home.nix
     ./i3
     ./packages.nix
