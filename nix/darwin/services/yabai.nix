@@ -12,7 +12,7 @@ in
       # When focusing a window, put the mouse at its center
       mouse_follows_focus = "on";
       # Automatically focus the window under the mouse
-      focus_follows_mouse = "autoraise";
+      focus_follows_mouse = "autofocus";
       # New window spawns to the right if vertical split, or bottom if
       # horizontal split
       window_placement = "second_child";
