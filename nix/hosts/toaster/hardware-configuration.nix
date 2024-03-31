@@ -12,11 +12,6 @@
   boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
-  boot.blacklistedKernelModules = [
-    # No beeping
-    "pcspkr"
-    "snd_pcsp"
-  ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
