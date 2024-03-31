@@ -23,6 +23,9 @@
       vars = import ./vars;
     in
     {
+      homeConfigurations."aeolyus" = import ./outputs/home.nix {
+        inherit inputs vars;
+      };
 
       darwinConfigurations."aarch64-darwin" = import ./outputs/hosts/darwin {
         inherit inputs vars;
