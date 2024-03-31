@@ -11,7 +11,7 @@ nixosSystem {
   modules = [
     home-manager.nixosModules.home-manager
     {
-      home-manager.users.${user.username} = import ../../home/linux;
+      home-manager.users.${user.username} = import ../../home/linux/gui;
       home-manager.extraSpecialArgs = { inherit user; };
     }
     ../../common

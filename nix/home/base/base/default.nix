@@ -1,8 +1,8 @@
 {
   imports = [
-    ./fonts.nix
     ./fzf.nix
     ./git.nix
+    ./gpg.nix
     ./home.nix
     ./nvim.nix
     ./packages.nix

@@ -1,6 +1,6 @@
 {
   imports = [
-    ../base
+    ../base/gui
     ./home.nix
     ./modules
     ./packages.nix

@@ -12,7 +12,6 @@
     neovim # Text editor
     python3 # Programming language
     ripgrep # Alternative to grep
-    spotify # Music player
     unzip # Extraction utility for zip archives
     zip # Compressor/archiver
   ];

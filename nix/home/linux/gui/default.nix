@@ -1,12 +1,10 @@
 {
   imports = [
-    ../base
-    ./home.nix
+    ../../base/gui
     ./i3
     ./packages.nix
     ./picom.nix
-    ./ssh-agent.nix
-    ./gpg-agent.nix
+    ../base
     ./redshift.nix
     ./rofi.nix
     ./urxvt.nix
