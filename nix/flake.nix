@@ -23,11 +23,12 @@
       vars = import ./vars;
     in
     {
-      darwinConfigurations."aarch64-darwin" = import ./hosts/darwin {
+
+      darwinConfigurations."aarch64-darwin" = import ./outputs/hosts/darwin {
         inherit inputs vars;
       };
 
-      nixosConfigurations."toaster" = import ./hosts/toaster {
+      nixosConfigurations."toaster" = import ./outputs/hosts/toaster {
         inherit inputs vars;
       };
 

@@ -11,12 +11,12 @@ nixosSystem {
   modules = [
     home-manager.nixosModules.home-manager
     {
-      home-manager.users.${user.username} = import ../../home/linux/gui;
+      home-manager.users.${user.username} = import ../../../home/linux/gui;
       home-manager.extraSpecialArgs = { inherit user; };
     }
-    ../../common
-    ../../nixos
-    ../../overlays
+    ../../../common
+    ../../../nixos
+    ../../../overlays
     ./hardware-configuration.nix
   ];
 }
