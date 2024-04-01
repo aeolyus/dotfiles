@@ -50,7 +50,7 @@
     };
     envExtra = ''
       # Set editor to neovim
-      EDITOR=nvim
+      export EDITOR=nvim
     '';
     initExtra = ''
       # Enhance vi mode
