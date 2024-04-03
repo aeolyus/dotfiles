@@ -35,6 +35,10 @@ in
       bind-key r source-file ~/.config/tmux/tmux.conf \; \
         display-message "Config reloaded"
 
+      # Set working directory to cwd
+      bind-key a attach-session -c "#{pane_current_path}" \; \
+        display-message "Set working directory to '#{pane_current_path}'"
+
       # Numbering
       setw -g pane-base-index 1
       set -g renumber-windows on
