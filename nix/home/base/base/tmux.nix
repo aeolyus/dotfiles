@@ -31,6 +31,10 @@ in
       bind-key l select-pane -R
       bind-key S choose-session
 
+      # Reload config
+      bind-key r source-file ~/.config/tmux/tmux.conf \; \
+        display-message "Config reloaded"
+
       # Numbering
       setw -g pane-base-index 1
       set -g renumber-windows on
