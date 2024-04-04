@@ -7,7 +7,7 @@ let
 in
 darwinSystem {
   system = "aarch64-darwin";
-  specialArgs = { inherit self user; };
+  specialArgs = { inherit self inputs user; };
   modules = [
     home-manager.darwinModules.home-manager
     {

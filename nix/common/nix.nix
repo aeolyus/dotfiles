@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   # Auto upgrade nix package
@@ -14,5 +14,14 @@
   nix.gc = {
     automatic = true;
     options = "--delete-older-than 1w";
+  };
+
+  # Local flake-locked nixpkgs
+  nix.registry.local = {
+    from = {
+      type = "indirect";
+      id = "local";
+    };
+    flake = inputs.nixpkgs;
   };
 }

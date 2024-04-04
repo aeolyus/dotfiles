@@ -7,7 +7,7 @@ let
 in
 homeManagerConfiguration {
   inherit pkgs;
-  extraSpecialArgs = { inherit self user; };
+  extraSpecialArgs = { inherit self inputs user; };
   modules = [
     ../common/nix.nix
     ../home/linux/base

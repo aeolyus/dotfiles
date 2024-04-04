@@ -7,7 +7,7 @@ let
 in
 nixosSystem {
   system = "x86_64-linux";
-  specialArgs = { inherit self user; };
+  specialArgs = { inherit self inputs user; };
   modules = [
     home-manager.nixosModules.home-manager
     {
