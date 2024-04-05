@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 let
   mod = config.xsession.windowManager.i3.config.modifier;
+  alt = "Mod1";
   # Binaries
   brightnessctl = "${pkgs.brightnessctl}/bin/brightnessctl";
   pactl = "${pkgs.pulseaudio}/bin/pactl";
@@ -109,6 +110,10 @@ in
 
     # Restart i3 inplace (preserves layout/session, can be used to upgrade i3)
     "${mod}+Shift+r" = "restart";
+
+    # Sleep
+    "${mod}+${alt}+s" = "exec systemctl suspend-then-hibernate";
+    "${mod}+${alt}+h" = "exec systemctl hibernate";
 
     # PulseAudio controls
     "XF86AudioRaiseVolume" =
