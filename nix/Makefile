@@ -2,8 +2,8 @@ default: help
 
 DARWIN_REBUILD := ./result/sw/bin/darwin-rebuild
 
-.PHONY: deploy
-deploy: $(DARWIN_REBUILD) ## Bootstrap
+.PHONY: aarch64-darwin
+aarch64-darwin: $(DARWIN_REBUILD) ## Configure aarch64-darwin machine
 	$(DARWIN_REBUILD) switch \
 		--flake .#aarch64-darwin \
 		--option accept-flake-config true
@@ -20,7 +20,7 @@ lint: ## Lint code
 
 .PHONY: help
 help: Makefile ## Print this help
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
+	@grep -E '^[a-zA-Z0-9_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
 		| sort \
 		| awk 'BEGIN {FS = ":.*?## "}; \
 		{printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
