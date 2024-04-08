@@ -14,6 +14,9 @@ nixosSystem {
       home-manager.users.${user.username} = import ../../../home/linux/gui;
       home-manager.extraSpecialArgs = { inherit user; };
     }
+    {
+      networking.hostName = "toaster";
+    }
     ../../../common
     ../../../nixos
     ../../../overlays
