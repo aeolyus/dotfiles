@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     clang # C language family compiler
+    eternal-terminal # Remote shell
     fd # Alternative to find
     file # File type identification utility
     git # Version control system
@@ -9,6 +10,7 @@
     gnumake # GNU Make
     go # Programming language
     htop # Interactive process viewer
+    mosh # Mobile shell
     neovim # Text editor
     python3 # Programming language
     ripgrep # Alternative to grep
