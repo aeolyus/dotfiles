@@ -13,6 +13,8 @@ in
     sensibleOnTop = false;
     # Set Ctrl-a as prefix
     shortcut = "a";
+    # vi style shortcuts
+    keyMode = "vi";
     # Prevent delays in vim registering esc key
     escapeTime = 0;
     # Start numbering at 1 for ergonomics
