@@ -22,6 +22,7 @@ in
 {
   programs.urxvt = {
     enable = true;
+    package = pkgs.rxvt-unicode-emoji;
     scroll = {
       bar.enable = false;
       lines = 10000;
@@ -37,6 +38,7 @@ in
     fonts = [
       "xft:Hack Nerd Font Mono:size=9"
       "xft:FiraCode Nerd Font Mono:size=9"
+      "xft:Noto Color Emoji:size=9"
       "xft:DejaVu Sans Mono:size=9"
     ];
     keybindings = {
@@ -72,7 +74,7 @@ in
       color15 = nord6;
 
       # Extensions
-      perl-lib = "${pkgs.rxvt-unicode}/lib/urxvt/perl";
+      perl-lib = "${pkgs.rxvt-unicode-emoji}/lib/urxvt/perl";
       perl-ext-common = builtins.concatStringsSep "," [
         "default" # Keep default extensions
         "matcher" # Match strings to change their rendition (defaults for URLs)

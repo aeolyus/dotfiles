@@ -6,7 +6,7 @@ let
   brightnessctl = "${pkgs.brightnessctl}/bin/brightnessctl";
   pactl = "${pkgs.pulseaudio}/bin/pactl";
   rofi = "${pkgs.rofi}/bin/rofi";
-  urxvt = "${pkgs.rxvt-unicode}/bin/urxvt";
+  urxvt = "${pkgs.rxvt-unicode-emoji}/bin/urxvt";
 in
 {
   # Set main modifier key to super key
