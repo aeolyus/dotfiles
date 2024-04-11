@@ -14,6 +14,10 @@ nixos: ## Configure NixOS machine
 	sudo nixos-rebuild switch --flake ".#$(HOST)" \
 		--option accept-flake-config true
 
+.PHONY: home
+home: ## Configure home-manager
+	nix run home-manager/master switch -- --flake ".#$${USER}"
+
 .PHONY: fmt
 fmt: ## Format code
 	nix fmt --accept-flake-config
