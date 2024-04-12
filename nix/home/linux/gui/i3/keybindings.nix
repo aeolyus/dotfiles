@@ -5,6 +5,7 @@ let
   # Binaries
   brightnessctl = "${pkgs.brightnessctl}/bin/brightnessctl";
   pactl = "${pkgs.pulseaudio}/bin/pactl";
+  playerctl = "${pkgs.playerctl}/bin/playerctl";
   rofi = "${pkgs.rofi}/bin/rofi";
   urxvt = "${pkgs.rxvt-unicode-emoji}/bin/urxvt";
 in
@@ -114,6 +115,11 @@ in
     # Sleep
     "${mod}+${alt}+s" = "exec systemctl suspend-then-hibernate";
     "${mod}+${alt}+h" = "exec systemctl hibernate";
+
+    # Media player controls
+    "XF86AudioPlay" = "exec --no-startup-id ${playerctl} play-pause";
+    "XF86AudioNext" = "exec --no-startup-id ${playerctl} next";
+    "XF86AudioPrev" = "exec --no-startup-id ${playerctl} previous";
 
     # PulseAudio controls
     "XF86AudioRaiseVolume" =
