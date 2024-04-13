@@ -2,6 +2,7 @@
   imports = [
     ./keybindings.nix
     ./modes.nix
+    ./screen-locker.nix
   ];
 
   xsession = {

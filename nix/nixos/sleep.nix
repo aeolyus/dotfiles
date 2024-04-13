@@ -3,7 +3,7 @@
     lidSwitch = "suspend-then-hibernate";
     extraConfig = ''
       IdleAction=suspend-then-hibernate
-      IdleActionSec=5m
+      IdleActionSec=60m
     '';
   };
   systemd.sleep.extraConfig = ''
