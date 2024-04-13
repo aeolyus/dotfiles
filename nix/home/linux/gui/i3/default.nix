@@ -3,6 +3,7 @@
     ./keybindings.nix
     ./modes.nix
     ./screen-locker.nix
+    ./wallpaper.nix
   ];
 
   xsession = {

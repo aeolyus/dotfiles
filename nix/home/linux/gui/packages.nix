@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     brightnessctl # Control device brightness
+    feh # Light-weight image viewer and wallpaper display
     google-chrome # Browser
     i3lock-fancy-rapid # Screen locker
     pavucontrol # PulseAudio volume control
