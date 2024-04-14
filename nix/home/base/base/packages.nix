@@ -10,6 +10,7 @@
     gnumake # GNU Make
     go # Programming language
     htop # Interactive process viewer
+    kubectl # Kubernetes CLI
     mosh # Mobile shell
     neovim # Text editor
     python3 # Programming language
