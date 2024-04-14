@@ -10,8 +10,11 @@ homeManagerConfiguration {
   extraSpecialArgs = { inherit self inputs user; };
   modules = [
     ../common/nix.nix
-    ../home/linux/base
+    ../home/linux/gui
     ../overlays
-    { targets.genericLinux.enable = true; }
+    {
+      targets.genericLinux.enable = true;
+      xdg.mime.enable = true;
+    }
   ];
 }

@@ -23,7 +23,11 @@
       vars = import ./vars;
     in
     {
-      homeConfigurations."aeolyus" = import ./outputs/home.nix {
+      homeConfigurations."aeolyus.home" = import ./outputs/home.nix {
+        inherit inputs vars;
+      };
+
+      homeConfigurations."aeolyus.home.gui" = import ./outputs/home-gui.nix {
         inherit inputs vars;
       };
 

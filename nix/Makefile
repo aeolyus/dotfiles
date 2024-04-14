@@ -16,7 +16,11 @@ nixos: ## Configure NixOS machine
 
 .PHONY: home
 home: ## Configure home-manager
-	nix run home-manager/master switch -- --flake ".#$${USER}"
+	nix run home-manager/master switch -- --flake ".#$${USER}.home"
+
+.PHONY: home-gui
+home-gui: ## Configure home-manager, including GUI configs
+	nix run home-manager/master switch -- --flake ".#$${USER}.home.gui"
 
 .PHONY: fmt
 fmt: ## Format code
