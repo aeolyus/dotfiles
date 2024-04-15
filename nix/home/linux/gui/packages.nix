@@ -1,6 +1,8 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    arandr # Another XRandR GUI
+    autorandr # Auto select display config based on connected devices
     brightnessctl # Control device brightness
     feh # Light-weight image viewer and wallpaper display
     google-chrome # Browser
