@@ -4,6 +4,7 @@
     ./modes.nix
     ./screen-locker.nix
     ./wallpaper.nix
+    ./startup.nix
   ];
 
   xsession = {
