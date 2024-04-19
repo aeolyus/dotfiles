@@ -4,10 +4,12 @@ let
   alt = "Mod1";
   # Binaries
   brightnessctl = "${pkgs.brightnessctl}/bin/brightnessctl";
+  maim = "${pkgs.maim}/bin/maim";
   pactl = "${pkgs.pulseaudio}/bin/pactl";
   playerctl = "${pkgs.playerctl}/bin/playerctl";
   rofi = "${pkgs.rofi}/bin/rofi";
   urxvt = "${pkgs.rxvt-unicode-emoji}/bin/urxvt";
+  xclip = "${pkgs.xclip}/bin/xclip";
 in
 {
   # Set main modifier key to super key
@@ -131,6 +133,11 @@ in
     # Brightness controls
     "XF86MonBrightnessUp" = "exec ${brightnessctl} set +5%";
     "XF86MonBrightnessDown" = "exec ${brightnessctl} set 5%-";
+
+    # Screenshots
+    "Print" = "exec ${maim} -su | ${xclip} -selection clipboard -t image/png";
+    "Shift+Print" =
+      "exec ${maim} -su | ${xclip} -selection clipboard -t image/png";
 
     # Exit i3 (logs you out of your X session)
     "${mod}+Shift+e" = ''
