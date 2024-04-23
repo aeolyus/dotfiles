@@ -9,7 +9,9 @@
     ./redshift.nix
     ./rofi.nix
     ./urxvt.nix
+    ./xinitrc.nix
     ./xprofile.nix
     ./xresources.nix
+    ./zprofile.nix
   ];
 }
