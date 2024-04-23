@@ -12,5 +12,7 @@
     playerctl # CLI MRPIS media player controller
     pulseaudio # Sound server
     xclip # CLI interface to X11 clipboard
+    xorg.xdpyinfo # Display information utility for X
+    xorg.xset # User preference utility for X
   ];
 }
