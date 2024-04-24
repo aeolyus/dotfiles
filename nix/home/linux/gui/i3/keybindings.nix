@@ -114,6 +114,9 @@ in
     # Restart i3 inplace (preserves layout/session, can be used to upgrade i3)
     "${mod}+Shift+r" = "restart";
 
+    # Lock
+    "${mod}+${alt}+l" = "exec loginctl lock-session";
+
     # Sleep
     "${mod}+${alt}+s" = "exec systemctl suspend-then-hibernate";
     "${mod}+${alt}+h" = "exec systemctl hibernate";
