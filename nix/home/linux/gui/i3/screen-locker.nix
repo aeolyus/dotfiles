@@ -7,6 +7,6 @@
       "--transfer-sleep-lock"
     ];
     inactiveInterval = 2; # minutes
-    lockCmd = "${pkgs.i3lock-fancy-rapid}/bin/i3lock 5 pixel";
+    lockCmd = "${pkgs.i3lock-fancy-rapid}/bin/i3lock 5 pixel --nofork";
   };
 }
