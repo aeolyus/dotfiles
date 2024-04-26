@@ -16,10 +16,10 @@ in
   xsession.windowManager.i3.config.modifier = "Mod4";
   xsession.windowManager.i3.config.keybindings = {
     # Start a terminal
-    "${mod}+Return" = "exec ${urxvt}";
+    "${mod}+Return" = "exec --no-startup-id ${urxvt}";
 
     # Program launcher
-    "${mod}+space" = "exec ${rofi} -show drun";
+    "${mod}+space" = "exec --no-startup-id ${rofi} -show drun";
 
     # Kill focused window
     "${mod}+Shift+q" = "kill";
@@ -128,19 +128,25 @@ in
 
     # PulseAudio controls
     "XF86AudioRaiseVolume" =
-      "exec ${pactl} set-sink-volume @DEFAULT_SINK@ +5%";
+      "exec --no-startup-id ${pactl} set-sink-volume @DEFAULT_SINK@ +5%";
     "XF86AudioLowerVolume" =
-      "exec ${pactl} set-sink-volume @DEFAULT_SINK@ -5%";
-    "XF86AudioMute" = "exec ${pactl} set-sink-mute @DEFAULT_SINK@ toggle";
+      "exec --no-startup-id ${pactl} set-sink-volume @DEFAULT_SINK@ -5%";
+    "XF86AudioMute" =
+      "exec --no-startup-id ${pactl} set-sink-mute @DEFAULT_SINK@ toggle";
 
     # Brightness controls
-    "XF86MonBrightnessUp" = "exec ${brightnessctl} set +5%";
-    "XF86MonBrightnessDown" = "exec ${brightnessctl} set 5%-";
+    "XF86MonBrightnessUp" = "exec --no-startup-id ${brightnessctl} set +5%";
+    "XF86MonBrightnessDown" = "exec --no-startup-id ${brightnessctl} set 5%-";
 
     # Screenshots
-    "Print" = "exec ${maim} -su | ${xclip} -selection clipboard -t image/png";
-    "Shift+Print" =
-      "exec ${maim} -su | ${xclip} -selection clipboard -t image/png";
+    "Print" = ''
+      exec --no-startup-id ${maim} -su \
+        | ${xclip} -selection clipboard -t image/png
+    '';
+    "Shift+Print" = ''
+      exec --no-startup-id ${maim} -su \
+        | ${xclip} -selection clipboard -t image/png
+    '';
 
     # Exit i3 (logs you out of your X session)
     "${mod}+Shift+e" = ''
