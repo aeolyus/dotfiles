@@ -53,6 +53,9 @@
       export EDITOR=nvim
     '';
     initExtra = ''
+      # Custom shell scripts
+      export PATH=$PATH:$HOME/dotfiles/spells
+
       # Enhance vi mode
       # Allow backspace to backward-delete-char
       bindkey "^?" backward-delete-char
