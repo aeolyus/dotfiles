@@ -1,10 +1,11 @@
 {
   imports = [
+    ./floating.nix
     ./keybindings.nix
     ./modes.nix
     ./screen-locker.nix
-    ./wallpaper.nix
     ./startup.nix
+    ./wallpaper.nix
   ];
 
   xsession = {
