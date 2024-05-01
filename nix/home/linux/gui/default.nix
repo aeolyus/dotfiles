@@ -2,6 +2,7 @@
   imports = [
     ../../base/gui
     ../base
+    ./dunst.nix
     ./gtk
     ./i3
     ./packages.nix
