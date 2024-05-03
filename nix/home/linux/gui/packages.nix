@@ -7,6 +7,7 @@
     feh # Light-weight image viewer and wallpaper display
     google-chrome # Browser
     i3lock-fancy-rapid # Screen locker
+    lutris # Open Source gaming platform for GNU/Linux
     maim # CLI screenshot utility
     pavucontrol # PulseAudio volume control
     playerctl # CLI MRPIS media player controller
