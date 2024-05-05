@@ -4,6 +4,7 @@
     arandr # Another XRandR GUI
     autorandr # Auto select display config based on connected devices
     brightnessctl # Control device brightness
+    discord # All-in-one voice and text chat for gamers
     feh # Light-weight image viewer and wallpaper display
     google-chrome # Browser
     i3lock-fancy-rapid # Screen locker
