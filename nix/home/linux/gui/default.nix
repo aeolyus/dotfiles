@@ -9,6 +9,7 @@
     ./picom.nix
     ./redshift.nix
     ./rofi.nix
+    ./syncthing.nix
     ./urxvt.nix
     ./xinitrc.nix
     ./xprofile.nix
