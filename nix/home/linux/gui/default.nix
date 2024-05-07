@@ -3,6 +3,7 @@
     ../../base/gui
     ../base
     ./dunst.nix
+    ./easyeffects.nix
     ./gtk
     ./i3
     ./packages.nix
