@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     bazelisk # Build tool
     clang # C language family compiler
+    dig # DNS lookup utility
     eternal-terminal # Remote shell
     fd # Alternative to find
     file # File type identification utility
