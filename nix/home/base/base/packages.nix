@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    bazelisk # Build tool
     clang # C language family compiler
     eternal-terminal # Remote shell
     fd # Alternative to find
