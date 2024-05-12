@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    bat # Alternative to cat
     bazelisk # Build tool
     clang # C language family compiler
     dig # DNS lookup utility
