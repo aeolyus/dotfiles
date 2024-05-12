@@ -5,6 +5,8 @@
     bazelisk # Build tool
     clang # C language family compiler
     dig # DNS lookup utility
+    docker # Docker CLI
+    docker-compose # Tool to define and run multi-container apps
     eternal-terminal # Remote shell
     fd # Alternative to find
     file # File type identification utility
