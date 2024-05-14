@@ -13,7 +13,6 @@
         "robbyrussell/oh-my-zsh path:plugins/gitfast"
         "robbyrussell/oh-my-zsh path:plugins/colored-man-pages"
         # Theme
-        "chriskempson/base16-shell"
         "sindresorhus/pure"
       ];
     };
