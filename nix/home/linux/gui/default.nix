@@ -8,6 +8,7 @@
     ./i3
     ./packages.nix
     ./picom.nix
+    ./polybar.nix
     ./redshift.nix
     ./rofi.nix
     ./syncthing.nix
