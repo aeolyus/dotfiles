@@ -8,6 +8,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    utils.url = "github:numtide/flake-utils";
     darwin = {
       url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -18,7 +19,7 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, ... }:
+  outputs = inputs@{ nixpkgs, utils, ... }:
     let
       vars = import ./vars;
     in
@@ -38,11 +39,15 @@
       nixosConfigurations."toaster" = import ./outputs/hosts/toaster {
         inherit inputs vars;
       };
-
-      # nix fmt formatter
-      formatter = {
-        aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.nixpkgs-fmt;
-        x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
-      };
-    };
+    }
+    //
+    utils.lib.eachDefaultSystem (system:
+      let
+        pkgs = import nixpkgs { inherit system; };
+      in
+      {
+        # nix fmt formatter
+        formatter = pkgs.nixpkgs-fmt;
+      }
+    );
 }
