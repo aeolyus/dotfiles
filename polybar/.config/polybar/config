@@ -127,7 +127,7 @@ font-0 = "Hack Nerd Font Mono:size=10;2"
 
 modules-left = i3 xwindow
 modules-center =
-modules-right = arrow1 vpn wireless-network arrow2 memory2 arrow3 uptime arrow4 volume arrow5 battery arrow6 date arrow7
+modules-right = arrow1 vpn wired-network wireless-network arrow2 memory2 arrow3 uptime arrow4 volume arrow5 battery arrow6 date arrow7
 
 separator =
 
