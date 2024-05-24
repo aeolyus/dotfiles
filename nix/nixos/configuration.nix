@@ -5,15 +5,6 @@
 { pkgs, ... }:
 
 {
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot = {
-    enable = true;
-    # Maximum number of latest generations in the boot menu. Useful to prevent
-    # boot partition running out of disk space.
-    configurationLimit = 10;
-  };
-  boot.loader.efi.canTouchEfiVariables = true;
-
   # networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
