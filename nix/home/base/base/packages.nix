@@ -19,6 +19,7 @@
     kubectl # Kubernetes CLI
     mosh # Mobile shell
     neovim # Text editor
+    procps # procfs utilities, most use procps over GNU coreutils for uptime
     python3 # Programming language
     ripgrep # Alternative to grep
     unzip # Extraction utility for zip archives
