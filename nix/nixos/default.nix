@@ -7,5 +7,6 @@
     ./dconf.nix
     ./docker.nix
     ./sleep.nix
+    ./tailscale.nix
   ];
 }
