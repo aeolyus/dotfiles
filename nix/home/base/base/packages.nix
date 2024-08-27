@@ -10,6 +10,7 @@
     eternal-terminal # Remote shell
     fd # Alternative to find
     file # File type identification utility
+    ghostscript # PostScript interpreter
     git # Version control system
     git-branchless # Enhance git stacked diffs
     gnumake # GNU Make
