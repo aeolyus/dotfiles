@@ -75,6 +75,7 @@
     extraGroups = [
       "wheel" # Enable ‘sudo’ for the user
       "networkmanager" # Grant permission to change network settings
+      "docker" # Provide access to docker socket
     ];
     shell = pkgs.zsh;
   };
