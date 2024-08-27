@@ -17,6 +17,7 @@
     go # Programming language
     htop # Interactive process viewer
     hyperfine # CLI benchmarking tool
+    kubecolor # Colorize kubectl output
     kubectl # Kubernetes CLI
     mosh # Mobile shell
     mpv # Media player

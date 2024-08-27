@@ -46,6 +46,8 @@
       v = "$EDITOR";
       d = "docker";
       dc = "docker-compose";
+      k = "kubectl";
+      kubectl = "kubecolor";
     };
     envExtra = ''
       # Set editor to neovim
