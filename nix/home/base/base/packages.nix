@@ -18,6 +18,7 @@
     hyperfine # CLI benchmarking tool
     kubectl # Kubernetes CLI
     mosh # Mobile shell
+    mpv # Media player
     neovim # Text editor
     procps # procfs utilities, most use procps over GNU coreutils for uptime
     python3 # Programming language
