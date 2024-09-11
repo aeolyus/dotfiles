@@ -49,7 +49,7 @@ return require('packer').startup(function(use)
   })
   -- Tools
   use 'nvim-tree/nvim-tree.lua'
-  use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
+  use { 'akinsho/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons' }
   use 'lukas-reineke/indent-blankline.nvim'
   use 'jamessan/vim-gnupg'
   use 'junegunn/vim-easy-align'
