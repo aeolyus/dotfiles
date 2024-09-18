@@ -44,7 +44,7 @@ return require('packer').startup(function(use)
     },
   }
   use({
-    "jose-elias-alvarez/null-ls.nvim",
+    "nvimtools/none-ls.nvim",
     requires = { "nvim-lua/plenary.nvim" },
   })
   -- Tools
