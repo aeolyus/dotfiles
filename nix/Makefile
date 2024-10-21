@@ -24,6 +24,11 @@ home-gui: ## Configure home-manager, including GUI configs
 	nix run home-manager/master switch -- --flake ".#$${USER}.home.gui" \
 		--option accept-flake-config true
 
+.PHONY: update
+update: ## Update flake lock file
+	nix flake update \
+		--option accept-flake-config true
+
 .PHONY: fmt
 fmt: ## Format code
 	nix fmt --accept-flake-config
