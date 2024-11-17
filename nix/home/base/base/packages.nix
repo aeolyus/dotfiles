@@ -22,6 +22,7 @@
     kubectl # Kubernetes CLI
     mosh # Mobile shell
     mpv # Media player
+    ncdu # Disk usage analyzer with an ncurses interface
     neovim # Text editor
     procps # procfs utilities, most use procps over GNU coreutils for uptime
     python3 # Programming language
