@@ -4,7 +4,6 @@
     arandr # Another XRandR GUI
     autorandr # Auto select display config based on connected devices
     brightnessctl # Control device brightness
-    caffeine-ng # Keep your computer awake
     discord # All-in-one voice and text chat for gamers
     feh # Light-weight image viewer and wallpaper display
     google-chrome # Browser

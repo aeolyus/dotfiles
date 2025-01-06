@@ -2,6 +2,7 @@
   imports = [
     ../../base/gui
     ../base
+    ./caffeine.nix
     ./dunst.nix
     ./easyeffects.nix
     ./gtk
