@@ -54,8 +54,6 @@ in
       foreground = nord4;
       background = nord0;
       cursorColor = nord4;
-      fading = 35;
-      fadeColor = nord3;
       color0 = nord1;
       color1 = nord11;
       color2 = nord14;
