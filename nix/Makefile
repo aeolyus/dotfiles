@@ -24,6 +24,12 @@ home-gui: ## Configure home-manager, including GUI configs
 	nix run home-manager/master switch -- --flake ".#$${USER}.home.gui" \
 		--option accept-flake-config true
 
+.PHONY: home-gui-host
+home-gui-host: ## Configure a host specific home-manager, including GUI configs
+	nix run home-manager/master switch -- \
+		--flake ".#aeolyus.${HOST}.home.gui" \
+		--option accept-flake-config true
+
 .PHONY: update
 update: ## Update flake lock file
 	nix flake update \

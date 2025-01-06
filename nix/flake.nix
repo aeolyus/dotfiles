@@ -32,6 +32,12 @@
         inherit inputs vars;
       };
 
+      homeConfigurations."aeolyus.ghost.home.gui" =
+        import ./outputs/hosts/ghost/default.nix {
+          inherit inputs vars;
+        };
+
+
       darwinConfigurations."aarch64-darwin" = import ./outputs/hosts/darwin {
         inherit inputs vars;
       };
