@@ -17,6 +17,7 @@
     xclip # CLI interface to X11 clipboard
     xdragon # Simple drag-and-drop source/sink for X
     xorg.xdpyinfo # Display information utility for X
+    xorg.xmodmap # Modify keymaps and pointer button mappings for X
     xorg.xset # User preference utility for X
   ];
 }
