@@ -85,6 +85,9 @@ in
     # Enter fullscreen mode for the focused container
     "${mod}+f" = "fullscreen toggle";
 
+    # Toggle sticky
+    "${mod}+t" = "sticky toggle";
+
     # Change container layout (stacked, tabbed, toggle split)
     "${mod}+slash" = "layout stacking";
     "${mod}+apostrophe" = "layout tabbed";
