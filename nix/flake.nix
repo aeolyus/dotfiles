@@ -36,7 +36,7 @@
       };
 
       homeConfigurations."aeolyus.ghost.home.gui" =
-        import ./outputs/hosts/ghost/default.nix {
+        import ./outputs/home-hosts/ghost/default.nix {
           inherit inputs vars;
         };
 
