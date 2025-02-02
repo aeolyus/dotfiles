@@ -1,0 +1,3 @@
+{
+  services.autorandr.enable = true;
+}
