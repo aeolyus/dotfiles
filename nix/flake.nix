@@ -48,6 +48,9 @@
       nixosConfigurations."toaster" = import ./outputs/hosts/toaster {
         inherit inputs vars;
       };
+      nixosConfigurations."ghost" = import ./outputs/hosts/ghost {
+        inherit inputs vars;
+      };
     }
     //
     utils.lib.eachDefaultSystem (system:
