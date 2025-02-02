@@ -8,6 +8,7 @@
     docker # Docker CLI
     docker-compose # Tool to define and run multi-container apps
     eternal-terminal # Remote shell
+    exfatprogs # exFAT filesystem userspace utilities
     fd # Alternative to find
     file # File type identification utility
     gdb # GNU debugger
