@@ -21,5 +21,6 @@ nixosSystem {
     ../../../nixos
     ../../../overlays
     ./hardware-configuration.nix
+    ./nvidia.nix
   ];
 }
