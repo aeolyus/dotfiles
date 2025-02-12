@@ -42,7 +42,7 @@ fmt: ## Format code
 .PHONY: lint
 lint: ## Lint code
 	nix fmt --accept-flake-config -- --check .
-	nix run github:astro/deadnix/main -- --fail
+	deadnix --fail || nix run github:astro/deadnix/main -- --fail
 	nix flake check --all-systems --accept-flake-config
 
 .PHONY: help
