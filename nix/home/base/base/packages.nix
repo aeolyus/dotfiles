@@ -10,6 +10,7 @@
     eternal-terminal # Remote shell
     exfatprogs # exFAT filesystem userspace utilities
     fd # Alternative to find
+    ffmpeg # Video and audio processing tool
     file # File type identification utility
     gdb # GNU debugger
     ghostscript # PostScript interpreter
@@ -19,6 +20,7 @@
     go # Programming language
     htop # Interactive process viewer
     hyperfine # CLI benchmarking tool
+    imagemagick # Swiss army knife of image processing
     kubecolor # Colorize kubectl output
     kubectl # Kubernetes CLI
     mosh # Mobile shell
