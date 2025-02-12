@@ -28,7 +28,6 @@
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
-    xkb.options = "ctrl:swapcaps";
     # Use a fake session to let Home Manager take care of the X session
     # https://github.com/nix-community/home-manager/issues/391
     desktopManager.session = [
