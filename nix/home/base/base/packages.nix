@@ -4,6 +4,7 @@
     bat # Alternative to cat
     bazelisk # Build tool
     clang # C language family compiler
+    deadnix # Find and remove unused nix code
     dig # DNS lookup utility
     docker # Docker CLI
     docker-compose # Tool to define and run multi-container apps
