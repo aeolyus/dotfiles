@@ -66,6 +66,11 @@
 
   swapDevices = [{ device = "/swap/swapfile"; }];
 
+  boot.resumeDevice = "/dev/disk/by-uuid/8ed986c4-1247-4877-84b4-9f318e26fb35";
+  boot.kernelParams = [
+    "resume_offset=795904" # btrfs inspect-internal map-swapfile -r /swap/swapfile
+  ];
+
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
