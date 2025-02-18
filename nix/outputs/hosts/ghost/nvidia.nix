@@ -15,5 +15,8 @@
     # Use the Nvidia open source kernel module (not to be confused with the
     # independent third-party "nouveau" open source driver).
     open = true;
+    # Save entire VRAM memory instead of just bare essentials. Fixes graphical
+    # corruption issues after waking up from sleep.
+    powerManagement.enable = true;
   };
 }
