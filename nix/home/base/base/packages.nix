@@ -31,6 +31,7 @@
     procps # procfs utilities, most use procps over GNU coreutils for uptime
     python3 # Programming language
     ripgrep # Alternative to grep
+    tree # Command to list directory contents in a tree-like format
     unzip # Extraction utility for zip archives
     zip # Compressor/archiver
   ];
