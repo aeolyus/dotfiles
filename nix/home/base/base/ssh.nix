@@ -1,7 +1,7 @@
 {
   programs.ssh = {
     enable = true;
-    addKeysToAgent = true;
-    includes = "config.d/*";
+    addKeysToAgent = "1h";
+    includes = [ "config.d/*" ];
   };
 }
