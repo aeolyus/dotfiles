@@ -43,7 +43,12 @@
 
   services.libinput = {
     touchpad.naturalScrolling = true;
-    mouse.accelProfile = "flat";
+    mouse = {
+      # When enabled, pressing the left and right buttons simultaneously
+      # produces a middle mouse button click
+      middleEmulation = false;
+      accelProfile = "flat";
+    };
   };
 
   # Automatically set timezone based on IP geolocation
