@@ -10,5 +10,6 @@
     ./sleep.nix
     ./tailscale.nix
     ./virtualbox.nix
+    ./steam.nix
   ];
 }
