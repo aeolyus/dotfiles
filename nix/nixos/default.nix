@@ -9,5 +9,6 @@
     ./docker.nix
     ./sleep.nix
     ./tailscale.nix
+    ./virtualbox.nix
   ];
 }
