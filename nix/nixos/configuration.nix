@@ -41,6 +41,10 @@
     ];
   };
 
+  # Required as PAM services are disabled by default
+  # https://github.com/NixOS/nixpkgs/pull/399051
+  programs.i3lock.enable = true;
+
   services.libinput = {
     touchpad.naturalScrolling = true;
     mouse = {

@@ -7,11 +7,7 @@
     noto-fonts-cjk-serif
     noto-fonts-emoji
     noto-fonts-extra
-    (nerdfonts.override {
-      fonts = [
-        "Hack"
-        "FiraCode"
-      ];
-    })
+    nerd-fonts.hack
+    nerd-fonts.fira-mono
   ];
 }

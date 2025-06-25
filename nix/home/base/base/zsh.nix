@@ -53,7 +53,7 @@
       # Set editor to neovim
       export EDITOR=nvim
     '';
-    initExtra = ''
+    initContent = ''
       # Custom shell scripts
       export PATH=$PATH:$HOME/dotfiles/spells
 
