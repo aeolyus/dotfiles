@@ -32,6 +32,7 @@
     python3 # Programming language
     ripgrep # Alternative to grep
     tree # Command to list directory contents in a tree-like format
+    units # Unit conversion tool
     unzip # Extraction utility for zip archives
     zip # Compressor/archiver
   ];
