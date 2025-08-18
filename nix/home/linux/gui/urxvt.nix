@@ -71,6 +71,10 @@ in
       color14 = nord7;
       color15 = nord6;
 
+      # Prevent urxvt opening prompt in middle of screen
+      # https://github.com/NixOS/nixpkgs/issues/241646
+      geometry = "80x240+0+0";
+
       # Extensions
       perl-lib = "${pkgs.rxvt-unicode-emoji}/lib/urxvt/perl";
       perl-ext-common = builtins.concatStringsSep "," [

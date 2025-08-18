@@ -9,7 +9,7 @@ in
     enable = true;
     defaultCacheTtl = ttl;
     maxCacheTtl = ttl;
-    pinentryPackage = pinentry;
+    pinentry.package = pinentry;
     extraConfig = ''
       allow-loopback-pinentry
     '';

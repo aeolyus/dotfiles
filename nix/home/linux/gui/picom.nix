@@ -3,6 +3,7 @@
     enable = true;
     shadow = true;
     vSync = true;
+    backend = "glx";
     shadowExclude = [
       "class_g = 'Polybar'"
       "class_g = 'i3bar'"
