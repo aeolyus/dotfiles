@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   programs.zsh = {
     enable = true;
@@ -12,10 +13,14 @@
         "mafredri/zsh-async"
         "robbyrussell/oh-my-zsh path:plugins/gitfast"
         "robbyrussell/oh-my-zsh path:plugins/colored-man-pages"
-        # Theme
-        "sindresorhus/pure"
       ];
     };
+    plugins = [
+      {
+        name = "pure";
+        src = "${pkgs.pure-prompt}/share/zsh/site-functions";
+      }
+    ];
     history = {
       # Record timestamp
       extended = true;
@@ -54,6 +59,10 @@
       export EDITOR=nvim
     '';
     initContent = ''
+      # Prompt
+      autoload -Uz promptinit; promptinit
+      prompt pure
+
       # Custom shell scripts
       export PATH=$PATH:$HOME/dotfiles/spells
 
