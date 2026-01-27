@@ -5,5 +5,6 @@
     obsidian # Knowledge base
     spotify # Music player
     zathura # PDF viewer
+    prismlauncher # FOSS Minecraft launcher
   ];
 }
