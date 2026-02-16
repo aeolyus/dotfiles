@@ -5,7 +5,7 @@ HOST := $(shell hostnamectl hostname)
 
 .PHONY: aarch64-darwin
 aarch64-darwin: $(DARWIN_REBUILD) ## Configure aarch64-darwin machine
-	$(DARWIN_REBUILD) switch \
+	sudo $(DARWIN_REBUILD) switch \
 		--flake .#aarch64-darwin \
 		--option accept-flake-config true
 
