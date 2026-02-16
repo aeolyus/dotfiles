@@ -1,8 +1,8 @@
 { lib, pkgs, ... }:
 let
   autorandr = "${pkgs.autorandr}/bin/autorandr";
-  xinput = "${pkgs.xorg.xinput}/bin/xinput";
-  setxkbmap = "${pkgs.xorg.setxkbmap}/bin/setxkbmap";
+  xinput = "${pkgs.xinput}/bin/xinput";
+  setxkbmap = "${pkgs.setxkbmap}/bin/setxkbmap";
 in
 {
   xsession.windowManager.i3.config.startup = [

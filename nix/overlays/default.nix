@@ -3,6 +3,6 @@
     (import ./polybar.nix)
     (import ./sudo.nix)
     (import ./tmux.nix)
-    (import ./git-branchless.nix)
+    (import ./gdb.nix)
   ];
 }
