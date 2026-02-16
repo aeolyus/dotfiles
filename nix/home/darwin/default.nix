@@ -4,5 +4,6 @@
     ./home.nix
     ./modules
     ./packages.nix
+    ./programs
   ];
 }
