@@ -37,7 +37,7 @@ update: ## Update flake lock file
 
 .PHONY: fmt
 fmt: ## Format code
-	nix fmt --accept-flake-config
+	nix fmt --accept-flake-config -- .
 
 .PHONY: lint
 lint: ## Lint code
