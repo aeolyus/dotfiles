@@ -4,5 +4,6 @@
     ./home.nix
     ./ssh-agent.nix
     ./gpg-agent.nix
+    ./packages.nix
   ];
 }
