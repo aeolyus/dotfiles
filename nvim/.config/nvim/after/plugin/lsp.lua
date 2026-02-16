@@ -7,6 +7,6 @@ lsp.on_attach(function(client, bufnr)
   vim.highlight.priorities.semantic_tokens = 95
 end)
 
-require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+vim.lsp.enable("lua_ls")
 
 lsp.setup()
