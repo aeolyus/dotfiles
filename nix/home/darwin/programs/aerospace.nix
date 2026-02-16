@@ -44,45 +44,13 @@
       # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
       # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
       # Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
-      automatically-unhide-macos-hidden-apps = false;
+      automatically-unhide-macos-hidden-apps = true;
 
       # List of workspaces that should stay alive even when they contain no windows,
       # even when they are invisible.
       # This config version is only available since 'config-version = 2'
       # Fallback value (if you omit the key): persistent-workspaces = []
-      persistent-workspaces = [
-        "1"
-        "2"
-        "3"
-        "4"
-        "5"
-        "6"
-        "7"
-        "8"
-        "9"
-        "A"
-        "B"
-        "C"
-        "D"
-        "E"
-        "F"
-        "G"
-        "I"
-        "M"
-        "N"
-        "O"
-        "P"
-        "Q"
-        "R"
-        "S"
-        "T"
-        "U"
-        "V"
-        "W"
-        "X"
-        "Y"
-        "Z"
-      ];
+      persistent-workspaces = [ "1" "2" "3" "4" "5" "6" "7" "8" "9" "10" ];
 
       # A callback that runs every time binding mode changes
       # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -135,22 +103,26 @@
         # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
         # You can uncomment the following lines to open up terminal with alt + enter shortcut
         # (like in i3)
-        # alt-enter = '''exec-and-forget osascript -e '
-        # tell application "Terminal"
-        #     do script
-        #     activate
-        # end tell'
-        # '''
+        alt-enter = ''exec-and-forget osascript -e '
+        tell application "Terminal"
+            do script
+            activate
+        end tell'
+        '';
+
+        cmd-h = [ ]; # Disbale "hide application"
+        cmd-alt-h = [ ]; # Disable "hide others"
 
         # See: https://nikitabobko.github.io/AeroSpace/commands#layout
-        alt-slash = "layout tiles horizontal vertical";
-        alt-comma = "layout accordion horizontal vertical";
+        alt-semicolon = "layout tiles horizontal vertical";
+        alt-quote = "layout accordion horizontal vertical";
 
         # See: https://nikitabobko.github.io/AeroSpace/commands#focus
         alt-h = "focus left";
         alt-j = "focus down";
         alt-k = "focus up";
         alt-l = "focus right";
+        alt-f = "fullscreen";
 
         # See: https://nikitabobko.github.io/AeroSpace/commands#move
         alt-shift-h = "move left";
@@ -172,28 +144,7 @@
         alt-7 = "workspace 7";
         alt-8 = "workspace 8";
         alt-9 = "workspace 9";
-        alt-a = "workspace A"; # In your config, you can drop workspace bindings that you don't need
-        alt-b = "workspace B";
-        alt-c = "workspace C";
-        alt-d = "workspace D";
-        alt-e = "workspace E";
-        alt-f = "workspace F";
-        alt-g = "workspace G";
-        alt-i = "workspace I";
-        alt-m = "workspace M";
-        alt-n = "workspace N";
-        alt-o = "workspace O";
-        alt-p = "workspace P";
-        alt-q = "workspace Q";
-        alt-r = "workspace R";
-        alt-s = "workspace S";
-        alt-t = "workspace T";
-        alt-u = "workspace U";
-        alt-v = "workspace V";
-        alt-w = "workspace W";
-        alt-x = "workspace X";
-        alt-y = "workspace Y";
-        alt-z = "workspace Z";
+        alt-0 = "workspace 0"; # In your config, you can drop workspace bindings that you don't need
 
         # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
         alt-shift-1 = "move-node-to-workspace 1";
@@ -205,28 +156,7 @@
         alt-shift-7 = "move-node-to-workspace 7";
         alt-shift-8 = "move-node-to-workspace 8";
         alt-shift-9 = "move-node-to-workspace 9";
-        alt-shift-a = "move-node-to-workspace A";
-        alt-shift-b = "move-node-to-workspace B";
-        alt-shift-c = "move-node-to-workspace C";
-        alt-shift-d = "move-node-to-workspace D";
-        alt-shift-e = "move-node-to-workspace E";
-        alt-shift-f = "move-node-to-workspace F";
-        alt-shift-g = "move-node-to-workspace G";
-        alt-shift-i = "move-node-to-workspace I";
-        alt-shift-m = "move-node-to-workspace M";
-        alt-shift-n = "move-node-to-workspace N";
-        alt-shift-o = "move-node-to-workspace O";
-        alt-shift-p = "move-node-to-workspace P";
-        alt-shift-q = "move-node-to-workspace Q";
-        alt-shift-r = "move-node-to-workspace R";
-        alt-shift-s = "move-node-to-workspace S";
-        alt-shift-t = "move-node-to-workspace T";
-        alt-shift-u = "move-node-to-workspace U";
-        alt-shift-v = "move-node-to-workspace V";
-        alt-shift-w = "move-node-to-workspace W";
-        alt-shift-x = "move-node-to-workspace X";
-        alt-shift-y = "move-node-to-workspace Y";
-        alt-shift-z = "move-node-to-workspace Z";
+        alt-shift-0 = "move-node-to-workspace 0";
 
         # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
         alt-tab = "workspace-back-and-forth";
