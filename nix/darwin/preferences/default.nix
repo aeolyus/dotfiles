@@ -1,0 +1,5 @@
+{
+  imports = [
+    ./unnaturalscrollwheels.nix
+  ];
+}

@@ -5,6 +5,7 @@
     ./keybindings
     ./mouse
     ./nix.nix
+    ./preferences
     ./services
     ./system.nix
     ./user.nix
