@@ -1,7 +1,9 @@
 {
-  programs.ssh.matchBlocks."*" = {
+  programs.ssh = {
     enable = true;
-    addKeysToAgent = "1h";
     includes = [ "config.d/*" ];
+    matchBlocks."*" = {
+      addKeysToAgent = "1h";
+    };
   };
 }
