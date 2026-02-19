@@ -1,125 +1,97 @@
+# Remaps common Windows-style Ctrl+key shortcuts to macOS Cmd+key equivalents.
+{ lib, pkgs, ... }:
+let
+  # Apps excluded from ALL Ctrl-to-Cmd remappings (terminals, VMs, remote desktop)
+  fullExclude = app: ''"${app}" ~'';
+  fullExcludeApps = [
+    "Terminal"
+    "iTerm2"
+  ];
+
+  # Browsers for browser-only shortcuts
+  browserApps = [
+    "Google Chrome"
+    "Safari"
+  ];
+
+  mkRemap = { from, to, excludeApps }:
+    let
+      excludeLines = lib.concatMapStringsSep "\n    " fullExclude excludeApps;
+    in
+    ''
+      ${from} [
+          ${excludeLines}
+          * : skhd -k "${to}"
+      ]
+    '';
+
+  mkBrowserOnly = { from, to }:
+    let
+      browserLines = lib.concatMapStringsSep "\n    "
+        (app: ''"${app}" : skhd -k "${to}"'')
+        browserApps;
+    in
+    ''
+      ${from} [
+          ${browserLines}
+          * ~
+      ]
+    '';
+
+in
 {
   services.skhd = {
     enable = true;
+    package = pkgs.skhd;
+
     skhdConfig = ''
-      # Default mode
-      :: default
+      # Copy
+      ${mkRemap { from = "ctrl - c"; to = "cmd - c"; excludeApps = fullExcludeApps; }}
+      # Paste
+      ${mkRemap { from = "ctrl - v"; to = "cmd - v"; excludeApps = fullExcludeApps; }}
+      # Cut
+      ${mkRemap { from = "ctrl - x"; to = "cmd - x"; excludeApps = fullExcludeApps; }}
+      # Select all
+      ${mkRemap { from = "ctrl - a"; to = "cmd - a"; excludeApps = fullExcludeApps; }}
+      # Undo
+      ${mkRemap { from = "ctrl - z"; to = "cmd - z"; excludeApps = fullExcludeApps; }}
+      # Redo
+      ${mkRemap { from = "ctrl - y"; to = "cmd + shift - z"; excludeApps = fullExcludeApps; }}
+      # Find
+      ${mkRemap { from = "ctrl - f"; to = "cmd - f"; excludeApps = fullExcludeApps; }}
+      # Save
+      ${mkRemap { from = "ctrl - s"; to = "cmd - s"; excludeApps = fullExcludeApps; }}
+      # New
+      ${mkRemap { from = "ctrl - n"; to = "cmd - n"; excludeApps = fullExcludeApps; }}
+      # Close window/tab
+      ${mkRemap { from = "ctrl - w"; to = "cmd - w"; excludeApps = fullExcludeApps; }}
 
-      # Workspace focus
-      alt - 1 : yabai -m space --focus 1
-      alt - 2 : yabai -m space --focus 2
-      alt - 3 : yabai -m space --focus 3
-      alt - 4 : yabai -m space --focus 4
-      alt - 5 : yabai -m space --focus 5
-      alt - 6 : yabai -m space --focus 6
-      alt - 7 : yabai -m space --focus 7
-      alt - 8 : yabai -m space --focus 8
-      alt - 9 : yabai -m space --focus 9
-      alt - 0 : yabai -m space --focus 10
+      # Formatting and tab shortcuts
+      # Bold
+      ${mkRemap { from = "ctrl - b"; to = "cmd - b"; excludeApps = fullExcludeApps; }}
+      # Italic
+      ${mkRemap { from = "ctrl - i"; to = "cmd - i"; excludeApps = fullExcludeApps; }}
+      # New tab
+      ${mkRemap { from = "ctrl - t"; to = "cmd - t"; excludeApps = fullExcludeApps; }}
+      # Reopen previously closed tab
+      ${mkRemap { from = "ctrl - shift- t"; to = "cmd - shift - t"; excludeApps = fullExcludeApps; }}
 
-      # Move windows to another workspace
-      alt + shift - 1 : yabai -m window --space 1
-      alt + shift - 2 : yabai -m window --space 2
-      alt + shift - 3 : yabai -m window --space 3
-      alt + shift - 4 : yabai -m window --space 4
-      alt + shift - 5 : yabai -m window --space 5
-      alt + shift - 6 : yabai -m window --space 6
-      alt + shift - 7 : yabai -m window --space 7
-      alt + shift - 8 : yabai -m window --space 8
-      alt + shift - 9 : yabai -m window --space 9
-      alt + shift - 0 : yabai -m window --space 10
+      # Browser-only shortcuts
+      # Focus URL bar
+      ${mkBrowserOnly { from = "ctrl - l"; to = "cmd - l"; }}
+      # Reload page
+      ${mkBrowserOnly { from = "ctrl - r"; to = "cmd - r"; }}
 
-      # Navigation
-      alt - h : yabai -m window --focus west
-      alt - j : yabai -m window --focus south
-      alt - k : yabai -m window --focus north
-      alt - l : yabai -m window --focus east
+      # Word navigation
+      # Move one word left (Ctrl+Left -> Option+Left)
+      ${mkRemap { from = "ctrl - left"; to = "alt - left"; excludeApps = fullExcludeApps; }}
+      # Move one word right (Ctrl+Right -> Option+Right)
+      ${mkRemap { from = "ctrl - right"; to = "alt - right"; excludeApps = fullExcludeApps; }}
 
-      # Moving windows
-      shift + alt - h : yabai -m window --warp west
-      shift + alt - j : yabai -m window --warp south
-      shift + alt - k : yabai -m window --warp north
-      shift + alt - l : yabai -m window --warp east
-
-      # Move floating window
-      shift + alt - h : yabai -m window --move rel:-20:0
-      shift + alt - j : yabai -m window --move rel:0:20
-      shift + alt - k : yabai -m window --move rel:0:-20
-      shift + alt - l : yabai -m window --move rel:20:0
-
-      # Float/unfloat windows
-      shift + alt - space : yabai -m window --toggle float; \
-      yabai -m window --grid 4:4:1:1:2:2
-
-      # Fullscreen
-      alt - f : yabai -m window --toggle zoom-fullscreen
-      shift + alt - f : yabai -m window --toggle native-fullscreen
-
-      # Resize mode
-      :: resize @
-
-      ## Enter resize mode
-      alt - r ; resize
-
-      ## Leave resize mode
-      resize < escape ; default
-
-      ## Resize mode key bindings
-      resize < h : \
-          yabai -m window --resize left:-20:0 ; \
-          yabai -m window --resize right:-20:0
-      resize < j : \
-          yabai -m window --resize bottom:0:20 ; \
-          yabai -m window --resize top:0:20
-      resize < k : \
-          yabai -m window --resize top:0:-20 ; \
-          yabai -m window --resize bottom:0:-20
-      resize < l : \
-          yabai -m window --resize right:20:0 ; \
-          yabai -m window --resize left:20:0
-
-      # Resize windows
-      ctrl + alt - h : \
-          yabai -m window --resize left:-20:0 ; \
-          yabai -m window --resize right:-20:0
-
-      ctrl + alt - j : \
-          yabai -m window --resize bottom:0:20 ; \
-          yabai -m window --resize top:0:20
-
-      ctrl + alt - k : \
-          yabai -m window --resize top:0:-20 ; \
-          yabai -m window --resize bottom:0:-20
-
-      ctrl + alt - l : \
-          yabai -m window --resize right:20:0 ; \
-          yabai -m window --resize left:20:0
-
-      # Toggle window split type with semicolon
-      alt - 0x29 : yabai -m window --toggle split
-
-      # Balance size of windows
-      shift + alt - 0 : yabai -m space --balance
-      ctrl + alt - 0 : yabai -m space --balance
-
-      # Workspace init
-      ctrl + alt - n : yabai -m space --create && \
-                            index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
-                            yabai -m space --focus "''${index}"
-      ctrl + alt - d : yabai -m space --destroy
-
-      # Terminal
-      alt - return : pgrep -f "iTerm" \
-        && osascript -e 'tell application "iTerm2" to create window with default profile' \
-        || open -a "/Applications/iTerm.app"
-
-      # Toggle sticky(+float), topmost, picture-in-picture
-      cmd - p : yabai -m window --toggle sticky;\
-      yabai -m window --toggle topmost;\
-      yabai -m window --toggle pip
-
-      # Restart
-      alt + shift - r : brew services restart skhd && brew services restart yabai
+      # Print
+      ${mkRemap { from = "ctrl - p"; to = "cmd - p"; excludeApps = fullExcludeApps; }}
+      # Open file
+      ${mkRemap { from = "ctrl - o"; to = "cmd - o"; excludeApps = fullExcludeApps; }}
     '';
   };
 }
