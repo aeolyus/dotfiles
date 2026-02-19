@@ -1,3 +1,7 @@
+{ pkgs, ... }:
+let
+  aerospace = "${pkgs.aerospace}/bin/aerospace";
+in
 {
   programs.aerospace = {
     enable = true;
@@ -138,8 +142,8 @@
         alt-shift-l = "move right";
 
         # See: https://nikitabobko.github.io/AeroSpace/commands#resize
-        alt-shift-minus = "resize smart -50";
-        alt-shift-equal = "resize smart +50";
+        # alt-shift-minus = "resize smart -50";
+        # alt-shift-equal = "resize smart +50";
 
         # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
         alt-1 = "workspace 1";
@@ -153,6 +157,13 @@
         alt-9 = "workspace 9";
         alt-0 = "workspace 0"; # In your config, you can drop workspace bindings that you don't need
 
+        # Toggle scratchpad workspace
+        alt-minus =
+          "exec-and-forget"
+          + " [ \"$(${aerospace} list-workspaces --focused)\" = scratchpad ]"
+          + " && ${aerospace} workspace-back-and-forth"
+          + " || ${aerospace} workspace scratchpad";
+
         # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
         alt-shift-1 = "move-node-to-workspace 1";
         alt-shift-2 = "move-node-to-workspace 2";
@@ -164,6 +175,7 @@
         alt-shift-8 = "move-node-to-workspace 8";
         alt-shift-9 = "move-node-to-workspace 9";
         alt-shift-0 = "move-node-to-workspace 0";
+        alt-shift-minus = "move-node-to-workspace scratchpad";
 
         # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
         alt-tab = "workspace-back-and-forth";
