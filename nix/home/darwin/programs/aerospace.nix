@@ -183,6 +183,10 @@ in
         alt-tab = "workspace-back-and-forth";
         # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
         alt-shift-tab = "move-workspace-to-monitor --wrap-around next";
+        alt-shift-cmd-h = "move-workspace-to-monitor left";
+        alt-shift-cmd-j = "move-workspace-to-monitor down";
+        alt-shift-cmd-k = "move-workspace-to-monitor up";
+        alt-shift-cmd-l = "move-workspace-to-monitor right";
 
         # See: https://nikitabobko.github.io/AeroSpace/commands#mode
         alt-shift-semicolon = "mode service";
