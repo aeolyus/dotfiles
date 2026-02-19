@@ -103,11 +103,9 @@
         # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
         # You can uncomment the following lines to open up terminal with alt + enter shortcut
         # (like in i3)
-        alt-enter = ''exec-and-forget osascript -e '
-        tell application "Terminal"
-            do script
-            activate
-        end tell'
+        alt-enter = ''exec-and-forget pgrep -f "iTerm" \
+        && osascript -e 'tell application "iTerm2" to create window with default profile' \
+        || open -na iTerm2
         '';
 
         cmd-h = [ ]; # Disable "hide application"
