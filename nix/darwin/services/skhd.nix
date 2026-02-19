@@ -83,10 +83,12 @@ in
       ${mkBrowserOnly { from = "ctrl - r"; to = "cmd - r"; }}
 
       # Word navigation
-      # Move one word left (Ctrl+Left -> Option+Left)
+      # Move one word left
       ${mkRemap { from = "ctrl - left"; to = "alt - left"; excludeApps = fullExcludeApps; }}
-      # Move one word right (Ctrl+Right -> Option+Right)
+      # Move one word right
       ${mkRemap { from = "ctrl - right"; to = "alt - right"; excludeApps = fullExcludeApps; }}
+      # Delete word
+      ${mkRemap { from = "ctrl - backspace"; to = "alt - backspace"; excludeApps = fullExcludeApps; }}
 
       # Print
       ${mkRemap { from = "ctrl - p"; to = "cmd - p"; excludeApps = fullExcludeApps; }}

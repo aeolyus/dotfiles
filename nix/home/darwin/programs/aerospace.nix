@@ -141,6 +141,8 @@ in
         alt-shift-k = "move up";
         alt-shift-l = "move right";
 
+        alt-shift-q = "close";
+
         # See: https://nikitabobko.github.io/AeroSpace/commands#resize
         # alt-shift-minus = "resize smart -50";
         # alt-shift-equal = "resize smart +50";
