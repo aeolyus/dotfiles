@@ -1,7 +1,6 @@
 {
   imports = [
     # ./chrome.nix
+    ./keyboard.nix
   ];
-  system.keyboard.enableKeyMapping = true;
-  system.keyboard.remapCapsLockToControl = true;
 }
