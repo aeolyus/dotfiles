@@ -110,8 +110,17 @@
         end tell'
         '';
 
-        cmd-h = [ ]; # Disbale "hide application"
+        cmd-h = [ ]; # Disable "hide application"
         cmd-alt-h = [ ]; # Disable "hide others"
+
+        # Lock screen
+        cmd-alt-l =
+          let
+            lock = "keystroke \"q\" using {command down, control down}";
+          in
+          "exec-and-forget osascript -e"
+          + " 'tell application \"System Events\""
+          + " to ${lock}'";
 
         # See: https://nikitabobko.github.io/AeroSpace/commands#layout
         alt-semicolon = "layout tiles horizontal vertical";
