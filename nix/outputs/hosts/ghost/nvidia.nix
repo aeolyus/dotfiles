@@ -32,5 +32,5 @@
   };
 
   # Build nixpkgs packages with CUDA support where available
-  # nixpkgs.config.cudaSupport = true;
+  nixpkgs.config.cudaSupport = true;
 }
