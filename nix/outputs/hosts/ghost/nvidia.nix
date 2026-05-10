@@ -19,4 +19,18 @@
     # corruption issues after waking up from sleep.
     powerManagement.enable = true;
   };
+
+  # CUDA binary cache — avoids building CUDA packages from source
+  # https://wiki.nixos.org/wiki/CUDA
+  nix.settings = {
+    substituters = [
+      "https://cache.nixos-cuda.org"
+    ];
+    trusted-public-keys = [
+      "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
+    ];
+  };
+
+  # Build nixpkgs packages with CUDA support where available
+  # nixpkgs.config.cudaSupport = true;
 }
