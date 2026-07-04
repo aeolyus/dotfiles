@@ -28,6 +28,7 @@
     mpv # Media player
     ncdu # Disk usage analyzer with an ncurses interface
     neovim # Text editor
+    opencode # Open source coding agent
     procps # procfs utilities, most use procps over GNU coreutils for uptime
     python3 # Programming language
     ripgrep # Alternative to grep
