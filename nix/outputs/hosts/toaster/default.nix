@@ -18,6 +18,10 @@ nixosSystem {
     }
     {
       networking.hostName = "toaster";
+
+      # nixos-hardware enables throttled for this laptop, which introspects the
+      # UPower D-Bus service on startup
+      services.upower.enable = true;
     }
     ../../../common
     ../../../nixos
